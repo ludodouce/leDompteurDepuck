@@ -23,7 +23,10 @@
 //#define DOUBLE_BUFFERING
 
 //salut Marius
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 3a7c00e (testsuite)
 static void serial_start(void)
 {
 	static SerialConfig ser_cfg = {
