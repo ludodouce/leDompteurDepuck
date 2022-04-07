@@ -23,6 +23,7 @@
 //#define DOUBLE_BUFFERING
 
 //salut Marius
+//Test comeback
 static void serial_start(void)
 {
 	static SerialConfig ser_cfg = {
