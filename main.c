@@ -22,7 +22,7 @@
 //uncomment to use double buffering to send the FFT to the computer
 //#define DOUBLE_BUFFERING
 
-//salut Marius
+//salut Ludo
 
 static void serial_start(void)
 {
