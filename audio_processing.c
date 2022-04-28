@@ -27,12 +27,12 @@ static float micBack_output[FFT_SIZE];
 
 #define MIN_VALUE_THRESHOLD	30000
 
-#define MIN_FREQ		10	//we don't analyze before this index to not use resources for nothing
+#define MIN_FREQ		30	//we don't analyze before this index to not use resources for nothing
 #define FREQ_FORWARD	32	//250Hz
 #define FREQ_LEFT		19	//296Hz
 #define FREQ_RIGHT		23	//359HZ
 #define FREQ_BACKWARD	32	//406Hz
-#define MAX_FREQ		30	//we don't analyze after this index to not use resources for nothing
+#define MAX_FREQ		50	//we don't analyze after this index to not use resources for nothing
 
 #define FREQ_FORWARD_L		(FREQ_FORWARD-1)
 #define FREQ_FORWARD_H		(FREQ_FORWARD+1)
@@ -51,7 +51,8 @@ static float micBack_output[FFT_SIZE];
 void sound_remote(float* data){
 	float max_norm = MIN_VALUE_THRESHOLD;
 	int16_t max_norm_index = -1;
-	static bool plusHaut = false;
+	static bool allumer = false;
+	static bool plusVite = false;
 
 	//search for the highest peak
 	for(uint16_t i = MIN_FREQ ; i <= MAX_FREQ ; i++){
@@ -65,21 +66,33 @@ void sound_remote(float* data){
 	}
 
 	//go forward
-	if(max_norm_index >= 24 && max_norm_index <= 25){
-		//if(plusHaut) plusHaut = false;
-		//if(!plusHaut) plusHaut = true;
+	if(max_norm_index >= 45 && max_norm_index <= 46){
+			allumer = !allumer;
+			if(allumer){
+			left_motor_set_speed(400);
+			right_motor_set_speed(400);
 
-		if(plusHaut){
-			left_motor_set_speed(600);
-			right_motor_set_speed(600);
-			plusHaut = false;
-		} else {
+		chThdSleepMilliseconds(2000);
+			}else{
 			left_motor_set_speed(0);
 			right_motor_set_speed(0);
-			plusHaut = true;
+			chThdSleepMilliseconds(2000);
+			}
 		}
-		chThdSleepMilliseconds(2000);
-		}
+
+	if(max_norm_index >= 48 && max_norm_index <= 59){
+				plusVite = !plusVite;
+				if(allumer && plusVite){
+				left_motor_set_speed(600);
+				right_motor_set_speed(600);
+
+			chThdSleepMilliseconds(2000);
+				}else if (allumer && !plusVite){
+				left_motor_set_speed(400);
+				right_motor_set_speed(400);
+				chThdSleepMilliseconds(2000);
+				}
+			}
 	/*//turn left
 	else if(max_norm_index >= FREQ_LEFT_L && max_norm_index <= FREQ_LEFT_H){
 		left_motor_set_speed(-600);

@@ -18,11 +18,11 @@
 #include <sensors/VL53L0X/VL53L0X.h>
 
 //uncomment to send the FFTs results from the real microphones
-//#define SEND_FROM_MIC
+#define SEND_FROM_MIC
 
 //uncomment to use double buffering to send the FFT to the computer
 //#define DOUBLE_BUFFERING
-#define VL53L0X
+//#define VL53L0X
 //salut Ludo
 
 static void serial_start(void)
