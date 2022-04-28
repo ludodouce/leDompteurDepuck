@@ -15,6 +15,7 @@
 #include <fft.h>
 #include <communications.h>
 #include <arm_math.h>
+#include <sensors/VL53L0X/VL53L0X.h>
 
 //uncomment to send the FFTs results from the real microphones
 #define SEND_FROM_MIC
@@ -80,9 +81,29 @@ int main(void)
     //it calls the callback given in parameter when samples are ready
     mic_start(&processAudioData);
 #endif  /* SEND_FROM_MIC */
-
+    VL53L0X_start();
     /* Infinite loop. */
     while (1) {
+#ifdef VL53L0X
+        uint16_t distance = 0;
+        distance = VL53L0X_get_dist_mm();
+        if (distance < 55){
+        	left_motor_set_pos(0);
+        	right_motor_set_pos(0);
+        	uint16_t nombrePourFaireUnTour = 2000;
+        	uint16_t valActuelle = 0;
+        	while (nombrePourFaireUnTour >= valActuelle){
+        	right_motor_set_speed(-100);
+        	valActuelle=right_motor_get_pos();
+        	chprintf((BaseSequentialStream*)&SD3, "Hey! position = %d\n", valActuelle);
+        	}
+
+        } else {
+        	left_motor_set_speed(100);
+        	right_motor_set_speed(100);
+        }
+        //chprintf((BaseSequentialStream*)&SD3, "distance = %d \n", distance);
+#endif
 #ifdef SEND_FROM_MIC
         //waits until a result must be sent to the computer
         wait_send_to_computer();
