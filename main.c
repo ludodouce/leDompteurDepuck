@@ -16,9 +16,10 @@
 #include <communications.h>
 #include <arm_math.h>
 #include <sensors/VL53L0X/VL53L0X.h>
+#include <detecteurinfra.h>
 
 //uncomment to send the FFTs results from the real microphones
-#define SEND_FROM_MIC
+//#define SEND_FROM_MIC
 
 //uncomment to use double buffering to send the FFT to the computer
 //#define DOUBLE_BUFFERING
@@ -82,8 +83,10 @@ int main(void)
     mic_start(&processAudioData);
 #endif  /* SEND_FROM_MIC */
     VL53L0X_start();
+    startDetecteur();
     /* Infinite loop. */
     while (1) {
+
 #ifdef VL53L0X
         uint16_t distance = 0;
         distance = VL53L0X_get_dist_mm();
@@ -113,6 +116,8 @@ int main(void)
 #endif  /* DOUBLE_BUFFERING */
 #endif  /* SEND_FROM_MIC */
     }
+
+    chThdSleepMilliseconds(100);
 }
 
 #define STACK_CHK_GUARD 0xe2dee396
