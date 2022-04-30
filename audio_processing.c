@@ -24,6 +24,7 @@ static float micLeft_output[FFT_SIZE];
 static float micRight_output[FFT_SIZE];
 static float micFront_output[FFT_SIZE];
 static float micBack_output[FFT_SIZE];
+static float speed_coeff;
 
 #define MIN_VALUE_THRESHOLD	30000
 
@@ -60,39 +61,43 @@ void sound_remote(float* data){
 			max_norm = data[i];
 			max_norm_index = i;
 	//chprintf((BaseSequentialStream*)&SD3, "max_norm = %f \n\n", max_norm);
-
-
 		}
 	}
-
+	//chprintf((BaseSequentialStream*)&SD3, "max_norm_index = %d \n", max_norm_index);
 	//go forward
-	if(max_norm_index >= 45 && max_norm_index <= 46){
+	if(max_norm_index >= 45 && max_norm_index <= 47){
 			allumer = !allumer;
-			if(allumer){
-			left_motor_set_speed(400);
-			right_motor_set_speed(400);
-		    chThdSleepMilliseconds(2000);
-			}else{
-			left_motor_set_speed(0);
-			right_motor_set_speed(0);
+			speed_coeff = (float)allumer;
+			chprintf((BaseSequentialStream*)&SD3, "allume = %d \n", allumer);
+			if (max_norm_index >= 40 && allumer) speed_coeff = 2*max_norm_index/MIN_FREQ;
+			//chprintf((BaseSequentialStream*)&SD3, "speed = %f \n", speed_coeff);
 			chThdSleepMilliseconds(2000);
-			}
+//			if(allumer){
+//			left_motor_set_speed(400);
+//			right_motor_set_speed(400);
+//			speed_coeff = 1;
+//		    chThdSleepMilliseconds(2000);
+//			}else{
+//			left_motor_set_speed(0);
+//			right_motor_set_speed(0);
+//			speed_coeff = 0;
+//			chThdSleepMilliseconds(2000);
+//			}
 		}
-
-	if(max_norm_index >= 48 && max_norm_index <= 59){
-				plusVite = !plusVite;
-				if(allumer && plusVite){
-				left_motor_set_speed(600);
-				right_motor_set_speed(600);
-
-			chThdSleepMilliseconds(2000);
-
-				}else if (allumer && !plusVite){
-				left_motor_set_speed(100);
-				right_motor_set_speed(100);
-				chThdSleepMilliseconds(2000);
-				}
-			}
+//	if(max_norm_index >= 48 && max_norm_index <= 59){
+//				plusVite = !plusVite;
+//				if(allumer && plusVite){
+//				left_motor_set_speed(600);
+//				right_motor_set_speed(600);
+//
+//			chThdSleepMilliseconds(2000);
+//
+//				}else if (allumer && !plusVite){
+//				left_motor_set_speed(100);
+//				right_motor_set_speed(100);
+//				chThdSleepMilliseconds(2000);
+//				}
+//			}
 
 }
 
@@ -174,6 +179,7 @@ void processAudioData(int16_t *data, uint16_t num_samples){
 		}
 		nb_samples = 0;
 		mustSend++;
+		//chprintf((BaseSequentialStream*)&SD3, "mustSend = %d \n", mustSend);
 
 		sound_remote(micLeft_output);
 	}
@@ -183,6 +189,10 @@ void wait_send_to_computer(void){
 	chBSemWait(&sendToComputer_sem);
 }
 
+float get_speed_coeff(void) {
+	chprintf((BaseSequentialStream*)&SD3, "speed = %f \n", speed_coeff);
+	return speed_coeff;
+}
 float* get_audio_buffer_ptr(BUFFER_NAME_t name){
 	if(name == LEFT_CMPLX_INPUT){
 		return micLeft_cmplx_input;

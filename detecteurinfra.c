@@ -9,10 +9,15 @@
 
 #include <sensors/VL53L0X/VL53L0X.h>
 #include <motors.h>
+#include "ch.h"
+#include <chprintf.h>
+#include <audio_processing.h>
+
+#define INITIAL_SPEED 100
 
 static BSEMAPHORE_DECL(peutTourner, TRUE);
 
-static THD_WORKING_AREA(waDetecteurDistance, 128);
+static THD_WORKING_AREA(waDetecteurDistance, 256);
 static THD_FUNCTION(DetecteurDistance, arg) {
 
     chRegSetThreadName(__FUNCTION__);
@@ -21,44 +26,33 @@ static THD_FUNCTION(DetecteurDistance, arg) {
     while(1){
 			uint16_t distance = 0;
 	        distance = VL53L0X_get_dist_mm();
-
+	        float speed = get_speed_coeff();
 	        if (distance < 55){
-
-	        	chBSemWait(&peutTourner);
-	        	//chprintf((BaseSequentialStream*)&SD3, "Hey! position = %d\n", valActuelle);
-
-
+	        	 right_motor_set_speed(-INITIAL_SPEED);
+	             //chprintf((BaseSequentialStream*)&SD3, "Hey! position = %d\n", valActuelle);
+	        	 chThdSleepMilliseconds(3262);
 	        } else {
-	        	left_motor_set_speed(100);//attention utile pour debuguer mais à enlever quand on mixe les threads
-	        	right_motor_set_speed(100);
-
-	        //chprintf((BaseSequentialStream*)&SD3, "distance = %d \n", distance);
+	        	left_motor_set_speed(INITIAL_SPEED*speed);//attention utile pour debuguer mais ï¿½ enlever quand on mixe les threads
+	        	right_motor_set_speed(INITIAL_SPEED*speed);
+	            //chprintf((BaseSequentialStream*)&SD3, "speed_coeff = %d \n", speed_coeff);
 	        }
     }
 	chThdSleepMilliseconds(100);
 }
 
-static THD_WORKING_AREA(waTourne, 128);
-static THD_FUNCTION(Tourne, arg){
-	chRegSetThreadName(__FUNCTION__);
-	    (void)arg;
-
-	    while(1){
-
-	    	chBSemSignal(&peutTourner);
-
-			uint16_t nombrePourFaireUnTour = 2000;
-		    uint16_t valActuelle = 0;
-
-		    while (nombrePourFaireUnTour >= valActuelle){
-		    right_motor_set_speed(-100);
-		    valActuelle+=1;
-
-		}
-	  }
-}
+//static THD_WORKING_AREA(waTourne, 512);
+//static THD_FUNCTION(Tourne, arg){
+//	chRegSetThreadName(__FUNCTION__);
+//	    (void)arg;
+//
+//	    while(1){
+//	    	//chBSemSignal(&peutTourner);
+//	     	chBSemWait(&peutTourner);
+//	     	right_motor_set_speed(-100);
+//	  }
+//}
 
 void startDetecteur(void){
 	chThdCreateStatic(waDetecteurDistance, sizeof(waDetecteurDistance), NORMALPRIO, DetecteurDistance, NULL);
-	chThdCreateStatic(waTourne, sizeof(waTourne), NORMALPRIO+2, Tourne, NULL);
+	//chThdCreateStatic(waTourne, sizeof(waTourne), NORMALPRIO, Tourne, NULL);
 }
