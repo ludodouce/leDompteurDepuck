@@ -27,11 +27,18 @@ static THD_FUNCTION(DetecteurDistance, arg) {
 			uint16_t distance = 0;
 	        distance = VL53L0X_get_dist_mm();
 	        float speed = get_speed_coeff();
+	        bool direction = get_direction();
+	        chprintf((BaseSequentialStream*)&SD3, "Hey! direction = %d\n", direction);
 	        if ((distance < 55) && speed!=0){
+	        	if (direction) {
 	        	 right_motor_set_speed(-INITIAL_SPEED);
 	        	 left_motor_set_speed(INITIAL_SPEED);
+	        	} else {
+	        	 right_motor_set_speed(INITIAL_SPEED);
+	        	 left_motor_set_speed(-INITIAL_SPEED);
+	        	}
 	             //chprintf((BaseSequentialStream*)&SD3, "Hey! position = %d\n", valActuelle);
-	        	 chThdSleepMilliseconds(3262);
+	        	 chThdSleepMilliseconds(3270);
 	        } else {
 	        	left_motor_set_speed(INITIAL_SPEED*speed);//attention utile pour debuguer mais � enlever quand on mixe les threads
 	        	right_motor_set_speed(INITIAL_SPEED*speed);

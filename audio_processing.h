@@ -30,5 +30,6 @@ float get_speed_coeff(void);
 *	Returns the pointer to the BUFFER_NAME_t buffer asked
 */
 float* get_audio_buffer_ptr(BUFFER_NAME_t name);
+bool get_direction(void);
 
 #endif /* AUDIO_PROCESSING_H */

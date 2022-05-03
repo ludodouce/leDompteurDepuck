@@ -25,6 +25,7 @@ static float micRight_output[FFT_SIZE];
 static float micFront_output[FFT_SIZE];
 static float micBack_output[FFT_SIZE];
 static float speed_coeff;
+static bool direction;
 
 #define MIN_VALUE_THRESHOLD	30000
 
@@ -49,23 +50,36 @@ static float speed_coeff;
 *	Simple function used to detect the highest value in a buffer
 *	and to execute a motor command depending on it
 */
-void sound_remote(float* data){
-	float max_norm = MIN_VALUE_THRESHOLD;
-	int16_t max_norm_index = -1;
+void sound_remote(float* data_L, float* data_R){
+	float max_norm_left = MIN_VALUE_THRESHOLD;
+	int16_t max_norm_index_left = -1;
+	float max_norm_right = MIN_VALUE_THRESHOLD;
+	int16_t max_norm_index_right = -1;
 	static bool allumer = false;
 	static bool plusVite = false;
 
 	//search for the highest peak
 	for(uint16_t i = MIN_FREQ ; i <= MAX_FREQ ; i++){
-		if(data[i] > max_norm){
-			max_norm = data[i];
-			max_norm_index = i;
+		if(data_L[i] > max_norm_left){
+			max_norm_left = data_L[i];
+			max_norm_index_left = i;
 	//chprintf((BaseSequentialStream*)&SD3, "max_norm = %f \n\n", max_norm);
+		}
+		if(data_R[i] > max_norm_right){
+			max_norm_right = data_R[i];
+			max_norm_index_right = i;
+			//chprintf((BaseSequentialStream*)&SD3, "max_norm = %f \n\n", max_norm);
 		}
 	}
 	//chprintf((BaseSequentialStream*)&SD3, "max_norm_index = %d \n", max_norm_index);
 	//go forward
-	if(max_norm_index >= 50 && max_norm_index <= 51){
+	if (max_norm_left < max_norm_right) {
+			direction = true;
+		} else {
+			direction = false;
+		}
+
+	if(max_norm_index_left >= 50 && max_norm_index_left <= 51){
 			allumer = !allumer;
 			speed_coeff=allumer;
 			chThdSleepMilliseconds(2000);
@@ -82,16 +96,16 @@ void sound_remote(float* data){
 //			chThdSleepMilliseconds(2000);
 //			}
 		}
-	chprintf((BaseSequentialStream*)&SD3, "allume = %d \n", allumer);
+	//chprintf((BaseSequentialStream*)&SD3, "allume = %d \n", allumer);
 	//chprintf((BaseSequentialStream*)&SD3, "speed = %f \n", speed_coeff);
 	if (allumer) {
 		speed_coeff=1;
 	} else {
 		speed_coeff=0;
 	}
-	if ((max_norm_index > 55) && allumer) {
-					speed_coeff = 2*max_norm_index/MIN_FREQ;
-				}
+	if ((max_norm_index_left > 55) && allumer) {
+		speed_coeff = 2*max_norm_index_left/MIN_FREQ;
+	}
 //	if(max_norm_index >= 48 && max_norm_index <= 59){
 //				plusVite = !plusVite;
 //				if(allumer && plusVite){
@@ -188,7 +202,7 @@ void processAudioData(int16_t *data, uint16_t num_samples){
 		mustSend++;
 		//chprintf((BaseSequentialStream*)&SD3, "mustSend = %d \n", mustSend);
 
-		sound_remote(micLeft_output);
+		sound_remote(micLeft_output,micRight_output);
 	}
 }
 
@@ -199,6 +213,9 @@ void wait_send_to_computer(void){
 float get_speed_coeff(void) {
 	//chprintf((BaseSequentialStream*)&SD3, "speed = %f \n", speed_coeff);
 	return speed_coeff;
+}
+bool get_direction(void) {
+	return direction;
 }
 float* get_audio_buffer_ptr(BUFFER_NAME_t name){
 	if(name == LEFT_CMPLX_INPUT){
