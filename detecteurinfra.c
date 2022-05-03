@@ -40,7 +40,7 @@ static THD_FUNCTION(DetecteurDistance, arg) {
 	             //chprintf((BaseSequentialStream*)&SD3, "Hey! position = %d\n", valActuelle);
 	        	 chThdSleepMilliseconds(3270);
 	        } else {
-	        	left_motor_set_speed(INITIAL_SPEED*speed);//attention utile pour debuguer mais � enlever quand on mixe les threads
+	        	left_motor_set_speed(INITIAL_SPEED*speed);//attention utile pour debuguer mais enlever quand on mixe les threads
 	        	right_motor_set_speed(INITIAL_SPEED*speed);
 	            //chprintf((BaseSequentialStream*)&SD3, "speed_coeff = %d \n", speed_coeff);
 	        }
