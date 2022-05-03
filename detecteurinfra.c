@@ -26,18 +26,19 @@ static THD_FUNCTION(DetecteurDistance, arg) {
 
     while(1){
 			uint16_t distance = 0;
-	        distance = VL53L0X_get_dist_mm();
-	        float speed = get_speed_coeff();
-	        bool direction = get_direction();
-	        //chprintf((BaseSequentialStream*)&SD3, "Hey! direction = %d\n", direction);
 
-	        int selecteur = get_selector();
+	       int selecteur = get_selector();
+
 
 	     if(selecteur == 5){
-
 	    	laChoreeDeReggaeton();
 	     }
+
 	     else{
+
+	    	 distance = VL53L0X_get_dist_mm();
+	    	 float speed = get_speed_coeff();
+	    	 bool direction = get_direction();
 
 	        if ((distance < 55) && speed!=0){
 
@@ -51,7 +52,7 @@ static THD_FUNCTION(DetecteurDistance, arg) {
 	             //chprintf((BaseSequentialStream*)&SD3, "Hey! position = %d\n", valActuelle);
 	        	 chThdSleepMilliseconds(3270);
 	        } else {
-	        	left_motor_set_speed(INITIAL_SPEED*speed);//attention utile pour debuguer mais enlever quand on mixe les threads
+	        	left_motor_set_speed(INITIAL_SPEED*speed);
 	        	right_motor_set_speed(INITIAL_SPEED*speed);
 	            //chprintf((BaseSequentialStream*)&SD3, "speed_coeff = %d \n", speed_coeff);
 	        }
@@ -75,8 +76,7 @@ static THD_FUNCTION(DetecteurDistance, arg) {
 
 void startDetecteur(void){
 	chThdCreateStatic(waDetecteurDistance, sizeof(waDetecteurDistance), NORMALPRIO, DetecteurDistance, NULL);
-	//chThdCreateStatic(waTourne, sizeof(waTourne), NORMALPRIO, Tourne, NULL);
-}
+	}
 
 
 void laChoreeDeReggaeton(void){
@@ -84,30 +84,30 @@ void laChoreeDeReggaeton(void){
 
 	right_motor_set_speed(SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE);
-	chThdSleepMilliseconds(1200);
+	chThdSleepMilliseconds(1300);
 	right_motor_set_speed(-SPEED_CHOREE);
 	left_motor_set_speed(-SPEED_CHOREE);
 	chThdSleepMilliseconds(1400);
 	right_motor_set_speed(SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE);
-	chThdSleepMilliseconds(1200);
+	chThdSleepMilliseconds(1300);
 	right_motor_set_speed(-SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE);
 	chThdSleepMilliseconds(1665);
 
 	right_motor_set_speed(SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE);
-	chThdSleepMilliseconds(1200);
+	chThdSleepMilliseconds(1300);
 	right_motor_set_speed(-SPEED_CHOREE);
 	left_motor_set_speed(-SPEED_CHOREE);
 	chThdSleepMilliseconds(1400);
 	right_motor_set_speed(SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE);
-	chThdSleepMilliseconds(1200);
+	chThdSleepMilliseconds(1300);
 
 	right_motor_set_speed(0);
 	left_motor_set_speed(0);
 
-
+	chThdSleepMilliseconds(3000);
 
 }

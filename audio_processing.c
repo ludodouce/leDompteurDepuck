@@ -55,9 +55,8 @@ void sound_remote(float* data_L, float* data_R){
 	float max_norm_left = MIN_VALUE_THRESHOLD;
 	int16_t max_norm_index_left = -1;
 	float max_norm_right = MIN_VALUE_THRESHOLD;
-	int16_t max_norm_index_right = -1;
+
 	static bool allumer = false;
-	static bool plusVite = false;
 
 	//search for the highest peak
 	for(uint16_t i = MIN_FREQ ; i <= MAX_FREQ ; i++){
@@ -68,12 +67,13 @@ void sound_remote(float* data_L, float* data_R){
 		}
 		if(data_R[i] > max_norm_right){
 			max_norm_right = data_R[i];
-			max_norm_index_right = i;
 			//chprintf((BaseSequentialStream*)&SD3, "max_norm = %f \n\n", max_norm);
 		}
 	}
+
 	//chprintf((BaseSequentialStream*)&SD3, "max_norm_index = %d \n", max_norm_index);
 	//go forward
+
 	if (max_norm_left < max_norm_right) {
 			direction = true;
 		} else {
