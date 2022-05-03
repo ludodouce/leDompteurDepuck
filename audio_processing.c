@@ -51,6 +51,7 @@ static bool direction;
 *	and to execute a motor command depending on it
 */
 void sound_remote(float* data_L, float* data_R){
+
 	float max_norm_left = MIN_VALUE_THRESHOLD;
 	int16_t max_norm_index_left = -1;
 	float max_norm_right = MIN_VALUE_THRESHOLD;

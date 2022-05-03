@@ -9,5 +9,6 @@
 #define DETECTEURINFRA_H_
 
 void startDetecteur(void); //start the thread for detectDistance
+void laChoreeDeReggaeton(void); //fonction de la chorée
 
 #endif /* DETECTEURINFRA_H_ */
