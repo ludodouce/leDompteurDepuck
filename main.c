@@ -87,24 +87,6 @@ int main(void)
     /* Infinite loop. */
     while (1) {
 
-#ifdef VL53L0X
-        uint16_t distance = 0;
-        distance = VL53L0X_get_dist_mm();
-        if (distance < 55){
-        	uint16_t nombrePourFaireUnTour = 2000;
-        	uint16_t valActuelle = 0;
-        	while (nombrePourFaireUnTour >= valActuelle){
-        	right_motor_set_speed(-100);
-        	valActuelle+=1;
-        	chprintf((BaseSequentialStream*)&SD3, "Hey! position = %d\n", valActuelle);
-        	}
-
-        } else {
-        	left_motor_set_speed(100);
-        	right_motor_set_speed(100);
-        }
-        //chprintf((BaseSequentialStream*)&SD3, "distance = %d \n", distance);
-#endif
 #ifdef SEND_FROM_MIC
         //waits until a result must be sent to the computer
         wait_send_to_computer();

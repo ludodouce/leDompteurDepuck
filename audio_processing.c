@@ -28,12 +28,12 @@ static float speed_coeff;
 
 #define MIN_VALUE_THRESHOLD	30000
 
-#define MIN_FREQ		30	//we don't analyze before this index to not use resources for nothing
+#define MIN_FREQ		40	//we don't analyze before this index to not use resources for nothing
 #define FREQ_FORWARD	32	//250Hz
 #define FREQ_LEFT		19	//296Hz
 #define FREQ_RIGHT		23	//359HZ
 #define FREQ_BACKWARD	32	//406Hz
-#define MAX_FREQ		50	//we don't analyze after this index to not use resources for nothing
+#define MAX_FREQ		60	//we don't analyze after this index to not use resources for nothing
 
 #define FREQ_FORWARD_L		(FREQ_FORWARD-1)
 #define FREQ_FORWARD_H		(FREQ_FORWARD+1)
@@ -65,13 +65,11 @@ void sound_remote(float* data){
 	}
 	//chprintf((BaseSequentialStream*)&SD3, "max_norm_index = %d \n", max_norm_index);
 	//go forward
-	if(max_norm_index >= 45 && max_norm_index <= 47){
+	if(max_norm_index >= 50 && max_norm_index <= 51){
 			allumer = !allumer;
-			speed_coeff = (float)allumer;
-			chprintf((BaseSequentialStream*)&SD3, "allume = %d \n", allumer);
-			if (max_norm_index >= 40 && allumer) speed_coeff = 2*max_norm_index/MIN_FREQ;
-			//chprintf((BaseSequentialStream*)&SD3, "speed = %f \n", speed_coeff);
+			speed_coeff=allumer;
 			chThdSleepMilliseconds(2000);
+			//chprintf((BaseSequentialStream*)&SD3, "allume = %d \n", allumer);
 //			if(allumer){
 //			left_motor_set_speed(400);
 //			right_motor_set_speed(400);
@@ -84,6 +82,16 @@ void sound_remote(float* data){
 //			chThdSleepMilliseconds(2000);
 //			}
 		}
+	chprintf((BaseSequentialStream*)&SD3, "allume = %d \n", allumer);
+	//chprintf((BaseSequentialStream*)&SD3, "speed = %f \n", speed_coeff);
+	if (allumer) {
+		speed_coeff=1;
+	} else {
+		speed_coeff=0;
+	}
+	if ((max_norm_index > 55) && allumer) {
+					speed_coeff = 2*max_norm_index/MIN_FREQ;
+				}
 //	if(max_norm_index >= 48 && max_norm_index <= 59){
 //				plusVite = !plusVite;
 //				if(allumer && plusVite){
@@ -98,7 +106,6 @@ void sound_remote(float* data){
 //				chThdSleepMilliseconds(2000);
 //				}
 //			}
-
 }
 
 /*
@@ -190,7 +197,7 @@ void wait_send_to_computer(void){
 }
 
 float get_speed_coeff(void) {
-	chprintf((BaseSequentialStream*)&SD3, "speed = %f \n", speed_coeff);
+	//chprintf((BaseSequentialStream*)&SD3, "speed = %f \n", speed_coeff);
 	return speed_coeff;
 }
 float* get_audio_buffer_ptr(BUFFER_NAME_t name){

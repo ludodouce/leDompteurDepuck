@@ -27,8 +27,9 @@ static THD_FUNCTION(DetecteurDistance, arg) {
 			uint16_t distance = 0;
 	        distance = VL53L0X_get_dist_mm();
 	        float speed = get_speed_coeff();
-	        if (distance < 55){
+	        if ((distance < 55) && speed!=0){
 	        	 right_motor_set_speed(-INITIAL_SPEED);
+	        	 left_motor_set_speed(INITIAL_SPEED);
 	             //chprintf((BaseSequentialStream*)&SD3, "Hey! position = %d\n", valActuelle);
 	        	 chThdSleepMilliseconds(3262);
 	        } else {
