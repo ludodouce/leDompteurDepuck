@@ -17,6 +17,7 @@
 #include <arm_math.h>
 #include <sensors/VL53L0X/VL53L0X.h>
 #include <detecteurinfra.h>
+#include"spi_comm.h"
 
 //uncomment to send the FFTs results from the real microphones
 #define SEND_FROM_MIC
@@ -57,6 +58,7 @@ static void timer12_start(void){
 int main(void)
 {
 
+
     halInit();
     chSysInit();
     mpu_init();
@@ -69,6 +71,7 @@ int main(void)
     timer12_start();
     //inits the motors
     motors_init();
+    spi_comm_start();
 
     //temp tab used to store values in complex_float format
     //needed bx doFFT_c

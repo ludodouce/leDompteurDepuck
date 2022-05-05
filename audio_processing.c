@@ -10,6 +10,7 @@
 #include <communications.h>
 #include <fft.h>
 #include <arm_math.h>
+#include <leds.h>
 
 //semaphore
 static BSEMAPHORE_DECL(sendToComputer_sem, TRUE);
@@ -51,9 +52,10 @@ static bool direction;
 *	and to execute a motor command depending on it
 */
 
-void sound_remote(float* data_L, float* data_R){
+void sound_remote(float* data_L, float* data_R, float* data_F){
 
 	float max_norm_left = MIN_VALUE_THRESHOLD;
+	float max_norm_front = MIN_VALUE_THRESHOLD;
 	int16_t max_norm_index_left = -1;
 	float max_norm_right = MIN_VALUE_THRESHOLD;
 
@@ -70,10 +72,24 @@ void sound_remote(float* data_L, float* data_R){
 			max_norm_right = data_R[i];
 			//chprintf((BaseSequentialStream*)&SD3, "max_norm = %f \n\n", max_norm);
 		}
+		if(data_F[i] > max_norm_front){
+					max_norm_front = data_F[i];
+					//chprintf((BaseSequentialStream*)&SD3, "max_norm = %f \n\n", max_norm);
+				}
 	}
 
-	//chprintf((BaseSequentialStream*)&SD3, "max_norm_index = %d \n", max_norm_index);
+
 	//go forward
+	if ((max_norm_right > max_norm_left) && (abs(max_norm_right-max_norm_front)<30000)){
+
+		chprintf((BaseSequentialStream*)&SD3, "max_norm_front = %f \n", max_norm_front);
+			chprintf((BaseSequentialStream*)&SD3, "max_norm_right = %f \n", max_norm_right);
+			chprintf((BaseSequentialStream*)&SD3, "max_norm_left = %f \n", max_norm_left);
+
+			set_rgb_led(LED2,0,100, 0);
+	} else {
+		set_rgb_led(LED2,0,0, 0);
+	}
 
 	if (max_norm_left < max_norm_right) {
 			direction = true;
@@ -206,7 +222,7 @@ void processAudioData(int16_t *data, uint16_t num_samples){
 
 		//chprintf((BaseSequentialStream*)&SD3, "max_norm = %f \n\n", max_norm);
 
-		sound_remote(micLeft_output,micRight_output);
+		sound_remote(micLeft_output,micRight_output,micFront_output);
 	}
 }
 
