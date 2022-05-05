@@ -50,6 +50,7 @@ static bool direction;
 *	Simple function used to detect the highest value in a buffer
 *	and to execute a motor command depending on it
 */
+
 void sound_remote(float* data_L, float* data_R){
 
 	float max_norm_left = MIN_VALUE_THRESHOLD;
@@ -202,6 +203,8 @@ void processAudioData(int16_t *data, uint16_t num_samples){
 		nb_samples = 0;
 		mustSend++;
 		//chprintf((BaseSequentialStream*)&SD3, "mustSend = %d \n", mustSend);
+
+		//chprintf((BaseSequentialStream*)&SD3, "max_norm = %f \n\n", max_norm);
 
 		sound_remote(micLeft_output,micRight_output);
 	}

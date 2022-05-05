@@ -82,28 +82,70 @@ void startDetecteur(void){
 void laChoreeDeReggaeton(void){
 	chThdSleepMilliseconds(3000);
 
-	right_motor_set_speed(SPEED_CHOREE);
-	left_motor_set_speed(SPEED_CHOREE);
-	chThdSleepMilliseconds(1300);
-	right_motor_set_speed(-SPEED_CHOREE);
-	left_motor_set_speed(-SPEED_CHOREE);
-	chThdSleepMilliseconds(1400);
-	right_motor_set_speed(SPEED_CHOREE);
-	left_motor_set_speed(SPEED_CHOREE);
-	chThdSleepMilliseconds(1300);
 	right_motor_set_speed(-SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE);
-	chThdSleepMilliseconds(1665);
+	chThdSleepMilliseconds(165);   //toure de 45 degrés
 
 	right_motor_set_speed(SPEED_CHOREE);
-	left_motor_set_speed(SPEED_CHOREE);
-	chThdSleepMilliseconds(1300);
+	left_motor_set_speed(SPEED_CHOREE); //devant
+	chThdSleepMilliseconds(1400);
 	right_motor_set_speed(-SPEED_CHOREE);
+	left_motor_set_speed(-SPEED_CHOREE); //derrière
+	chThdSleepMilliseconds(1400);
+
+	right_motor_set_speed(SPEED_CHOREE);
+	left_motor_set_speed(-SPEED_CHOREE); //tour de 90 degrés
+	chThdSleepMilliseconds(340);
+
+	right_motor_set_speed(SPEED_CHOREE);
+	left_motor_set_speed(SPEED_CHOREE); //devant
+	chThdSleepMilliseconds(1400);
+	right_motor_set_speed(-SPEED_CHOREE);
+	left_motor_set_speed(-SPEED_CHOREE);  //derrière
+	chThdSleepMilliseconds(1400);
+
+	right_motor_set_speed(-SPEED_CHOREE);
+	left_motor_set_speed(SPEED_CHOREE);
+	chThdSleepMilliseconds(165);   //toure de 45 degrés
+
+	right_motor_set_speed(SPEED_CHOREE);
+	left_motor_set_speed(SPEED_CHOREE); //devant
+	chThdSleepMilliseconds(1400);
+	right_motor_set_speed(-SPEED_CHOREE); //derrière
+	left_motor_set_speed(-SPEED_CHOREE);
+	chThdSleepMilliseconds(1400);
+	right_motor_set_speed(-SPEED_CHOREE); //derrière
 	left_motor_set_speed(-SPEED_CHOREE);
 	chThdSleepMilliseconds(1400);
 	right_motor_set_speed(SPEED_CHOREE);
-	left_motor_set_speed(SPEED_CHOREE);
-	chThdSleepMilliseconds(1300);
+	left_motor_set_speed(SPEED_CHOREE); //devant
+	chThdSleepMilliseconds(1400);
+
+	right_motor_set_speed(-SPEED_CHOREE);
+	left_motor_set_speed(SPEED_CHOREE);  //tour et quart
+	chThdSleepMilliseconds(1630);
+
+	right_motor_set_speed(SPEED_CHOREE);
+	left_motor_set_speed(SPEED_CHOREE); //devant
+	chThdSleepMilliseconds(1400);
+	right_motor_set_speed(-SPEED_CHOREE); //derrière
+	left_motor_set_speed(-SPEED_CHOREE);
+	chThdSleepMilliseconds(1400);
+
+	right_motor_set_speed(SPEED_CHOREE);
+	left_motor_set_speed(-SPEED_CHOREE); //tour de 180 degrés
+	chThdSleepMilliseconds(670);
+
+	right_motor_set_speed(SPEED_CHOREE);
+	left_motor_set_speed(SPEED_CHOREE); //devant
+	chThdSleepMilliseconds(1400);
+	right_motor_set_speed(-SPEED_CHOREE); //derrière
+	left_motor_set_speed(-SPEED_CHOREE);
+	chThdSleepMilliseconds(1400);
+
+	right_motor_set_speed(-SPEED_CHOREE);
+	left_motor_set_speed(SPEED_CHOREE);  //tour et quart
+	chThdSleepMilliseconds(2970);
 
 	right_motor_set_speed(0);
 	left_motor_set_speed(0);
