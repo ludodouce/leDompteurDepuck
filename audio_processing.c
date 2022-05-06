@@ -52,10 +52,11 @@ static bool direction;
 *	and to execute a motor command depending on it
 */
 
-void sound_remote(float* data_L, float* data_R, float* data_F){
+void sound_remote(float* data_L, float* data_R, float* data_F, float* data_B){
 
 	float max_norm_left = MIN_VALUE_THRESHOLD;
 	float max_norm_front = MIN_VALUE_THRESHOLD;
+	float max_norm_back = MIN_VALUE_THRESHOLD;
 	int16_t max_norm_index_left = -1;
 	float max_norm_right = MIN_VALUE_THRESHOLD;
 
@@ -73,23 +74,71 @@ void sound_remote(float* data_L, float* data_R, float* data_F){
 			//chprintf((BaseSequentialStream*)&SD3, "max_norm = %f \n\n", max_norm);
 		}
 		if(data_F[i] > max_norm_front){
-					max_norm_front = data_F[i];
+			max_norm_front = data_F[i];
 					//chprintf((BaseSequentialStream*)&SD3, "max_norm = %f \n\n", max_norm);
 				}
+		if(data_B[i] > max_norm_back){
+			max_norm_back = data_B[i];
+		}
 	}
 
 
 	//go forward
-	if ((max_norm_right > max_norm_left) && (abs(max_norm_right-max_norm_front)<30000)){
+	if ((max_norm_right > max_norm_left)){
+		if (max_norm_front > max_norm_back) {
+			if (abs(max_norm_right-max_norm_front)<20000){
+				clear_leds();
+				set_rgb_led(LED2,0,100, 0);
+			} else if (max_norm_front > max_norm_right) {
+				clear_leds();
+				set_led(LED1,1);
+			} else {
+				clear_leds();
+				set_led(LED3,1);
+			}
+		} else {
+			if (abs(max_norm_right-max_norm_back)<15000){
+				clear_leds();
+				set_rgb_led(LED4,0,100, 0);
+			} else if (max_norm_back > max_norm_right) {
+				clear_leds();
+				set_led(LED5,1);
+			} else {
+				clear_leds();
+				set_led(LED3,1);
+			}
+		}
+	} else if ((max_norm_right < max_norm_left)) {
+		if (max_norm_front > max_norm_back) {
+					if (abs(max_norm_left-max_norm_front)<20000){
+						clear_leds();
+						set_rgb_led(LED8,0,100, 0);
+					} else if (max_norm_front > max_norm_left) {
+						clear_leds();
+						set_led(LED1,1);
+					} else {
+						clear_leds();
+						set_led(LED7,1);
+					}
+				} else {
+					if (abs(max_norm_left-max_norm_back)<15000){
+						clear_leds();
+						set_rgb_led(LED6,0,100, 0);
+					} else if (max_norm_back > max_norm_left) {
+						clear_leds();
+						set_led(LED5,1);
+					} else {
+						clear_leds();
+						set_led(LED7,1);
+					}
+				}
+	} else {
+		clear_leds();
+	}
 
-		chprintf((BaseSequentialStream*)&SD3, "max_norm_front = %f \n", max_norm_front);
+			chprintf((BaseSequentialStream*)&SD3, "max_norm_front = %f \n", max_norm_front);
 			chprintf((BaseSequentialStream*)&SD3, "max_norm_right = %f \n", max_norm_right);
 			chprintf((BaseSequentialStream*)&SD3, "max_norm_left = %f \n", max_norm_left);
-
-			set_rgb_led(LED2,0,100, 0);
-	} else {
-		set_rgb_led(LED2,0,0, 0);
-	}
 
 	if (max_norm_left < max_norm_right) {
 			direction = true;
@@ -222,7 +271,7 @@ void processAudioData(int16_t *data, uint16_t num_samples){
 
 		//chprintf((BaseSequentialStream*)&SD3, "max_norm = %f \n\n", max_norm);
 
-		sound_remote(micLeft_output,micRight_output,micFront_output);
+		sound_remote(micLeft_output,micRight_output,micFront_output,micBack_output);
 	}
 }
 
