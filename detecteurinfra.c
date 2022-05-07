@@ -29,50 +29,36 @@ static THD_FUNCTION(DetecteurDistance, arg) {
 
 	       int selecteur = get_selector();
 
-
+	      //selection du mode choregraphie ou mode Cirque
 	     if(selecteur == 5){
 	    	laChoreeDeReggaeton();
 	     }
 
 	     else{
 
-	    	 distance = VL53L0X_get_dist_mm();
+	    	 distance = VL53L0X_get_dist_mm(); //receive distance in mm from the Thread of the ToF
 	    	 float speed = get_speed_coeff();
-	    	 bool direction = get_direction();
+	    	 bool direction = get_direction(); //receive direction, going left or right, from the Thread of audio processing
 
 	        if ((distance < 55) && speed!=0){
 
 	        	if (direction) {
-	        	 right_motor_set_speed(-INITIAL_SPEED);
+	        	 right_motor_set_speed(-INITIAL_SPEED); //turn right of 90deg
 	        	 left_motor_set_speed(INITIAL_SPEED);
 	        	} else {
-	        	 right_motor_set_speed(INITIAL_SPEED);
+	        	 right_motor_set_speed(INITIAL_SPEED); //turn left of 90deg
 	        	 left_motor_set_speed(-INITIAL_SPEED);
 	        	}
-	             //chprintf((BaseSequentialStream*)&SD3, "Hey! position = %d\n", valActuelle);
 	        	 chThdSleepMilliseconds(3270);
 	        } else {
-	        	left_motor_set_speed(INITIAL_SPEED*speed);
+	        	left_motor_set_speed(INITIAL_SPEED*speed); //going forward with speed depending on the frequency (100step/s by default)
 	        	right_motor_set_speed(INITIAL_SPEED*speed);
-	            //chprintf((BaseSequentialStream*)&SD3, "speed_coeff = %d \n", speed_coeff);
 	        }
 	     }
     }
 
 	chThdSleepMilliseconds(100);
 }
-
-//static THD_WORKING_AREA(waTourne, 512);
-//static THD_FUNCTION(Tourne, arg){
-//	chRegSetThreadName(__FUNCTION__);
-//	    (void)arg;
-//
-//	    while(1){
-//	    	//chBSemSignal(&peutTourner);
-//	     	chBSemWait(&peutTourner);
-//	     	right_motor_set_speed(-100);
-//	  }
-//}
 
 void startDetecteur(void){
 	chThdCreateStatic(waDetecteurDistance, sizeof(waDetecteurDistance), NORMALPRIO, DetecteurDistance, NULL);
@@ -84,37 +70,37 @@ void laChoreeDeReggaeton(void){
 
 	right_motor_set_speed(-SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE);
-	chThdSleepMilliseconds(165);   //toure de 45 degrés
+	chThdSleepMilliseconds(165);   //toure de 45 degrï¿½s
 
 	right_motor_set_speed(SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE); //devant
 	chThdSleepMilliseconds(1400);
 	right_motor_set_speed(-SPEED_CHOREE);
-	left_motor_set_speed(-SPEED_CHOREE); //derrière
+	left_motor_set_speed(-SPEED_CHOREE); //derriï¿½re
 	chThdSleepMilliseconds(1400);
 
 	right_motor_set_speed(SPEED_CHOREE);
-	left_motor_set_speed(-SPEED_CHOREE); //tour de 90 degrés
+	left_motor_set_speed(-SPEED_CHOREE); //tour de 90 degrï¿½s
 	chThdSleepMilliseconds(340);
 
 	right_motor_set_speed(SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE); //devant
 	chThdSleepMilliseconds(1400);
 	right_motor_set_speed(-SPEED_CHOREE);
-	left_motor_set_speed(-SPEED_CHOREE);  //derrière
+	left_motor_set_speed(-SPEED_CHOREE);  //derriï¿½re
 	chThdSleepMilliseconds(1400);
 
 	right_motor_set_speed(-SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE);
-	chThdSleepMilliseconds(165);   //toure de 45 degrés
+	chThdSleepMilliseconds(165);   //toure de 45 degrï¿½s
 
 	right_motor_set_speed(SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE); //devant
 	chThdSleepMilliseconds(1400);
-	right_motor_set_speed(-SPEED_CHOREE); //derrière
+	right_motor_set_speed(-SPEED_CHOREE); //derriï¿½re
 	left_motor_set_speed(-SPEED_CHOREE);
 	chThdSleepMilliseconds(1400);
-	right_motor_set_speed(-SPEED_CHOREE); //derrière
+	right_motor_set_speed(-SPEED_CHOREE); //derriï¿½re
 	left_motor_set_speed(-SPEED_CHOREE);
 	chThdSleepMilliseconds(1400);
 	right_motor_set_speed(SPEED_CHOREE);
@@ -128,18 +114,18 @@ void laChoreeDeReggaeton(void){
 	right_motor_set_speed(SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE); //devant
 	chThdSleepMilliseconds(1400);
-	right_motor_set_speed(-SPEED_CHOREE); //derrière
+	right_motor_set_speed(-SPEED_CHOREE); //derriï¿½re
 	left_motor_set_speed(-SPEED_CHOREE);
 	chThdSleepMilliseconds(1400);
 
 	right_motor_set_speed(SPEED_CHOREE);
-	left_motor_set_speed(-SPEED_CHOREE); //tour de 180 degrés
+	left_motor_set_speed(-SPEED_CHOREE); //tour de 180 degrï¿½s
 	chThdSleepMilliseconds(670);
 
 	right_motor_set_speed(SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE); //devant
 	chThdSleepMilliseconds(1400);
-	right_motor_set_speed(-SPEED_CHOREE); //derrière
+	right_motor_set_speed(-SPEED_CHOREE); //derriï¿½re
 	left_motor_set_speed(-SPEED_CHOREE);
 	chThdSleepMilliseconds(1400);
 

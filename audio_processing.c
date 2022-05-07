@@ -11,6 +11,7 @@
 #include <fft.h>
 #include <arm_math.h>
 #include <leds.h>
+#include "selector.h"
 
 //semaphore
 static BSEMAPHORE_DECL(sendToComputer_sem, TRUE);
@@ -28,14 +29,19 @@ static float micBack_output[FFT_SIZE];
 static float speed_coeff;
 static bool direction;
 
-#define MIN_VALUE_THRESHOLD	30000
 
-#define MIN_FREQ		40	//we don't analyze before this index to not use resources for nothing
+#define MIN_VALUE_THRESHOLD	30000
+#define IN_BETWEEN_FRONT 15000
+#define IN_BETWEEN_BACK 20000
+#define GREEN 0,100,0
+
+
+#define MIN_FREQ		50	//we don't analyze before this index to not use resources for nothing
 #define FREQ_FORWARD	32	//250Hz
 #define FREQ_LEFT		19	//296Hz
 #define FREQ_RIGHT		23	//359HZ
 #define FREQ_BACKWARD	32	//406Hz
-#define MAX_FREQ		60	//we don't analyze after this index to not use resources for nothing
+#define MAX_FREQ		70	//we don't analyze after this index to not use resources for nothing
 
 #define FREQ_FORWARD_L		(FREQ_FORWARD-1)
 #define FREQ_FORWARD_H		(FREQ_FORWARD+1)
@@ -46,6 +52,68 @@ static bool direction;
 #define FREQ_BACKWARD_L		(FREQ_BACKWARD-1)
 #define FREQ_BACKWARD_H		(FREQ_BACKWARD+1)
 
+/* Function to turn on and off leds and rgb leds (LED1..LED8) depending on the direction
+ * of the source of the sound by comparing the intensity perceived by M1 (back mic), M2 (left mic), M3 (right mic), M4 (front mic)
+ */
+void led_mon(float left, float right, float front, float back) {
+	int select = get_selector();
+	if (select!=5) {
+	if ((right > left)){
+		direction = true;
+			if (front > back) {
+				if (abs(right-front)<IN_BETWEEN_FRONT){
+					clear_leds();
+					set_rgb_led(LED2,GREEN);
+				} else if (front > right) {
+					clear_leds();
+					set_led(LED1,1);
+				} else {
+					clear_leds();
+					set_led(LED3,1);
+				}
+			} else {
+				if (abs(right-back)<IN_BETWEEN_BACK){
+					clear_leds();
+					set_rgb_led(LED4,GREEN);
+				} else if (back > right) {
+					clear_leds();
+					set_led(LED5,1);
+				} else {
+					clear_leds();
+					set_led(LED3,1);
+				}
+			}
+		} else if ((right < left)) {
+			direction = false;
+			if (front > back) {
+						if (abs(left-front)<IN_BETWEEN_FRONT){
+							clear_leds();
+							set_rgb_led(LED8,GREEN);
+						} else if (front > left) {
+							clear_leds();
+							set_led(LED1,1);
+						} else {
+							clear_leds();
+							set_led(LED7,1);
+						}
+					} else {
+						if (abs(left-back)<IN_BETWEEN_BACK){
+							clear_leds();
+							set_rgb_led(LED6,GREEN);
+						} else if (back > left) {
+							clear_leds();
+							set_led(LED5,1);
+						} else {
+							clear_leds();
+							set_led(LED7,1);
+						}
+					}
+		} else {
+			clear_leds();
+			direction=false;
+		}
+	}
+}
 
 /*
 *	Simple function used to detect the highest value in a buffer
@@ -53,13 +121,12 @@ static bool direction;
 */
 
 void sound_remote(float* data_L, float* data_R, float* data_F, float* data_B){
-
 	float max_norm_left = MIN_VALUE_THRESHOLD;
 	float max_norm_front = MIN_VALUE_THRESHOLD;
 	float max_norm_back = MIN_VALUE_THRESHOLD;
-	int16_t max_norm_index_left = -1;
 	float max_norm_right = MIN_VALUE_THRESHOLD;
 
+	int16_t max_norm_index_left = -1;
 	static bool allumer = false;
 
 	//search for the highest peak
@@ -67,126 +134,33 @@ void sound_remote(float* data_L, float* data_R, float* data_F, float* data_B){
 		if(data_L[i] > max_norm_left){
 			max_norm_left = data_L[i];
 			max_norm_index_left = i;
-	//chprintf((BaseSequentialStream*)&SD3, "max_norm = %f \n\n", max_norm);
 		}
 		if(data_R[i] > max_norm_right){
 			max_norm_right = data_R[i];
-			//chprintf((BaseSequentialStream*)&SD3, "max_norm = %f \n\n", max_norm);
 		}
 		if(data_F[i] > max_norm_front){
 			max_norm_front = data_F[i];
-					//chprintf((BaseSequentialStream*)&SD3, "max_norm = %f \n\n", max_norm);
 				}
 		if(data_B[i] > max_norm_back){
 			max_norm_back = data_B[i];
 		}
 	}
 
+	led_mon(max_norm_left,max_norm_right,max_norm_front,max_norm_back);
 
-	//go forward
-	if ((max_norm_right > max_norm_left)){
-		if (max_norm_front > max_norm_back) {
-			if (abs(max_norm_right-max_norm_front)<20000){
-				clear_leds();
-				set_rgb_led(LED2,0,100, 0);
-			} else if (max_norm_front > max_norm_right) {
-				clear_leds();
-				set_led(LED1,1);
-			} else {
-				clear_leds();
-				set_led(LED3,1);
-			}
-		} else {
-			if (abs(max_norm_right-max_norm_back)<15000){
-				clear_leds();
-				set_rgb_led(LED4,0,100, 0);
-			} else if (max_norm_back > max_norm_right) {
-				clear_leds();
-				set_led(LED5,1);
-			} else {
-				clear_leds();
-				set_led(LED3,1);
-			}
-		}
-	} else if ((max_norm_right < max_norm_left)) {
-		if (max_norm_front > max_norm_back) {
-					if (abs(max_norm_left-max_norm_front)<20000){
-						clear_leds();
-						set_rgb_led(LED8,0,100, 0);
-					} else if (max_norm_front > max_norm_left) {
-						clear_leds();
-						set_led(LED1,1);
-					} else {
-						clear_leds();
-						set_led(LED7,1);
-					}
-				} else {
-					if (abs(max_norm_left-max_norm_back)<15000){
-						clear_leds();
-						set_rgb_led(LED6,0,100, 0);
-					} else if (max_norm_back > max_norm_left) {
-						clear_leds();
-						set_led(LED5,1);
-					} else {
-						clear_leds();
-						set_led(LED7,1);
-					}
-				}
-	} else {
-		clear_leds();
-	}
-
-			chprintf((BaseSequentialStream*)&SD3, "max_norm_front = %f \n", max_norm_front);
-			chprintf((BaseSequentialStream*)&SD3, "max_norm_right = %f \n", max_norm_right);
-			chprintf((BaseSequentialStream*)&SD3, "max_norm_left = %f \n", max_norm_left);
-
-	if (max_norm_left < max_norm_right) {
-			direction = true;
-		} else {
-			direction = false;
-		}
-
-	if(max_norm_index_left >= 50 && max_norm_index_left <= 51){
+	if((max_norm_index_left >= 60 && max_norm_index_left <= 65)&&max_norm_left>100000){
 			allumer = !allumer;
 			speed_coeff=allumer;
 			chThdSleepMilliseconds(2000);
-			//chprintf((BaseSequentialStream*)&SD3, "allume = %d \n", allumer);
-//			if(allumer){
-//			left_motor_set_speed(400);
-//			right_motor_set_speed(400);
-//			speed_coeff = 1;
-//		    chThdSleepMilliseconds(2000);
-//			}else{
-//			left_motor_set_speed(0);
-//			right_motor_set_speed(0);
-//			speed_coeff = 0;
-//			chThdSleepMilliseconds(2000);
-//			}
 		}
-	//chprintf((BaseSequentialStream*)&SD3, "allume = %d \n", allumer);
-	//chprintf((BaseSequentialStream*)&SD3, "speed = %f \n", speed_coeff);
 	if (allumer) {
 		speed_coeff=1;
 	} else {
 		speed_coeff=0;
 	}
-	if ((max_norm_index_left > 55) && allumer) {
-		speed_coeff = 2*max_norm_index_left/MIN_FREQ;
-	}
-//	if(max_norm_index >= 48 && max_norm_index <= 59){
-//				plusVite = !plusVite;
-//				if(allumer && plusVite){
-//				left_motor_set_speed(600);
-//				right_motor_set_speed(600);
-//
-//			chThdSleepMilliseconds(2000);
-//
-//				}else if (allumer && !plusVite){
-//				left_motor_set_speed(100);
-//				right_motor_set_speed(100);
-//				chThdSleepMilliseconds(2000);
-//				}
-//			}
+//	if ((max_norm_index_left < 60) && allumer) {
+//			speed_coeff = 2*max_norm_index_left/MIN_FREQ;
+//		}
 }
 
 /*
@@ -267,20 +241,17 @@ void processAudioData(int16_t *data, uint16_t num_samples){
 		}
 		nb_samples = 0;
 		mustSend++;
-		//chprintf((BaseSequentialStream*)&SD3, "mustSend = %d \n", mustSend);
-
-		//chprintf((BaseSequentialStream*)&SD3, "max_norm = %f \n\n", max_norm);
 
 		sound_remote(micLeft_output,micRight_output,micFront_output,micBack_output);
 	}
 }
+
 
 void wait_send_to_computer(void){
 	chBSemWait(&sendToComputer_sem);
 }
 
 float get_speed_coeff(void) {
-	//chprintf((BaseSequentialStream*)&SD3, "speed = %f \n", speed_coeff);
 	return speed_coeff;
 }
 bool get_direction(void) {
