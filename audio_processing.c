@@ -36,12 +36,12 @@ static bool direction;
 #define GREEN 0,100,0
 
 
-#define MIN_FREQ		50	//we don't analyze before this index to not use resources for nothing
+#define MIN_FREQ		60	//we don't analyze before this index to not use resources for nothing
 #define FREQ_FORWARD	32	//250Hz
 #define FREQ_LEFT		19	//296Hz
 #define FREQ_RIGHT		23	//359HZ
 #define FREQ_BACKWARD	32	//406Hz
-#define MAX_FREQ		70	//we don't analyze after this index to not use resources for nothing
+#define MAX_FREQ		80	//we don't analyze after this index to not use resources for nothing
 
 #define FREQ_FORWARD_L		(FREQ_FORWARD-1)
 #define FREQ_FORWARD_H		(FREQ_FORWARD+1)
@@ -72,7 +72,7 @@ void led_mon(float left, float right, float front, float back) {
 					set_led(LED3,1);
 				}
 			} else {
-				if (abs(right-back)<IN_BETWEEN_BACK){
+				if ((abs(right-back)<IN_BETWEEN_BACK)){
 					clear_leds();
 					set_rgb_led(LED4,GREEN);
 				} else if (back > right) {
@@ -86,7 +86,7 @@ void led_mon(float left, float right, float front, float back) {
 		} else if ((right < left)) {
 			direction = false;
 			if (front > back) {
-						if (abs(left-front)<IN_BETWEEN_FRONT){
+						if (abs(front-left)<IN_BETWEEN_FRONT) {
 							clear_leds();
 							set_rgb_led(LED8,GREEN);
 						} else if (front > left) {
@@ -97,7 +97,7 @@ void led_mon(float left, float right, float front, float back) {
 							set_led(LED7,1);
 						}
 					} else {
-						if (abs(left-back)<IN_BETWEEN_BACK){
+						if ((abs(left-back)<IN_BETWEEN_BACK)) {
 							clear_leds();
 							set_rgb_led(LED6,GREEN);
 						} else if (back > left) {
@@ -145,10 +145,13 @@ void sound_remote(float* data_L, float* data_R, float* data_F, float* data_B){
 			max_norm_back = data_B[i];
 		}
 	}
-
+chprintf((BaseSequentialStream*)&SD3, "max_norm_left = %f \n", max_norm_left);
+chprintf((BaseSequentialStream*)&SD3, "max_norm_front = %f \n", max_norm_front);
+chprintf((BaseSequentialStream*)&SD3, "max_norm_right = %f \n", max_norm_right);
+//pour trouver l'intensité au niveau des micros et au niveau de la led par rapport au deux micros pour former les zones (rapport + justesse du code).
 	led_mon(max_norm_left,max_norm_right,max_norm_front,max_norm_back);
 
-	if((max_norm_index_left >= 60 && max_norm_index_left <= 65)&&max_norm_left>100000){
+	if((max_norm_index_left >= 65 && max_norm_index_left <= 70)&&max_norm_left>100000){ // 1015.625Hz et 1093.75Hz
 			allumer = !allumer;
 			speed_coeff=allumer;
 			chThdSleepMilliseconds(2000);
@@ -158,9 +161,9 @@ void sound_remote(float* data_L, float* data_R, float* data_F, float* data_B){
 	} else {
 		speed_coeff=0;
 	}
-//	if ((max_norm_index_left < 60) && allumer) {
-//			speed_coeff = 2*max_norm_index_left/MIN_FREQ;
-//		}
+	if ((max_norm_index_left > 70) && allumer) {
+			speed_coeff = 3*max_norm_index_left/MIN_FREQ;
+		}
 }
 
 /*
