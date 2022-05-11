@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -29,7 +29,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
   26              	main:
   27              	.LFB294:
   28              		.file 1 "main.c"
-  29              		.loc 1 39 0
+  29              		.loc 1 38 0
   30              		.cfi_startproc
   31              		@ Volatile: function does not return.
   32              		@ args = 0, pretend = 0, frame = 8
@@ -40,54 +40,54 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
   37 0002 104B     		ldr	r3, .L6
   38 0004 83B0     		sub	sp, sp, #12
   39              		.cfi_def_cfa_offset 16
-  40              		.loc 1 39 0
+  40              		.loc 1 38 0
   41 0006 1B68     		ldr	r3, [r3]
   42 0008 0193     		str	r3, [sp, #4]
-  43              		.loc 1 42 0
+  43              		.loc 1 41 0
   44 000a FFF7FEFF 		bl	halInit
   45              	.LVL0:
-  46              		.loc 1 43 0
+  46              		.loc 1 42 0
   47 000e FFF7FEFF 		bl	chSysInit
   48              	.LVL1:
-  49              		.loc 1 44 0
+  49              		.loc 1 43 0
   50 0012 FFF7FEFF 		bl	mpu_init
   51              	.LVL2:
   52              	.LBB4:
   53              	.LBB5:
-  54              		.loc 1 35 0
+  54              		.loc 1 34 0
   55 0016 0C49     		ldr	r1, .L6+4
   56 0018 0C48     		ldr	r0, .L6+8
   57 001a FFF7FEFF 		bl	sdStart
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 2
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 2
 
 
   58              	.LVL3:
   59              	.LBE5:
   60              	.LBE4:
-  61              		.loc 1 49 0
+  61              		.loc 1 48 0
   62 001e FFF7FEFF 		bl	usb_start
   63              	.LVL4:
-  64              		.loc 1 51 0
+  64              		.loc 1 50 0
   65 0022 FFF7FEFF 		bl	motors_init
   66              	.LVL5:
-  67              		.loc 1 52 0
+  67              		.loc 1 51 0
   68 0026 FFF7FEFF 		bl	spi_comm_start
   69              	.LVL6:
-  70              		.loc 1 56 0
+  70              		.loc 1 55 0
   71 002a 0948     		ldr	r0, .L6+12
   72 002c FFF7FEFF 		bl	mic_start
   73              	.LVL7:
-  74              		.loc 1 57 0
+  74              		.loc 1 56 0
   75 0030 FFF7FEFF 		bl	VL53L0X_start
   76              	.LVL8:
-  77              		.loc 1 58 0
+  77              		.loc 1 57 0
   78 0034 FFF7FEFF 		bl	startDetecteur
   79              	.LVL9:
   80              	.L2:
-  81              		.loc 1 63 0 discriminator 1
+  81              		.loc 1 62 0 discriminator 1
   82 0038 FFF7FEFF 		bl	wait_send_to_computer
   83              	.LVL10:
-  84              		.loc 1 64 0 discriminator 1
+  84              		.loc 1 63 0 discriminator 1
   85 003c 6420     		movs	r0, #100
   86 003e FFF7FEFF 		bl	chThdSleep
   87              	.LVL11:
@@ -113,12 +113,12 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  107              		.type	__stack_chk_fail, %function
  108              	__stack_chk_fail:
  109              	.LFB295:
- 110              		.loc 1 72 0
+ 110              		.loc 1 73 0
  111              		.cfi_startproc
  112              		@ args = 0, pretend = 0, frame = 8
  113              		@ frame_needed = 0, uses_anonymous_args = 0
  114 0000 00B5     		push	{lr}
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 3
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 3
 
 
  115              		.cfi_def_cfa_offset 4
@@ -126,16 +126,16 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  117 0002 084B     		ldr	r3, .L13
  118 0004 83B0     		sub	sp, sp, #12
  119              		.cfi_def_cfa_offset 16
- 120              		.loc 1 72 0
+ 120              		.loc 1 73 0
  121 0006 1A68     		ldr	r2, [r3]
  122 0008 0192     		str	r2, [sp, #4]
- 123              		.loc 1 73 0
+ 123              		.loc 1 74 0
  124 000a 019A     		ldr	r2, [sp, #4]
  125 000c 1B68     		ldr	r3, [r3]
  126 000e 9A42     		cmp	r2, r3
  127 0010 05D1     		bne	.L12
  128 0012 0548     		ldr	r0, .L13+4
- 129              		.loc 1 74 0
+ 129              		.loc 1 75 0
  130 0014 03B0     		add	sp, sp, #12
  131              		.cfi_remember_state
  132              		.cfi_def_cfa_offset 4
@@ -143,7 +143,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  134 0016 5DF804EB 		ldr	lr, [sp], #4
  135              		.cfi_restore 14
  136              		.cfi_def_cfa_offset 0
- 137              		.loc 1 73 0
+ 137              		.loc 1 74 0
  138 001a FFF7FEBF 		b	chSysHalt
  139              	.LVL12:
  140              	.L12:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  169 000a 0000     		.space	2
  170              		.section	.rodata.__stack_chk_fail.str1.4,"aMS",%progbits,1
  171              		.align	2
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 4
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 4
 
 
  172              	.LC0:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  222              		.file 48 "../lib/e-puck2_main-processor/ChibiOS//os/hal/ports/STM32/LLD/sdc_lld.h"
  223              		.file 49 "../lib/e-puck2_main-processor/ChibiOS//os/hal/include/spi.h"
  224              		.file 50 "../lib/e-puck2_main-processor/ChibiOS//os/hal/ports/STM32/LLD/SPIv1/spi_lld.h"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 5
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 5
 
 
  225              		.file 51 "../lib/e-puck2_main-processor/ChibiOS//os/hal/include/usb.h"
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  279 004a 02       		.byte	0x2
  280 004b 05       		.byte	0x5
  281 004c E4240000 		.4byte	.LASF4
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 6
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 6
 
 
  282 0050 03       		.uleb128 0x3
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  336 00b9 700C0000 		.4byte	.LASF16
  337 00bd 03       		.byte	0x3
  338 00be D8       		.byte	0xd8
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 7
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 7
 
 
  339 00bf B1000000 		.4byte	0xb1
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  393 0132 00       		.byte	0
  394 0133 0D       		.uleb128 0xd
  395 0134 08       		.byte	0x8
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 8
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 8
 
 
  396 0135 05       		.byte	0x5
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  450 01a3 08       		.byte	0x8
  451 01a4 0E       		.uleb128 0xe
  452 01a5 0E240000 		.4byte	.LASF31
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 9
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 9
 
 
  453 01a9 06       		.byte	0x6
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  507 0214 3C       		.byte	0x3c
  508 0215 9F000000 		.4byte	0x9f
  509 0219 0C       		.byte	0xc
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 10
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 10
 
 
  510 021a 0E       		.uleb128 0xe
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  564 0287 0001     		.2byte	0x100
  565 0289 12       		.uleb128 0x12
  566 028a 4B1E0000 		.4byte	.LASF48
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 11
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 11
 
 
  567 028e 06       		.byte	0x6
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  621 02fc 04       		.byte	0x4
  622 02fd 01030000 		.4byte	0x301
  623 0301 13       		.uleb128 0x13
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 12
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 12
 
 
  624 0302 0F       		.uleb128 0xf
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  678 036b 06       		.byte	0x6
  679 036c BA       		.byte	0xba
  680 036d 49000000 		.4byte	0x49
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 13
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 13
 
 
  681 0371 0E       		.byte	0xe
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  735 03dd 38       		.byte	0x38
  736 03de 10       		.uleb128 0x10
  737 03df 5F757200 		.ascii	"_ur\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 14
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 14
 
 
  738 03e3 06       		.byte	0x6
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  792 044f 06       		.byte	0x6
  793 0450 E5       		.byte	0xe5
  794 0451 9F000000 		.4byte	0x9f
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 15
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 15
 
 
  795 0455 64       		.byte	0x64
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  849 04ce 10       		.byte	0x10
  850 04cf 18       		.uleb128 0x18
  851 04d0 31180000 		.4byte	.LASF78
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 16
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 16
 
 
  852 04d4 06       		.byte	0x6
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  906 0549 06       		.byte	0x6
  907 054a 5402     		.2byte	0x254
  908 054c 9F000000 		.4byte	0x9f
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 17
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 17
 
 
  909 0550 50       		.byte	0x50
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  963 05c5 04       		.byte	0x4
  964 05c6 57040000 		.4byte	0x457
  965 05ca 14       		.uleb128 0x14
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 18
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 18
 
 
  966 05cb 9F000000 		.4byte	0x9f
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  1020 064c 57060000 		.4byte	0x657
  1021 0650 0C       		.uleb128 0xc
  1022 0651 B1000000 		.4byte	0xb1
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 19
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 19
 
 
  1023 0655 00       		.byte	0
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  1077 06c6 D9060000 		.4byte	0x6d9
  1078 06ca 06       		.byte	0x6
  1079 06cb 18       		.uleb128 0x18
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 20
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 20
 
 
  1080 06cc A0030000 		.4byte	.LASF102
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  1134 0740 18       		.uleb128 0x18
  1135 0741 97240000 		.4byte	.LASF109
  1136 0745 06       		.byte	0x6
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 21
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 21
 
 
  1137 0746 6102     		.2byte	0x261
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  1191 07bb 6A02     		.2byte	0x26a
  1192 07bd 54010000 		.4byte	0x154
  1193 07c1 B4       		.byte	0xb4
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 22
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 22
 
 
  1194 07c2 18       		.uleb128 0x18
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  1248 0836 7602     		.2byte	0x276
  1249 0838 4E080000 		.4byte	0x84e
  1250 083c 78       		.byte	0x78
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 23
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 23
 
 
  1251 083d 00       		.byte	0
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  1305 08b2 1F       		.uleb128 0x1f
  1306 08b3 BD080000 		.4byte	0x8bd
  1307 08b7 15       		.uleb128 0x15
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 24
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 24
 
 
  1308 08b8 9F000000 		.4byte	0x9f
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  1362 0932 1A       		.uleb128 0x1a
  1363 0933 27090000 		.4byte	0x927
  1364 0937 16       		.uleb128 0x16
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 25
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 25
 
 
  1365 0938 32090000 		.4byte	0x932
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  1419 09ad 27090000 		.4byte	0x927
  1420 09b1 03       		.uleb128 0x3
  1421 09b2 6E000000 		.4byte	.LASF144
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 26
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 26
 
 
  1422 09b6 09       		.byte	0x9
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  1476 0a28 E4100000 		.4byte	.LASF154
  1477 0a2c 0B       		.byte	0xb
  1478 0a2d C7       		.byte	0xc7
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 27
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 27
 
 
  1479 0a2e A6090000 		.4byte	0x9a6
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  1533 0a9a 9B090000 		.4byte	0x99b
  1534 0a9e 23       		.byte	0x23
  1535 0a9f 0E       		.uleb128 0xe
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 28
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 28
 
 
  1536 0aa0 3A170000 		.4byte	.LASF164
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  1590 0b14 B8250000 		.4byte	.LASF172
  1591 0b18 0B       		.byte	0xb
  1592 0b19 5E01     		.2byte	0x15e
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 29
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 29
 
 
  1593 0b1b 2C180000 		.4byte	0x182c
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  1647 0b87 40090000 		.4byte	.LASF178
  1648 0b8b 0A       		.byte	0xa
  1649 0b8c 57       		.byte	0x57
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 30
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 30
 
 
  1650 0b8d 910B0000 		.4byte	0xb91
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  1704 0c03 15       		.uleb128 0x15
  1705 0c04 CA000000 		.4byte	0xca
  1706 0c08 00       		.byte	0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 31
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 31
 
 
  1707 0c09 03       		.uleb128 0x3
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  1761 0c7c CD0B0000 		.4byte	.LASF189
  1762 0c80 0B       		.byte	0xb
  1763 0c81 7C01     		.2byte	0x17c
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 32
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 32
 
 
  1764 0c83 52190000 		.4byte	0x1952
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  1818 0cf8 BE170000 		.4byte	0x17be
  1819 0cfc 0C       		.byte	0xc
  1820 0cfd 00       		.byte	0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 33
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 33
 
 
  1821 0cfe 03       		.uleb128 0x3
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  1875 0d76 0B       		.uleb128 0xb
  1876 0d77 27090000 		.4byte	0x927
  1877 0d7b 860D0000 		.4byte	0xd86
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 34
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 34
 
 
  1878 0d7f 0C       		.uleb128 0xc
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  1932 0deb 32090000 		.4byte	0x932
  1933 0def 10       		.byte	0x10
  1934 0df0 0E       		.uleb128 0xe
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 35
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 35
 
 
  1935 0df1 F5090000 		.4byte	.LASF214
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  1989 0e5d 840B0000 		.4byte	.LASF221
  1990 0e61 0E       		.byte	0xe
  1991 0e62 D4       		.byte	0xd4
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 36
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 36
 
 
  1992 0e63 32090000 		.4byte	0x932
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  2046 0ece 04       		.byte	0x4
  2047 0ecf 0E       		.uleb128 0xe
  2048 0ed0 5D170000 		.4byte	.LASF228
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 37
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 37
 
 
  2049 0ed4 0E       		.byte	0xe
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  2103 0f3a 0101     		.2byte	0x101
  2104 0f3c 5B0F0000 		.4byte	0xf5b
  2105 0f40 23       		.uleb128 0x23
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 38
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 38
 
 
  2106 0f41 46523100 		.ascii	"FR1\000"
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  2160 0fb7 0E       		.byte	0xe
  2161 0fb8 1201     		.2byte	0x112
  2162 0fba 32090000 		.4byte	0x932
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 39
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 39
 
 
  2163 0fbe 14       		.byte	0x14
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  2217 1038 0802     		.2byte	0x208
  2218 103a 19       		.uleb128 0x19
  2219 103b D3200000 		.4byte	.LASF244
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 40
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 40
 
 
  2220 103f 0E       		.byte	0xe
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  2274 10bc 00       		.byte	0
  2275 10bd 0B       		.uleb128 0xb
  2276 10be 2C0F0000 		.4byte	0xf2c
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 41
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 41
 
 
  2277 10c2 CD100000 		.4byte	0x10cd
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  2331 1136 D0090000 		.4byte	.LASF255
  2332 113a 0E       		.byte	0xe
  2333 113b 3C01     		.2byte	0x13c
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 42
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 42
 
 
  2334 113d 32090000 		.4byte	0x932
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  2388 11b1 32090000 		.4byte	0x932
  2389 11b5 34       		.byte	0x34
  2390 11b6 00       		.byte	0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 43
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 43
 
 
  2391 11b7 08       		.uleb128 0x8
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  2445 122a 0E       		.byte	0xe
  2446 122b 6101     		.2byte	0x161
  2447 122d 32090000 		.4byte	0x932
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 44
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 44
 
 
  2448 1231 1C       		.byte	0x1c
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  2502 12a1 18       		.uleb128 0x18
  2503 12a2 BD070000 		.4byte	.LASF274
  2504 12a6 0E       		.byte	0xe
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 45
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 45
 
 
  2505 12a7 7101     		.2byte	0x171
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  2559 131d 32090000 		.4byte	0x932
  2560 1321 08       		.byte	0x8
  2561 1322 18       		.uleb128 0x18
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 46
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 46
 
 
  2562 1323 B3250000 		.4byte	.LASF277
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  2616 1397 0E       		.byte	0xe
  2617 1398 C102     		.2byte	0x2c1
  2618 139a 32090000 		.4byte	0x932
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 47
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 47
 
 
  2619 139e 00       		.byte	0
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  2673 1413 24       		.byte	0x24
  2674 1414 18       		.uleb128 0x18
  2675 1415 23150000 		.4byte	.LASF289
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 48
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 48
 
 
  2676 1419 0E       		.byte	0xe
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  2730 148e 0E       		.byte	0xe
  2731 148f D402     		.2byte	0x2d4
  2732 1491 32090000 		.4byte	0x932
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 49
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 49
 
 
  2733 1495 80       		.byte	0x80
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  2787 1507 14       		.byte	0x14
  2788 1508 18       		.uleb128 0x18
  2789 1509 0E0A0000 		.4byte	.LASF298
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 50
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 50
 
 
  2790 150d 0E       		.byte	0xe
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  2844 157d 0F03     		.2byte	0x30f
  2845 157f 32090000 		.4byte	0x932
  2846 1583 10       		.byte	0x10
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 51
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 51
 
 
  2847 1584 23       		.uleb128 0x23
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  2901 15f6 F4       		.byte	0xf4
  2902 15f7 30170000 		.4byte	0x1730
  2903 15fb 10       		.uleb128 0x10
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 52
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 52
 
 
  2904 15fc 73313600 		.ascii	"s16\000"
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  2958 1668 73323500 		.ascii	"s25\000"
  2959 166c 10       		.byte	0x10
  2960 166d FF       		.byte	0xff
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 53
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 53
 
 
  2961 166e C0150000 		.4byte	0x15c0
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  3015 16e0 C0150000 		.4byte	0x15c0
  3016 16e4 48       		.byte	0x48
  3017 16e5 23       		.uleb128 0x23
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 54
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 54
 
 
  3018 16e6 723700   		.ascii	"r7\000"
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  3072 1751 2C0B0000 		.4byte	0xb2c
  3073 1755 04       		.byte	0x4
  3074 1756 0E       		.uleb128 0xe
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 55
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 55
 
 
  3075 1757 7A0B0000 		.4byte	.LASF310
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  3129 17c4 74       		.byte	0x74
  3130 17c5 7A170000 		.4byte	0x177a
  3131 17c9 0D       		.uleb128 0xd
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 56
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 56
 
 
  3132 17ca 04       		.byte	0x4
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  3186 1831 12       		.byte	0x12
  3187 1832 4E       		.byte	0x4e
  3188 1833 E9170000 		.4byte	0x17e9
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 57
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 57
 
 
  3189 1837 0D       		.uleb128 0xd
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  3243 18a3 CA000000 		.4byte	0xca
  3244 18a7 1E       		.uleb128 0x1e
  3245 18a8 41180000 		.4byte	.LASF332
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 58
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 58
 
 
  3246 18ac 0B       		.byte	0xb
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  3300 191c 560B0000 		.4byte	0xb56
  3301 1920 00       		.byte	0
  3302 1921 0E       		.uleb128 0xe
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 59
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 59
 
 
  3303 1922 88150000 		.4byte	.LASF341
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  3357 198e F1080000 		.4byte	0x8f1
  3358 1992 04       		.byte	0x4
  3359 1993 0E       		.uleb128 0xe
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 60
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 60
 
 
  3360 1994 BE020000 		.4byte	.LASF346
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  3414 1a00 D80C0000 		.4byte	.LASF355
  3415 1a04 16       		.byte	0x16
  3416 1a05 40       		.byte	0x40
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 61
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 61
 
 
  3417 1a06 F1080000 		.4byte	0x8f1
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  3471 1a75 550A0000 		.4byte	.LASF363
  3472 1a79 16       		.byte	0x16
  3473 1a7a 6E       		.byte	0x6e
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 62
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 62
 
 
  3474 1a7b 6F1A0000 		.4byte	0x1a6f
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  3528 1aea 0F       		.uleb128 0xf
  3529 1aeb B6200000 		.4byte	.LASF372
  3530 1aef 04       		.byte	0x4
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 63
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 63
 
 
  3531 1af0 17       		.byte	0x17
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  3585 1b5c A81B0000 		.4byte	0x1ba8
  3586 1b60 14       		.byte	0x14
  3587 1b61 0E       		.uleb128 0xe
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 64
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 64
 
 
  3588 1b62 47180000 		.4byte	.LASF382
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  3642 1bd7 15       		.uleb128 0x15
  3643 1bd8 B8000000 		.4byte	0xb8
  3644 1bdc 00       		.byte	0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 65
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 65
 
 
  3645 1bdd 06       		.uleb128 0x6
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  3699 1c52 821C0000 		.4byte	0x1c82
  3700 1c56 04       		.byte	0x4
  3701 1c57 0E       		.uleb128 0xe
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 66
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 66
 
 
  3702 1c58 21040000 		.4byte	.LASF390
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  3756 1cd1 00       		.byte	0
  3757 1cd2 06       		.uleb128 0x6
  3758 1cd3 04       		.byte	0x4
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 67
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 67
 
 
  3759 1cd4 B91C0000 		.4byte	0x1cb9
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  3813 1d52 01       		.byte	0x1
  3814 1d53 29       		.uleb128 0x29
  3815 1d54 8F0A0000 		.4byte	.LASF397
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 68
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 68
 
 
  3816 1d58 02       		.byte	0x2
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  3870 1dc4 02       		.uleb128 0x2
  3871 1dc5 01       		.byte	0x1
  3872 1dc6 02       		.byte	0x2
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 69
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 69
 
 
  3873 1dc7 E9000000 		.4byte	.LASF408
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  3927 1e48 00       		.byte	0
  3928 1e49 0D       		.uleb128 0xd
  3929 1e4a 04       		.byte	0x4
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 70
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 70
 
 
  3930 1e4b 1B       		.byte	0x1b
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  3984 1eb0 AD       		.byte	0xad
  3985 1eb1 32090000 		.4byte	0x932
  3986 1eb5 08       		.byte	0x8
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 71
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 71
 
 
  3987 1eb6 0E       		.uleb128 0xe
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  4041 1f22 0D       		.uleb128 0xd
  4042 1f23 1C       		.byte	0x1c
  4043 1f24 1B       		.byte	0x1b
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 72
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 72
 
 
  4044 1f25 C1       		.byte	0xc1
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  4098 1f8e FF1F0000 		.4byte	0x1fff
  4099 1f92 0E       		.uleb128 0xe
  4100 1f93 FC100000 		.4byte	.LASF426
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 73
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 73
 
 
  4101 1f97 1B       		.byte	0x1b
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  4155 2000 680A0000 		.4byte	.LASF435
  4156 2004 1B       		.byte	0x1b
  4157 2005 FE       		.byte	0xfe
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 74
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 74
 
 
  4158 2006 8A1F0000 		.4byte	0x1f8a
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  4212 207b 1D       		.byte	0x1d
  4213 207c 2C01     		.2byte	0x12c
  4214 207e 0C090000 		.4byte	0x90c
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 75
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 75
 
 
  4215 2082 2B       		.uleb128 0x2b
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  4269 20f6 18       		.uleb128 0x18
  4270 20f7 491F0000 		.4byte	.LASF455
  4271 20fb 1D       		.byte	0x1d
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 76
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 76
 
 
  4272 20fc B301     		.2byte	0x1b3
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  4326 2172 06       		.uleb128 0x6
  4327 2173 04       		.byte	0x4
  4328 2174 6A200000 		.4byte	0x206a
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 77
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 77
 
 
  4329 2178 08       		.uleb128 0x8
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  4383 21ec 27090000 		.4byte	0x927
  4384 21f0 10       		.byte	0x10
  4385 21f1 18       		.uleb128 0x18
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 78
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 78
 
 
  4386 21f2 F8160000 		.4byte	.LASF466
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  4440 2267 16       		.uleb128 0x16
  4441 2268 5B220000 		.4byte	0x225b
  4442 226c 06       		.uleb128 0x6
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 79
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 79
 
 
  4443 226d 04       		.byte	0x4
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  4497 22df 0B       		.uleb128 0xb
  4498 22e0 F1080000 		.4byte	0x8f1
  4499 22e4 EF220000 		.4byte	0x22ef
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 80
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 80
 
 
  4500 22e8 0C       		.uleb128 0xc
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  4554 2357 1F       		.byte	0x1f
  4555 2358 1601     		.2byte	0x116
  4556 235a 560B0000 		.4byte	0xb56
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 81
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 81
 
 
  4557 235e 10       		.byte	0x10
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  4611 23d2 28       		.uleb128 0x28
  4612 23d3 07       		.byte	0x7
  4613 23d4 01       		.byte	0x1
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 82
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 82
 
 
  4614 23d5 37000000 		.4byte	0x37
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  4668 2443 0901     		.2byte	0x109
  4669 2445 27090000 		.4byte	0x927
  4670 2449 0C       		.byte	0xc
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 83
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 83
 
 
  4671 244a 23       		.uleb128 0x23
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  4725 24c1 21       		.byte	0x21
  4726 24c2 8701     		.2byte	0x187
  4727 24c4 70250000 		.4byte	0x2570
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 84
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 84
 
 
  4728 24c8 08       		.byte	0x8
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  4782 2538 8C110000 		.4byte	.LASF510
  4783 253c 21       		.byte	0x21
  4784 253d 2A01     		.2byte	0x12a
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 85
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 85
 
 
  4785 253f 1C250000 		.4byte	0x251c
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  4839 25b7 02       		.byte	0x2
  4840 25b8 00       		.byte	0
  4841 25b9 08       		.uleb128 0x8
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 86
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 86
 
 
  4842 25ba 150A0000 		.4byte	.LASF516
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  4896 262f 21       		.byte	0x21
  4897 2630 7501     		.2byte	0x175
  4898 2632 B9250000 		.4byte	0x25b9
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 87
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 87
 
 
  4899 2636 02       		.byte	0x2
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  4953 26a4 71       		.byte	0x71
  4954 26a5 C2260000 		.4byte	0x26c2
  4955 26a9 0E       		.uleb128 0xe
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 88
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 88
 
 
  4956 26aa E7150000 		.4byte	.LASF451
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  5010 2715 AC0D0000 		.4byte	.LASF531
  5011 2719 23       		.byte	0x23
  5012 271a 60       		.byte	0x60
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 89
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 89
 
 
  5013 271b F4260000 		.4byte	0x26f4
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  5067 278a 29       		.uleb128 0x29
  5068 278b 28040000 		.4byte	.LASF539
  5069 278f 04       		.byte	0x4
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 90
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 90
 
 
  5070 2790 00       		.byte	0
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  5124 2804 00       		.byte	0
  5125 2805 06       		.uleb128 0x6
  5126 2806 04       		.byte	0x4
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 91
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 91
 
 
  5127 2807 9C270000 		.4byte	0x279c
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  5181 287b 18       		.uleb128 0x18
  5182 287c F0060000 		.4byte	.LASF548
  5183 2880 26       		.byte	0x26
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 92
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 92
 
 
  5184 2881 A701     		.2byte	0x1a7
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  5238 28f5 B001     		.2byte	0x1b0
  5239 28f7 32090000 		.4byte	0x932
  5240 28fb 50       		.byte	0x50
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 93
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 93
 
 
  5241 28fc 18       		.uleb128 0x18
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  5295 296e 19060000 		.4byte	.LASF558
  5296 2972 25       		.byte	0x25
  5297 2973 9201     		.2byte	0x192
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 94
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 94
 
 
  5298 2975 2F290000 		.4byte	0x292f
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  5352 29e7 AE290000 		.4byte	0x29ae
  5353 29eb 08       		.uleb128 0x8
  5354 29ec 96170000 		.4byte	.LASF569
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 95
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 95
 
 
  5355 29f0 28       		.byte	0x28
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  5409 2a5f 28       		.byte	0x28
  5410 2a60 8601     		.2byte	0x186
  5411 2a62 8E2A0000 		.4byte	0x2a8e
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 96
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 96
 
 
  5412 2a66 18       		.uleb128 0x18
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  5466 2ade 08       		.byte	0x8
  5467 2adf 18       		.uleb128 0x18
  5468 2ae0 EF0B0000 		.4byte	.LASF457
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 97
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 97
 
 
  5469 2ae4 28       		.byte	0x28
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  5523 2b55 CC110000 		.4byte	.LASF590
  5524 2b59 28       		.byte	0x28
  5525 2b5a E001     		.2byte	0x1e0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 98
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 98
 
 
  5526 2b5c 9F2A0000 		.4byte	0x2a9f
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  5580 2bce 2A       		.byte	0x2a
  5581 2bcf 2801     		.2byte	0x128
  5582 2bd1 AF2C0000 		.4byte	0x2caf
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 99
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 99
 
 
  5583 2bd5 08       		.byte	0x8
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  5637 2c46 2A       		.byte	0x2a
  5638 2c47 F1       		.byte	0xf1
  5639 2c48 982C0000 		.4byte	0x2c98
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 100
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 100
 
 
  5640 2c4c 0E       		.uleb128 0xe
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  5694 2cbd 972B0000 		.4byte	0x2b97
  5695 2cc1 28       		.uleb128 0x28
  5696 2cc2 07       		.byte	0x7
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 101
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 101
 
 
  5697 2cc3 01       		.byte	0x1
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  5751 2d37 0C       		.byte	0xc
  5752 2d38 18       		.uleb128 0x18
  5753 2d39 48210000 		.4byte	.LASF532
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 102
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 102
 
 
  5754 2d3d 2C       		.byte	0x2c
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  5808 2db3 08       		.byte	0x8
  5809 2db4 2C       		.byte	0x2c
  5810 2db5 3901     		.2byte	0x139
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 103
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 103
 
 
  5811 2db7 D62D0000 		.4byte	0x2dd6
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  5865 2e2c 18       		.uleb128 0x18
  5866 2e2d 990B0000 		.4byte	.LASF557
  5867 2e31 2C       		.byte	0x2c
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 104
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 104
 
 
  5868 2e32 7301     		.2byte	0x173
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  5922 2eaa 29       		.uleb128 0x29
  5923 2eab 920E0000 		.4byte	.LASF626
  5924 2eaf 02       		.byte	0x2
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 105
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 105
 
 
  5925 2eb0 00       		.byte	0
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  5979 2f1b 6F6200   		.ascii	"ob\000"
  5980 2f1e 2D       		.byte	0x2d
  5981 2f1f 7B       		.byte	0x7b
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 106
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 106
 
 
  5982 2f20 FA2F0000 		.4byte	0x2ffa
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  6036 2f8a EF2F0000 		.4byte	0x2fef
  6037 2f8e 0E       		.uleb128 0xe
  6038 2f8f 56180000 		.4byte	.LASF636
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 107
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 107
 
 
  6039 2f93 2D       		.byte	0x2d
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  6093 2fff 0A300000 		.4byte	0x300a
  6094 3003 0C       		.uleb128 0xc
  6095 3004 B1000000 		.4byte	0xb1
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 108
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 108
 
 
  6096 3008 0F       		.byte	0xf
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  6150 3074 0E       		.uleb128 0xe
  6151 3075 E7150000 		.4byte	.LASF451
  6152 3079 30       		.byte	0x30
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 109
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 109
 
 
  6153 307a F7       		.byte	0xf7
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  6207 30e9 1001     		.2byte	0x110
  6208 30eb 27090000 		.4byte	0x927
  6209 30ef 40       		.byte	0x40
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 110
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 110
 
 
  6210 30f0 23       		.uleb128 0x23
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  6264 315b CB1D0000 		.4byte	0x1dcb
  6265 315f 04       		.byte	0x4
  6266 3160 0E       		.uleb128 0xe
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 111
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 111
 
 
  6267 3161 300E0000 		.4byte	.LASF658
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  6321 31ce 01       		.byte	0x1
  6322 31cf 37000000 		.4byte	0x37
  6323 31d3 31       		.byte	0x31
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 112
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 112
 
 
  6324 31d4 46       		.byte	0x46
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  6378 3248 32       		.byte	0x32
  6379 3249 CD01     		.2byte	0x1cd
  6380 324b 7F1A0000 		.4byte	0x1a7f
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 113
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 113
 
 
  6381 324f 0C       		.byte	0xc
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  6435 32bf F8080000 		.4byte	.LASF464
  6436 32c3 32       		.byte	0x32
  6437 32c4 A701     		.2byte	0x1a7
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 114
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 114
 
 
  6438 32c6 92320000 		.4byte	0x3292
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  6492 333d 211C0000 		.4byte	.LASF452
  6493 3341 34       		.byte	0x34
  6494 3342 7F01     		.2byte	0x17f
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 115
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 115
 
 
  6495 3344 A83D0000 		.4byte	0x3da8
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  6549 33b9 4A350000 		.4byte	0x354a
  6550 33bd 40       		.byte	0x40
  6551 33be 18       		.uleb128 0x18
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 116
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 116
 
 
  6552 33bf B0060000 		.4byte	.LASF684
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  6606 3434 747200   		.ascii	"tr\000"
  6607 3437 34       		.byte	0x34
  6608 3438 D601     		.2byte	0x1d6
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 117
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 117
 
 
  6609 343a 210B0000 		.4byte	0xb21
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  6663 34aa 01       		.byte	0x1
  6664 34ab 29       		.uleb128 0x29
  6665 34ac 9F1B0000 		.4byte	.LASF702
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 118
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 118
 
 
  6666 34b0 02       		.byte	0x2
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  6720 351a 39350000 		.4byte	0x3539
  6721 351e 18       		.uleb128 0x18
  6722 351f 5A250000 		.4byte	.LASF715
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 119
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 119
 
 
  6723 3523 33       		.byte	0x33
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  6777 359b 06       		.uleb128 0x6
  6778 359c 04       		.byte	0x4
  6779 359d A1350000 		.4byte	0x35a1
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 120
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 120
 
 
  6780 35a1 1F       		.uleb128 0x1f
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  6834 361b 00       		.byte	0
  6835 361c 0E       		.uleb128 0xe
  6836 361d 690C0000 		.4byte	.LASF724
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 121
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 121
 
 
  6837 3621 35       		.byte	0x35
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  6891 368a 47       		.byte	0x47
  6892 368b 32090000 		.4byte	0x932
  6893 368f 00       		.byte	0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 122
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 122
 
 
  6894 3690 0E       		.uleb128 0xe
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  6948 36f9 7F140000 		.4byte	.LASF740
  6949 36fd 35       		.byte	0x35
  6950 36fe 59       		.byte	0x59
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 123
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 123
 
 
  6951 36ff 32090000 		.4byte	0x932
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  7005 376b 413A0000 		.4byte	0x3a41
  7006 376f 0E       		.uleb128 0xe
  7007 3770 87040000 		.4byte	.LASF744
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 124
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 124
 
 
  7008 3774 35       		.byte	0x35
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  7062 37e0 35       		.byte	0x35
  7063 37e1 75       		.byte	0x75
  7064 37e2 32090000 		.4byte	0x932
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 125
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 125
 
 
  7065 37e6 24       		.byte	0x24
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  7119 3853 0401     		.2byte	0x104
  7120 3855 12       		.uleb128 0x12
  7121 3856 23140000 		.4byte	.LASF762
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 126
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 126
 
 
  7122 385a 35       		.byte	0x35
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  7176 38cf 35       		.byte	0x35
  7177 38d0 90       		.byte	0x90
  7178 38d1 32090000 		.4byte	0x932
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 127
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 127
 
 
  7179 38d5 4004     		.2byte	0x440
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  7233 3949 1408     		.2byte	0x814
  7234 394b 12       		.uleb128 0x12
  7235 394c F4200000 		.4byte	.LASF780
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 128
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 128
 
 
  7236 3950 35       		.byte	0x35
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  7290 39c5 35       		.byte	0x35
  7291 39c6 AB       		.byte	0xab
  7292 39c7 32090000 		.4byte	0x932
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 129
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 129
 
 
  7293 39cb 3C08     		.2byte	0x83c
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  7347 3a3e 0010     		.2byte	0x1000
  7348 3a40 00       		.byte	0
  7349 3a41 0B       		.uleb128 0xb
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 130
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 130
 
 
  7350 3a42 32090000 		.4byte	0x932
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  7404 3ac3 0C       		.uleb128 0xc
  7405 3ac4 B1000000 		.4byte	0xb1
  7406 3ac8 0F       		.byte	0xf
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 131
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 131
 
 
  7407 3ac9 00       		.byte	0
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  7461 3b3f 0E       		.uleb128 0xe
  7462 3b40 B50A0000 		.4byte	.LASF798
  7463 3b44 34       		.byte	0x34
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 132
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 132
 
 
  7464 3b45 C8       		.byte	0xc8
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  7518 3bab 0A       		.uleb128 0xa
  7519 3bac 641E0000 		.4byte	.LASF803
  7520 3bb0 34       		.byte	0x34
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 133
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 133
 
 
  7521 3bb1 E8       		.byte	0xe8
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  7575 3c1c 00       		.byte	0
  7576 3c1d 00       		.byte	0
  7577 3c1e 1C       		.uleb128 0x1c
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 134
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 134
 
 
  7578 3c1f 04       		.byte	0x4
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  7632 3c8a 25080000 		.4byte	.LASF530
  7633 3c8e 34       		.byte	0x34
  7634 3c8f 0D01     		.2byte	0x10d
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 135
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 135
 
 
  7635 3c91 3B3C0000 		.4byte	0x3c3b
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  7689 3d06 12       		.byte	0x12
  7690 3d07 18       		.uleb128 0x18
  7691 3d08 14240000 		.4byte	.LASF820
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 136
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 136
 
 
  7692 3d0c 34       		.byte	0x34
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  7746 3d7d CF120000 		.4byte	.LASF827
  7747 3d81 34       		.byte	0x34
  7748 3d82 6C01     		.2byte	0x16c
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 137
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 137
 
 
  7749 3d84 B1350000 		.4byte	0x35b1
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  7803 3dfc 28       		.uleb128 0x28
  7804 3dfd 07       		.byte	0x7
  7805 3dfe 01       		.byte	0x1
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 138
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 138
 
 
  7806 3dff 37000000 		.4byte	0x37
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  7860 3e6f 0E       		.uleb128 0xe
  7861 3e70 15120000 		.4byte	.LASF631
  7862 3e74 36       		.byte	0x36
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 139
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 139
 
 
  7863 3e75 E8       		.byte	0xe8
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  7917 3ede 36       		.byte	0x36
  7918 3edf BA       		.byte	0xba
  7919 3ee0 A03E0000 		.4byte	0x3ea0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 140
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 140
 
 
  7920 3ee4 16       		.uleb128 0x16
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  7974 3f50 341D0000 		.4byte	0x1d34
  7975 3f54 1C       		.byte	0x1c
  7976 3f55 00       		.byte	0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 141
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 141
 
 
  7977 3f56 16       		.uleb128 0x16
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  8031 3fc5 8B       		.byte	0x8b
  8032 3fc6 FB3F0000 		.4byte	0x3ffb
  8033 3fca 29       		.uleb128 0x29
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 142
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 142
 
 
  8034 3fcb 2D060000 		.4byte	.LASF848
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  8088 403a 38       		.byte	0x38
  8089 403b CF       		.byte	0xcf
  8090 403c EB400000 		.4byte	0x40eb
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 143
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 143
 
 
  8091 4040 08       		.byte	0x8
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  8145 40ac 5A400000 		.4byte	0x405a
  8146 40b0 00       		.byte	0
  8147 40b1 0E       		.uleb128 0xe
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 144
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 144
 
 
  8148 40b2 68220000 		.4byte	.LASF862
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  8202 4123 22       		.uleb128 0x22
  8203 4124 2F160000 		.4byte	.LASF868
  8204 4128 39       		.byte	0x39
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 145
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 145
 
 
  8205 4129 E9       		.byte	0xe9
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  8259 4198 0E       		.uleb128 0xe
  8260 4199 A81E0000 		.4byte	.LASF878
  8261 419d 3A       		.byte	0x3a
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 146
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 146
 
 
  8262 419e 13       		.byte	0x13
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  8316 420a 3A       		.byte	0x3a
  8317 420b 19       		.byte	0x19
  8318 420c 12420000 		.4byte	0x4212
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 147
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 147
 
 
  8319 4210 00       		.byte	0
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  8373 4279 3A       		.byte	0x3a
  8374 427a 22       		.byte	0x22
  8375 427b 12420000 		.4byte	0x4212
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 148
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 148
 
 
  8376 427f 08       		.byte	0x8
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  8430 42ea 11       		.byte	0x11
  8431 42eb 61430000 		.4byte	0x4361
  8432 42ef 14       		.byte	0x14
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 149
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 149
 
 
  8433 42f0 00       		.byte	0
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  8487 435a 00       		.byte	0
  8488 435b 06       		.uleb128 0x6
  8489 435c 04       		.byte	0x4
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 150
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 150
 
 
  8490 435d 92420000 		.4byte	0x4292
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  8544 43c9 06       		.uleb128 0x6
  8545 43ca 04       		.byte	0x4
  8546 43cb CF430000 		.4byte	0x43cf
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 151
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 151
 
 
  8547 43cf 02       		.uleb128 0x2
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  8601 4431 0A       		.uleb128 0xa
  8602 4432 A3000000 		.4byte	.LASF907
  8603 4436 3B       		.byte	0x3b
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 152
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 152
 
 
  8604 4437 3A       		.byte	0x3a
@@ -9112,18 +9112,18 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  8652 449c 32       		.uleb128 0x32
  8653 449d 6B170000 		.4byte	.LASF915
  8654 44a1 01       		.byte	0x1
- 8655 44a2 45       		.byte	0x45
+ 8655 44a2 46       		.byte	0x46
  8656 44a3 47090000 		.4byte	0x947
  8657 44a7 05       		.uleb128 0x5
  8658 44a8 03       		.byte	0x3
  8659 44a9 00000000 		.4byte	__stack_chk_guard
  8660 44ad 33       		.uleb128 0x33
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 153
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 153
 
 
  8661 44ae BA050000 		.4byte	.LASF933
  8662 44b2 01       		.byte	0x1
- 8663 44b3 47       		.byte	0x47
+ 8663 44b3 48       		.byte	0x48
  8664 44b4 00000000 		.4byte	.LFB295
  8665 44b8 2C000000 		.4byte	.LFE295-.LFB295
  8666 44bc 01       		.uleb128 0x1
@@ -9147,7 +9147,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  8684 44e3 37       		.uleb128 0x37
  8685 44e4 26240000 		.4byte	.LASF934
  8686 44e8 01       		.byte	0x1
- 8687 44e9 26       		.byte	0x26
+ 8687 44e9 25       		.byte	0x25
  8688 44ea 9F000000 		.4byte	0x9f
  8689 44ee 00000000 		.4byte	.LFB294
  8690 44f2 54000000 		.4byte	.LFE294-.LFB294
@@ -9159,7 +9159,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  8696 4501 16000000 		.4byte	.LBB4
  8697 4505 08000000 		.4byte	.LBE4-.LBB4
  8698 4509 01       		.byte	0x1
- 8699 450a 2F       		.byte	0x2f
+ 8699 450a 2E       		.byte	0x2e
  8700 450b 38450000 		.4byte	0x4538
  8701 450f 39       		.uleb128 0x39
  8702 4510 16000000 		.4byte	.LBB5
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  8715 452f 05       		.uleb128 0x5
  8716 4530 03       		.byte	0x3
  8717 4531 00000000 		.4byte	.LANCHOR0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 154
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 154
 
 
  8718 4535 00       		.byte	0
@@ -9228,17 +9228,17 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  8762 45a3 3C       		.uleb128 0x3c
  8763 45a4 DF020000 		.4byte	.LASF935
  8764 45a8 01       		.byte	0x1
- 8765 45a9 1D       		.byte	0x1d
+ 8765 45a9 1B       		.byte	0x1b
  8766 45aa 01       		.byte	0x1
  8767 45ab C1450000 		.4byte	0x45c1
  8768 45af 3D       		.uleb128 0x3d
  8769 45b0 44160000 		.4byte	.LASF936
  8770 45b4 01       		.byte	0x1
- 8771 45b5 1F       		.byte	0x1f
+ 8771 45b5 1E       		.byte	0x1e
  8772 45b6 6B2F0000 		.4byte	0x2f6b
  8773 45ba 05       		.uleb128 0x5
  8774 45bb 03       		.byte	0x3
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 155
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 155
 
 
  8775 45bc 00000000 		.4byte	ser_cfg.15495
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  8829 463a 44       		.byte	0x44
  8830 463b 40       		.uleb128 0x40
  8831 463c B5010000 		.4byte	.LASF926
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 156
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 156
 
 
  8832 4640 B5010000 		.4byte	.LASF926
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  8886 0026 0B       		.uleb128 0xb
  8887 0027 49       		.uleb128 0x49
  8888 0028 13       		.uleb128 0x13
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 157
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 157
 
 
  8889 0029 00       		.byte	0
@@ -9418,7 +9418,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  8943 005f 0B       		.uleb128 0xb
  8944 0060 0B       		.uleb128 0xb
  8945 0061 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 158
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 158
 
 
  8946 0062 0B       		.uleb128 0xb
@@ -9478,7 +9478,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  9000 0098 03       		.uleb128 0x3
  9001 0099 0E       		.uleb128 0xe
  9002 009a 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 159
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 159
 
 
  9003 009b 0B       		.uleb128 0xb
@@ -9538,7 +9538,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  9057 00d1 12       		.uleb128 0x12
  9058 00d2 0D       		.uleb128 0xd
  9059 00d3 00       		.byte	0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 160
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 160
 
 
  9060 00d4 03       		.uleb128 0x3
@@ -9598,7 +9598,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  9114 010a 05       		.uleb128 0x5
  9115 010b 01       		.uleb128 0x1
  9116 010c 13       		.uleb128 0x13
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 161
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 161
 
 
  9117 010d 00       		.byte	0
@@ -9658,7 +9658,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  9171 0143 1C       		.uleb128 0x1c
  9172 0144 13       		.uleb128 0x13
  9173 0145 01       		.byte	0x1
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 162
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 162
 
 
  9174 0146 0B       		.uleb128 0xb
@@ -9718,7 +9718,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  9228 017c 49       		.uleb128 0x49
  9229 017d 13       		.uleb128 0x13
  9230 017e 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 163
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 163
 
 
  9231 017f 19       		.uleb128 0x19
@@ -9778,7 +9778,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  9285 01b5 05       		.uleb128 0x5
  9286 01b6 00       		.byte	0
  9287 01b7 00       		.byte	0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 164
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 164
 
 
  9288 01b8 25       		.uleb128 0x25
@@ -9838,7 +9838,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  9342 01ee 3B       		.uleb128 0x3b
  9343 01ef 0B       		.uleb128 0xb
  9344 01f0 01       		.uleb128 0x1
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 165
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 165
 
 
  9345 01f1 13       		.uleb128 0x13
@@ -9898,7 +9898,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  9399 0227 00       		.byte	0
  9400 0228 2D       		.uleb128 0x2d
  9401 0229 0D       		.uleb128 0xd
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 166
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 166
 
 
  9402 022a 00       		.byte	0
@@ -9958,7 +9958,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  9456 0260 01       		.uleb128 0x1
  9457 0261 13       		.uleb128 0x13
  9458 0262 00       		.byte	0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 167
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 167
 
 
  9459 0263 00       		.byte	0
@@ -10018,7 +10018,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  9513 029c 01       		.byte	0x1
  9514 029d 11       		.uleb128 0x11
  9515 029e 01       		.uleb128 0x1
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 168
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 168
 
 
  9516 029f 9542     		.uleb128 0x2115
@@ -10078,7 +10078,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  9570 02dc 1D       		.uleb128 0x1d
  9571 02dd 01       		.byte	0x1
  9572 02de 31       		.uleb128 0x31
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 169
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 169
 
 
  9573 02df 13       		.uleb128 0x13
@@ -10138,7 +10138,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  9627 0317 13       		.uleb128 0x13
  9628 0318 00       		.byte	0
  9629 0319 00       		.byte	0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 170
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 170
 
 
  9630 031a 3D       		.uleb128 0x3d
@@ -10198,7 +10198,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  9684 0350 03       		.uleb128 0x3
  9685 0351 0E       		.uleb128 0xe
  9686 0352 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 171
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 171
 
 
  9687 0353 0B       		.uleb128 0xb
@@ -10258,7 +10258,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  9727 0032 6D657373 		.ascii	"messagebus_watcher_s\000"
  9727      61676562 
  9727      75735F77 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 172
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 172
 
 
  9727      61746368 
@@ -10318,7 +10318,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  9754              	.LASF203:
  9755 00cc 63685F73 		.ascii	"ch_system_t\000"
  9755      79737465 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 173
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 173
 
 
  9755      6D5F7400 
@@ -10378,7 +10378,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  9786              	.LASF262:
  9787 0157 444F5231 		.ascii	"DOR1\000"
  9787      00
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 174
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 174
 
 
  9788              	.LASF263:
@@ -10438,7 +10438,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  9819      00
  9820              	.LASF589:
  9821 01d7 646D6174 		.ascii	"dmatx\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 175
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 175
 
 
  9821      7800
@@ -10498,7 +10498,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  9849      5F66756E 
  9849      6300
  9850              	.LASF156:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 176
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 176
 
 
  9851 026e 705F6E65 		.ascii	"p_newer\000"
@@ -10558,7 +10558,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  9883 02ec 4F545950 		.ascii	"OTYPER\000"
  9883      455200
  9884              	.LASF504:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 177
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 177
 
 
  9885 02f3 64616370 		.ascii	"dacparams_t\000"
@@ -10618,7 +10618,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  9911      7400
  9912              	.LASF522:
  9913 0390 44414344 		.ascii	"DACD2\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 178
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 178
 
 
  9913      3200
@@ -10678,7 +10678,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  9943      4400
  9944              	.LASF650:
  9945 0418 63617264 		.ascii	"cardmode\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 179
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 179
 
 
  9945      6D6F6465 
@@ -10738,7 +10738,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  9973      6C626163 
  9973      6B5F7400 
  9974              	.LASF68:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 180
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 180
 
 
  9975 04a8 5F646174 		.ascii	"_data\000"
@@ -10798,7 +10798,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  9999      6E47726F 
  9999      757000
  10000              	.LASF776:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 181
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 181
 
 
  10001 0544 44535453 		.ascii	"DSTS\000"
@@ -10858,7 +10858,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10028              	.LASF284:
  10029 05cb 52455350 		.ascii	"RESP1\000"
  10029      3100
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 182
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 182
 
 
  10030              	.LASF285:
@@ -10918,7 +10918,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10059      7348616C 
  10059      7400
  10060              	.LASF786:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 183
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 183
 
 
  10061 065f 72657376 		.ascii	"resvd830\000"
@@ -10978,7 +10978,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10089      7900
  10090              	.LASF678:
  10091 06e6 696E5F70 		.ascii	"in_params\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 184
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 184
 
 
  10091      6172616D 
@@ -11038,7 +11038,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10121      434F4E54 
  10121      494E554F 
  10121      555300
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 185
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 185
 
 
  10122              	.LASF804:
@@ -11098,7 +11098,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10148              	.LASF812:
  10149 0800 7278636E 		.ascii	"rxcnt\000"
  10149      7400
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 186
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 186
 
 
  10150              	.LASF438:
@@ -11158,7 +11158,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10179      7900
  10180              	.LASF913:
  10181 0890 5F5F6664 		.ascii	"__fdlibm_posix\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 187
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 187
 
 
  10181      6C69626D 
@@ -11218,7 +11218,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10208              	.LASF315:
  10209 0923 74625F62 		.ascii	"tb_buffer\000"
  10209      75666665 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 188
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 188
 
 
  10209      7200
@@ -11278,7 +11278,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10237      74617465 
  10237      00
  10238              	.LASF54:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 189
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 189
 
 
  10239 09b5 5F73697A 		.ascii	"_size\000"
@@ -11338,7 +11338,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10272              	.LASF577:
  10273 0a2e 46415354 		.ascii	"FAST_DUTY_CYCLE_16_9\000"
  10273      5F445554 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 190
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 190
 
 
  10273      595F4359 
@@ -11398,7 +11398,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10299      73697A65 
  10299      00
  10300              	.LASF800:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 191
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 191
 
 
  10301 0ac2 73746D33 		.ascii	"stm32_otg_params_t\000"
@@ -11458,7 +11458,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10327      00
  10328              	.LASF778:
  10329 0b4f 44494550 		.ascii	"DIEPMSK\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 192
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 192
 
 
  10329      4D534B00 
@@ -11518,7 +11518,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10359      53544F50 
  10359      00
  10360              	.LASF607:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 193
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 193
 
 
  10361 0bde 50574D5F 		.ascii	"PWM_STOP\000"
@@ -11578,7 +11578,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10390              	.LASF724:
  10391 0c69 72657376 		.ascii	"resvd8\000"
  10391      643800
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 194
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 194
 
 
  10392              	.LASF16:
@@ -11638,7 +11638,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10421 0cfe 44494550 		.ascii	"DIEPEMPMSK\000"
  10421      454D504D 
  10421      534B00
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 195
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 195
 
 
  10422              	.LASF859:
@@ -11698,7 +11698,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10451      444D4146 
  10451      41494C55 
  10451      524500
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 196
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 196
 
 
  10452              	.LASF666:
@@ -11758,7 +11758,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10479 0e29 77696E74 		.ascii	"wint_t\000"
  10479      5F7400
  10480              	.LASF658:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 197
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 197
 
 
  10481 0e30 636F6E6E 		.ascii	"connect\000"
@@ -11818,7 +11818,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10504      6E203235 
  10504      35323034 
  10505 0f14 61726420 		.ascii	"ard -mfpu=fpv4-sp-d16 -mno-thumb-interwork -mthumb "
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 198
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 198
 
 
  10505      2D6D6670 
@@ -11878,7 +11878,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10525      5F6D6461 
  10525      7900
  10526              	.LASF389:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 199
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 199
 
 
  10527 1044 69666372 		.ascii	"ifcr\000"
@@ -11938,7 +11938,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10555      706F696E 
  10555      74537461 
  10555      746500
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 200
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 200
 
 
  10556              	.LASF154:
@@ -11998,7 +11998,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10585      725F6E61 
  10585      6D657370 
  10585      6163655F 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 201
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 201
 
 
  10586              	.LASF707:
@@ -12058,7 +12058,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10615 1203 50574D44 		.ascii	"PWMD3\000"
  10615      3300
  10616              	.LASF622:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 202
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 202
 
 
  10617 1209 50574D44 		.ascii	"PWMD4\000"
@@ -12118,7 +12118,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10645      4F5200
  10646              	.LASF441:
  10647 129d 4144435F 		.ascii	"ADC_ACTIVE\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 203
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 203
 
 
  10647      41435449 
@@ -12178,7 +12178,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10673      454400
  10674              	.LASF200:
  10675 1332 6973725F 		.ascii	"isr_cnt\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 204
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 204
 
 
  10675      636E7400 
@@ -12238,7 +12238,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10703      55524544 
  10704              	.LASF659:
  10705 13ca 64697363 		.ascii	"disconnect\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 205
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 205
 
 
  10705      6F6E6E65 
@@ -12298,7 +12298,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10735      4556454E 
  10735      545F5355 
  10735      5350454E 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 206
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 206
 
 
  10735      4400
@@ -12358,7 +12358,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10764              	.LASF439:
  10765 14f0 4144435F 		.ascii	"ADC_STOP\000"
  10765      53544F50 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 207
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 207
 
 
  10765      00
@@ -12418,7 +12418,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10791      00
  10792              	.LASF341:
  10793 1588 6D5F6F77 		.ascii	"m_owner\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 208
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 208
 
 
  10793      6E657200 
@@ -12478,7 +12478,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10819      615F6275 
  10819      6600
  10820              	.LASF233:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 209
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 209
 
 
  10821 162a 52444852 		.ascii	"RDHR\000"
@@ -12538,7 +12538,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10849 16ae 5F776373 		.ascii	"_wcsrtombs_state\000"
  10849      72746F6D 
  10849      62735F73 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 210
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 210
 
 
  10849      74617465 
@@ -12598,7 +12598,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10875 1748 65705F6D 		.ascii	"ep_mode\000"
  10875      6F646500 
  10876              	.LASF615:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 211
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 211
 
 
  10877 1750 70776D63 		.ascii	"pwmchannel_t\000"
@@ -12658,7 +12658,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10903      72746964 
  10903      5F7400
  10904              	.LASF923:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 212
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 212
 
 
  10905 17df 7370695F 		.ascii	"spi_comm_start\000"
@@ -12718,7 +12718,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10935      787400
  10936              	.LASF630:
  10937 1867 69717565 		.ascii	"iqueue\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 213
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 213
 
 
  10937      756500
@@ -12778,7 +12778,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10967      6B5F7400 
  10968              	.LASF136:
  10969 18f3 7375626F 		.ascii	"suboptarg\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 214
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 214
 
 
  10969      70746172 
@@ -12838,7 +12838,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  10997 197f 64616373 		.ascii	"dacsample_t\000"
  10997      616D706C 
  10997      655F7400 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 215
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 215
 
 
  10998              	.LASF709:
@@ -12898,7 +12898,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  11027 1a10 6D657373 		.ascii	"messagebus_watchgroup_s\000"
  11027      61676562 
  11027      75735F77 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 216
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 216
 
 
  11027      61746368 
@@ -12958,7 +12958,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  11055      00
  11056              	.LASF750:
  11057 1ab1 47494E54 		.ascii	"GINTMSK\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 217
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 217
 
 
  11057      4D534B00 
@@ -13018,7 +13018,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  11083 1b46 6B65726E 		.ascii	"kernel_stats\000"
  11083      656C5F73 
  11083      74617473 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 218
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 218
 
 
  11083      00
@@ -13078,7 +13078,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  11109      70747200 
  11110              	.LASF360:
  11111 1bed 63665F6F 		.ascii	"cf_off_preempt\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 219
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 219
 
 
  11111      66665F70 
@@ -13138,7 +13138,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  11138              	.LASF493:
  11139 1c7d 4441435F 		.ascii	"DAC_UNINIT\000"
  11139      554E494E 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 220
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 220
 
 
  11139      495400
@@ -13198,7 +13198,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  11165 1d1f 77746D74 		.ascii	"wtmtxp\000"
  11165      787000
  11166              	.LASF55:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 221
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 221
 
 
  11167 1d26 5F5F7346 		.ascii	"__sFILE\000"
@@ -13258,7 +13258,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  11195 1db2 63685F72 		.ascii	"ch_ready_list\000"
  11195      65616479 
  11195      5F6C6973 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 222
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 222
 
 
  11195      7400
@@ -13318,7 +13318,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  11221      52454144 
  11221      494E4700 
  11222              	.LASF423:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 223
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 223
 
 
  11223 1e5f 6166726C 		.ascii	"afrl\000"
@@ -13378,7 +13378,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  11251      3400
  11252              	.LASF249:
  11253 1ee3 52455345 		.ascii	"RESERVED5\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 224
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 224
 
 
  11253      52564544 
@@ -13438,7 +13438,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  11278      6E657200 
  11279              	.LASF802:
  11280 1f9f 6C696E65 		.ascii	"linear\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 225
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 225
 
 
  11280      617200
@@ -13498,7 +13498,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  11308      00
  11309              	.LASF373:
  11310 2036 65735F6E 		.ascii	"es_next\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 226
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 226
 
 
  11310      65787400 
@@ -13558,7 +13558,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  11338      7400
  11339              	.LASF492:
  11340 20cd 43414E44 		.ascii	"CAND1\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 227
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 227
 
 
  11340      3100
@@ -13618,7 +13618,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  11366      7200
  11367              	.LASF158:
  11368 2161 705F6E61 		.ascii	"p_name\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 228
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 228
 
 
  11368      6D6500
@@ -13678,7 +13678,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  11396      00
  11397              	.LASF596:
  11398 21e8 69327373 		.ascii	"i2sstate_t\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 229
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 229
 
 
  11398      74617465 
@@ -13738,7 +13738,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  11426      706C6574 
  11426      655F6362 
  11427              	.LASF351:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 230
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 230
 
 
  11428 227d 63665F6F 		.ascii	"cf_off_prio\000"
@@ -13798,7 +13798,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  11454 230e 4443544C 		.ascii	"DCTL\000"
  11454      00
  11455              	.LASF655:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 231
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 231
 
 
  11456 2313 53444344 		.ascii	"SDCDriverVMT\000"
@@ -13858,7 +13858,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  11482      727400
  11483              	.LASF902:
  11484 23a8 6275665F 		.ascii	"buf_len\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 232
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 232
 
 
  11484      6C656E00 
@@ -13918,7 +13918,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  11512      5F445554 
  11512      595F4359 
  11512      434C455F 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 233
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 233
 
 
  11512      3200
@@ -13978,7 +13978,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  11543              	.LASF472:
  11544 24be 64756D6D 		.ascii	"dummy\000"
  11544      7900
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 234
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 234
 
 
  11545              	.LASF574:
@@ -14038,7 +14038,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  11572      6F6E6669 
  11572      6700
  11573              	.LASF715:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 235
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 235
 
 
  11574 255a 75645F73 		.ascii	"ud_size\000"
@@ -14086,22 +14086,22 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 1
  11598      74617465 
  11598      5F7400
  11599              		.ident	"GCC: (GNU Tools for Arm Embedded Processors 7-2017-q4-major) 7.2.1 20170904 (release) [ARM
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s 			page 236
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s 			page 236
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s:18     .text.startup.main:00000000 $t
-C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s:26     .text.startup.main:00000000 main
-C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s:92     .text.startup.main:00000044 $d
-C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s:157    .data.__stack_chk_guard:00000000 __stack_chk_guard
-C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s:100    .text.__stack_chk_fail:00000000 $t
-C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s:108    .text.__stack_chk_fail:00000000 __stack_chk_fail
-C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s:147    .text.__stack_chk_fail:00000024 $d
-C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s:154    .data.__stack_chk_guard:00000000 $d
-C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s:160    .data.ser_cfg.15495:00000000 $d
-C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s:164    .data.ser_cfg.15495:00000000 ser_cfg.15495
-C:\Users\ludo\AppData\Local\Temp\ccvrfL5v.s:171    .rodata.__stack_chk_fail.str1.4:00000000 $d
+C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s:18     .text.startup.main:00000000 $t
+C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s:26     .text.startup.main:00000000 main
+C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s:92     .text.startup.main:00000044 $d
+C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s:157    .data.__stack_chk_guard:00000000 __stack_chk_guard
+C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s:100    .text.__stack_chk_fail:00000000 $t
+C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s:108    .text.__stack_chk_fail:00000000 __stack_chk_fail
+C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s:147    .text.__stack_chk_fail:00000024 $d
+C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s:154    .data.__stack_chk_guard:00000000 $d
+C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s:160    .data.ser_cfg.15495:00000000 $d
+C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s:164    .data.ser_cfg.15495:00000000 ser_cfg.15495
+C:\Users\ludo\AppData\Local\Temp\ccqkN1or.s:171    .rodata.__stack_chk_fail.str1.4:00000000 $d
 
 UNDEFINED SYMBOLS
 halInit

@@ -65,18 +65,20 @@ static bool direction;
 #define SPEED_OFF 0
 #define DEUXMILLEMILIS 2000
 #define MICRO_NB 4
+#define TAILLEPOUREVITERSURCHARGE 8
 
 /* Function to turn on and off leds and rgb leds (LED1..LED8) depending on the direction
  * of the source of the sound by comparing the intensity perceived by M1 (back mic), M2 (left mic), M3 (right mic), M4 (front mic)
  */
 void led_mon(float left, float right, float front, float back) {
+	//fonction qui gère la gestion de l'allumage des LEDs suivant la provenance du son
 	int select = get_selector();
-	if (select!=SELECTORVALUE) {
-	if ((right > left)){
-		direction = true;
-			if (front > back) {
+	if (select!=SELECTORVALUE) { //seulement si le mode chorée n'est pas activée
+	if ((right > left)){	//compare l'intensité
+		direction = true;	//choisit la direction où tourner
+			if (front > back) {	//compare l'intensité
 				if (abs(right-front)<IN_BETWEEN_FRONT){
-					clear_leds();
+					clear_leds();	//efface les LEDs deja allumee puis allume la led desiree
 					set_rgb_led(LED2,GREEN);
 				} else if (front > right) {
 					clear_leds();
@@ -98,7 +100,7 @@ void led_mon(float left, float right, float front, float back) {
 				}
 			}
 		} else if ((right < left)) {
-			direction = false;
+			direction = false;		//retient de tourner dans l'autre direction
 			if (front > back) {
 						if (abs(front-left)<IN_BETWEEN_FRONT) {
 							clear_leds();
@@ -124,7 +126,6 @@ void led_mon(float left, float right, float front, float back) {
 					}
 		} else {
 			clear_leds();
-			direction=false;
 		}
 	}
 }
@@ -141,7 +142,7 @@ void sound_remote(float* data_L, float* data_R, float* data_F, float* data_B){
 	float max_norm_right = MIN_VALUE_THRESHOLD;
 
 	int16_t max_norm_index_left = NORMINDEXMAX;
-	static bool allumer = false;
+	static bool allumer = false; //pour que le robot roule ou non
 
 	//search for the highest peak
 	for(uint16_t i = MIN_FREQ ; i <= MAX_FREQ ; i++){
@@ -159,23 +160,28 @@ void sound_remote(float* data_L, float* data_R, float* data_F, float* data_B){
 			max_norm_back = data_B[i];
 		}
 	}
-chprintf((BaseSequentialStream*)&SD3, "max_norm_left = %f \n", max_norm_left);
-chprintf((BaseSequentialStream*)&SD3, "max_norm_front = %f \n", max_norm_front);
-chprintf((BaseSequentialStream*)&SD3, "max_norm_right = %f \n", max_norm_right);
-//pour trouver l'intensitÃ© au niveau des micros et au niveau de la led par rapport au deux micros pour former les zones (rapport + justesse du code).
+
+//pour trouver l'intensitÃ© au niveau des micros et au niveau de la led par
+	//rapport au deux micros pour former les zones (rapport + justesse du code).
 	led_mon(max_norm_left,max_norm_right,max_norm_front,max_norm_back);
 
+	//condition pour les fréquences pour allumer le robot
+
 	if((max_norm_index_left >= NORM_INDEX_MIN_LEFT && max_norm_index_left <= NORM_INDEX_MAX_LEFT) && max_norm_left > LEFT_VALUE_MIN){ // 1015.625Hz et 1093.75Hz
-			allumer = !allumer;
-			speed_coeff=allumer;
-			chThdSleepMilliseconds(DEUXMILLEMILIS);
+		int selector = get_selector();
+
+		if(selector != SELECTORVALUE){ //fonctionne seulement s'il n'est pas dans le mode chorée
+		allumer = !allumer;
+		speed_coeff=allumer;
+		chThdSleepMilliseconds(DEUXMILLEMILIS);
+			}
 		}
 	if (allumer) {
-		speed_coeff=SPEED_ON;
+		speed_coeff=SPEED_ON;		//envoie la vitesse pour allumer ou eteindre le robot
 	} else {
 		speed_coeff=SPEED_OFF;
 	}
-	if ((max_norm_index_left > NORM_INDEX_MAX_LEFT) && allumer) {
+	if ((max_norm_index_left > NORM_INDEX_MAX_LEFT) && allumer) { //accelere le robot en fonction de la vitesse entendue
 			speed_coeff = COEFFSPEED*max_norm_index_left/MIN_FREQ;
 		}
 }
@@ -251,10 +257,10 @@ void processAudioData(int16_t *data, uint16_t num_samples){
 
 		//sends only one FFT result over 10 for 1 mic to not flood the computer
 		//sends to UART3
-		if(mustSend > 8){
+		if(mustSend > TAILLEPOUREVITERSURCHARGE){
 			//signals to send the result to the computer
 			chBSemSignal(&sendToComputer_sem);
-			mustSend = 0;
+			mustSend = ZERO;
 		} //ICI y'a des bailles à enlever
 		nb_samples = ZERO;
 		mustSend++;
@@ -270,7 +276,7 @@ void wait_send_to_computer(void){
 
 float get_speed_coeff(void) {
 	return speed_coeff;
-}
+} 								//nos publics fonctions pour communiquer la vitesse et la diretion
 bool get_direction(void) {
 	return direction;
 }

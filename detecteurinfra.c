@@ -23,7 +23,7 @@
 #define TEMPS_NONANTE_DEGRES_INITIAL_SPEED 3270
 #define CENTMS 100
 #define SPEED_OFF 0
-#define TEMPO_ROULER 400
+#define TEMPO_ROULER 580
 #define ATTENTE_DEMARRER 3000
 #define TEMPS_QUARANTECINQ_DEGRES 165
 #define TEMPS_TOURS_DEGRES  2970
@@ -69,50 +69,49 @@ static THD_FUNCTION(DetecteurDistance, arg) {
 	     }
     }
 
-	chThdSleepMilliseconds(CENTMS);
 }
 
-void startDetecteur(void){
+void startDetecteur(void){ //declaration du thread
 	chThdCreateStatic(waDetecteurDistance, sizeof(waDetecteurDistance), NORMALPRIO, DetecteurDistance, NULL);
 	}
 
 
-void laChoreeDeReggaeton(void){
+void laChoreeDeReggaeton(void){ //toute la choree
 	chThdSleepMilliseconds(ATTENTE_DEMARRER);
 
 	right_motor_set_speed(-SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE);
-	chThdSleepMilliseconds(TEMPS_QUARANTECINQ_DEGRES);   //toure de 45 degr�s
+	chThdSleepMilliseconds(TEMPS_QUARANTECINQ_DEGRES);   //toure de 45 degres
 
 	right_motor_set_speed(SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE); //devant
 	chThdSleepMilliseconds(TEMPO_ROULER);
 	right_motor_set_speed(-SPEED_CHOREE);
-	left_motor_set_speed(-SPEED_CHOREE); //derri�re
+	left_motor_set_speed(-SPEED_CHOREE); //derriere
 	chThdSleepMilliseconds(TEMPO_ROULER);
 
 	right_motor_set_speed(SPEED_CHOREE);
-	left_motor_set_speed(-SPEED_CHOREE); //tour de 90 degr�s
+	left_motor_set_speed(-SPEED_CHOREE); //tour de 90 degres
 	chThdSleepMilliseconds(TEMPS_NONANTE_DEGRES_CHOREE_SPEED);
 
 	right_motor_set_speed(SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE); //devant
 	chThdSleepMilliseconds(TEMPO_ROULER);
 	right_motor_set_speed(-SPEED_CHOREE);
-	left_motor_set_speed(-SPEED_CHOREE);  //derri�re
+	left_motor_set_speed(-SPEED_CHOREE);  //derriere
 	chThdSleepMilliseconds(TEMPO_ROULER);
 
 	right_motor_set_speed(-SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE);
-	chThdSleepMilliseconds(TEMPS_QUARANTECINQ_DEGRES);   //toure de 45 degr�s
+	chThdSleepMilliseconds(TEMPS_QUARANTECINQ_DEGRES);   //toure de 45 degres
 
 	right_motor_set_speed(SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE); //devant
 	chThdSleepMilliseconds(TEMPO_ROULER);
-	right_motor_set_speed(-SPEED_CHOREE); //derri�re
+	right_motor_set_speed(-SPEED_CHOREE); //derriere
 	left_motor_set_speed(-SPEED_CHOREE);
 	chThdSleepMilliseconds(TEMPO_ROULER);
-	right_motor_set_speed(-SPEED_CHOREE); //derri�re
+	right_motor_set_speed(-SPEED_CHOREE); //derriere
 	left_motor_set_speed(-SPEED_CHOREE);
 	chThdSleepMilliseconds(TEMPO_ROULER);
 	right_motor_set_speed(SPEED_CHOREE);
@@ -126,18 +125,18 @@ void laChoreeDeReggaeton(void){
 	right_motor_set_speed(SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE); //devant
 	chThdSleepMilliseconds(TEMPO_ROULER);
-	right_motor_set_speed(-SPEED_CHOREE); //derri�re
+	right_motor_set_speed(-SPEED_CHOREE); //derriere
 	left_motor_set_speed(-SPEED_CHOREE);
 	chThdSleepMilliseconds(TEMPO_ROULER);
 
 	right_motor_set_speed(SPEED_CHOREE);
-	left_motor_set_speed(-SPEED_CHOREE); //tour de 180 degr�s
+	left_motor_set_speed(-SPEED_CHOREE); //tour de 180 degres
 	chThdSleepMilliseconds(TEMPS_CENTQUATREVINGT_DEGRES);
 
 	right_motor_set_speed(SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE); //devant
 	chThdSleepMilliseconds(TEMPO_ROULER);
-	right_motor_set_speed(-SPEED_CHOREE); //derri�re
+	right_motor_set_speed(-SPEED_CHOREE); //derriere
 	left_motor_set_speed(-SPEED_CHOREE);
 	chThdSleepMilliseconds(TEMPO_ROULER);
 

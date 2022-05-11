@@ -24,10 +24,9 @@
 #define TRUE 1
 
 
-//uncomment to send the FFTs results from the real microphones
-
 static void serial_start(void)
 {
+	//serial config pour la communication
 	static SerialConfig ser_cfg = {
 	   SERIALCONFIG
 	};
@@ -38,7 +37,7 @@ static void serial_start(void)
 int main(void)
 {
 
-
+	//initialisation systeme
     halInit();
     chSysInit();
     mpu_init();
@@ -54,7 +53,7 @@ int main(void)
     //starts the microphones processing thread.
     //it calls the callback given in parameter when samples are ready
     mic_start(&processAudioData);
-    VL53L0X_start();
+    VL53L0X_start();	//init pour le decteur de distance
     startDetecteur();
     /* Infinite loop. */
     while (TRUE) {
@@ -62,8 +61,10 @@ int main(void)
         //waits until a result must be sent to the computer
     wait_send_to_computer();
     chThdSleepMilliseconds(CENTMILIS);
+    }
 }
-}
+
+//surveille la stack
 
 #define STACK_CHK_GUARD 0xe2dee396
 uintptr_t __stack_chk_guard = STACK_CHK_GUARD;
