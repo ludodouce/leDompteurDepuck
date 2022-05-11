@@ -19,15 +19,17 @@
 #include <detecteurinfra.h>
 #include"spi_comm.h"
 
+#define CENTMILIS 100
+#define SERIALCONFIG 115200,0,0,0,
+#define TRUE 1
+
+
 //uncomment to send the FFTs results from the real microphones
 
 static void serial_start(void)
 {
 	static SerialConfig ser_cfg = {
-	    115200,
-	    0,
-	    0,
-	    0,
+	   SERIALCONFIG
 	};
 //document changement
 	sdStart(&SD3, &ser_cfg); // UART3.
@@ -55,11 +57,11 @@ int main(void)
     VL53L0X_start();
     startDetecteur();
     /* Infinite loop. */
-    while (1) {
+    while (TRUE) {
 
         //waits until a result must be sent to the computer
     wait_send_to_computer();
-    chThdSleepMilliseconds(100);
+    chThdSleepMilliseconds(CENTMILIS);
 }
 }
 

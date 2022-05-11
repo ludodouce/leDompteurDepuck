@@ -52,12 +52,26 @@ static bool direction;
 #define FREQ_BACKWARD_L		(FREQ_BACKWARD-1)
 #define FREQ_BACKWARD_H		(FREQ_BACKWARD+1)
 
+#define SELECTORVALUE 5
+#define LEDON 1
+#define NORMINDEXMAX -1
+#define ZERO 0
+#define COEFFDEUX 2
+#define COEFFSPEED 3
+#define NORM_INDEX_MIN_LEFT 65
+#define NORM_INDEX_MAX_LEFT 70
+#define LEFT_VALUE_MIN 100000
+#define SPEED_ON 1
+#define SPEED_OFF 0
+#define DEUXMILLEMILIS 2000
+#define MICRO_NB 4
+
 /* Function to turn on and off leds and rgb leds (LED1..LED8) depending on the direction
  * of the source of the sound by comparing the intensity perceived by M1 (back mic), M2 (left mic), M3 (right mic), M4 (front mic)
  */
 void led_mon(float left, float right, float front, float back) {
 	int select = get_selector();
-	if (select!=5) {
+	if (select!=SELECTORVALUE) {
 	if ((right > left)){
 		direction = true;
 			if (front > back) {
@@ -66,10 +80,10 @@ void led_mon(float left, float right, float front, float back) {
 					set_rgb_led(LED2,GREEN);
 				} else if (front > right) {
 					clear_leds();
-					set_led(LED1,1);
+					set_led(LED1,LEDON);
 				} else {
 					clear_leds();
-					set_led(LED3,1);
+					set_led(LED3,LEDON);
 				}
 			} else {
 				if ((abs(right-back)<IN_BETWEEN_BACK)){
@@ -77,10 +91,10 @@ void led_mon(float left, float right, float front, float back) {
 					set_rgb_led(LED4,GREEN);
 				} else if (back > right) {
 					clear_leds();
-					set_led(LED5,1);
+					set_led(LED5,LEDON);
 				} else {
 					clear_leds();
-					set_led(LED3,1);
+					set_led(LED3,LEDON);
 				}
 			}
 		} else if ((right < left)) {
@@ -91,10 +105,10 @@ void led_mon(float left, float right, float front, float back) {
 							set_rgb_led(LED8,GREEN);
 						} else if (front > left) {
 							clear_leds();
-							set_led(LED1,1);
+							set_led(LED1,LEDON);
 						} else {
 							clear_leds();
-							set_led(LED7,1);
+							set_led(LED7,LEDON);
 						}
 					} else {
 						if ((abs(left-back)<IN_BETWEEN_BACK)) {
@@ -102,10 +116,10 @@ void led_mon(float left, float right, float front, float back) {
 							set_rgb_led(LED6,GREEN);
 						} else if (back > left) {
 							clear_leds();
-							set_led(LED5,1);
+							set_led(LED5,LEDON);
 						} else {
 							clear_leds();
-							set_led(LED7,1);
+							set_led(LED7,LEDON);
 						}
 					}
 		} else {
@@ -126,7 +140,7 @@ void sound_remote(float* data_L, float* data_R, float* data_F, float* data_B){
 	float max_norm_back = MIN_VALUE_THRESHOLD;
 	float max_norm_right = MIN_VALUE_THRESHOLD;
 
-	int16_t max_norm_index_left = -1;
+	int16_t max_norm_index_left = NORMINDEXMAX;
 	static bool allumer = false;
 
 	//search for the highest peak
@@ -151,18 +165,18 @@ chprintf((BaseSequentialStream*)&SD3, "max_norm_right = %f \n", max_norm_right);
 //pour trouver l'intensitÃ© au niveau des micros et au niveau de la led par rapport au deux micros pour former les zones (rapport + justesse du code).
 	led_mon(max_norm_left,max_norm_right,max_norm_front,max_norm_back);
 
-	if((max_norm_index_left >= 65 && max_norm_index_left <= 70)&&max_norm_left>100000){ // 1015.625Hz et 1093.75Hz
+	if((max_norm_index_left >= NORM_INDEX_MIN_LEFT && max_norm_index_left <= NORM_INDEX_MAX_LEFT) && max_norm_left > LEFT_VALUE_MIN){ // 1015.625Hz et 1093.75Hz
 			allumer = !allumer;
 			speed_coeff=allumer;
-			chThdSleepMilliseconds(2000);
+			chThdSleepMilliseconds(DEUXMILLEMILIS);
 		}
 	if (allumer) {
-		speed_coeff=1;
+		speed_coeff=SPEED_ON;
 	} else {
-		speed_coeff=0;
+		speed_coeff=SPEED_OFF;
 	}
-	if ((max_norm_index_left > 70) && allumer) {
-			speed_coeff = 3*max_norm_index_left/MIN_FREQ;
+	if ((max_norm_index_left > NORM_INDEX_MAX_LEFT) && allumer) {
+			speed_coeff = COEFFSPEED*max_norm_index_left/MIN_FREQ;
 		}
 }
 
@@ -185,11 +199,11 @@ void processAudioData(int16_t *data, uint16_t num_samples){
 	*
 	*/
 
-	static uint16_t nb_samples = 0;
-	static uint8_t mustSend = 0;
+	static uint16_t nb_samples = ZERO;
+	static uint8_t mustSend = ZERO;
 
 	//loop to fill the buffers
-	for(uint16_t i = 0 ; i < num_samples ; i+=4){
+	for(uint16_t i = ZERO ; i < num_samples ; i+=MICRO_NB){
 		//construct an array of complex numbers. Put 0 to the imaginary part
 		micRight_cmplx_input[nb_samples] = (float)data[i + MIC_RIGHT];
 		micLeft_cmplx_input[nb_samples] = (float)data[i + MIC_LEFT];
@@ -198,20 +212,20 @@ void processAudioData(int16_t *data, uint16_t num_samples){
 
 		nb_samples++;
 
-		micRight_cmplx_input[nb_samples] = 0;
-		micLeft_cmplx_input[nb_samples] = 0;
-		micBack_cmplx_input[nb_samples] = 0;
-		micFront_cmplx_input[nb_samples] = 0;
+		micRight_cmplx_input[nb_samples] = ZERO;
+		micLeft_cmplx_input[nb_samples] = ZERO;
+		micBack_cmplx_input[nb_samples] = ZERO;
+		micFront_cmplx_input[nb_samples] = ZERO;
 
 		nb_samples++;
 
 		//stop when buffer is full
-		if(nb_samples >= (2 * FFT_SIZE)){
+		if(nb_samples >= (COEFFDEUX * FFT_SIZE)){
 			break;
 		}
 	}
 
-	if(nb_samples >= (2 * FFT_SIZE)){
+	if(nb_samples >= (COEFFDEUX * FFT_SIZE)){
 		/*	FFT proccessing
 		*
 		*	This FFT function stores the results in the input buffer given.
@@ -241,8 +255,8 @@ void processAudioData(int16_t *data, uint16_t num_samples){
 			//signals to send the result to the computer
 			chBSemSignal(&sendToComputer_sem);
 			mustSend = 0;
-		}
-		nb_samples = 0;
+		} //ICI y'a des bailles à enlever
+		nb_samples = ZERO;
 		mustSend++;
 
 		sound_remote(micLeft_output,micRight_output,micFront_output,micBack_output);

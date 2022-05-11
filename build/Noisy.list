@@ -2023,7 +2023,7 @@ Disassembly of section .text:
 	...
 
 080018e0 <__gedf2>:
- 80018e0:	f04f 3cff 	mov.w	ip, #4294967295	; 0xffffffff
+ 80018e0:	f04f 3cff 	mov.w	ip, #4294967295
  80018e4:	e006      	b.n	80018f4 <__cmpdf2+0x4>
  80018e6:	bf00      	nop
 
@@ -2184,7 +2184,7 @@ Disassembly of section .text:
  8001a6c:	4770      	bx	lr
  8001a6e:	ea50 3001 	orrs.w	r0, r0, r1, lsl #12
  8001a72:	d102      	bne.n	8001a7a <__aeabi_d2uiz+0x3a>
- 8001a74:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 8001a74:	f04f 30ff 	mov.w	r0, #4294967295
  8001a78:	4770      	bx	lr
  8001a7a:	f04f 0000 	mov.w	r0, #0
  8001a7e:	4770      	bx	lr
@@ -2245,8 +2245,8 @@ Disassembly of section .text:
  8001b26:	bf08      	it	eq
  8001b28:	2800      	cmpeq	r0, #0
  8001b2a:	bf1c      	itt	ne
- 8001b2c:	f04f 31ff 	movne.w	r1, #4294967295	; 0xffffffff
- 8001b30:	f04f 30ff 	movne.w	r0, #4294967295	; 0xffffffff
+ 8001b2c:	f04f 31ff 	movne.w	r1, #4294967295
+ 8001b30:	f04f 30ff 	movne.w	r0, #4294967295
  8001b34:	f000 b974 	b.w	8001e20 <__aeabi_idiv0>
  8001b38:	f1ad 0c08 	sub.w	ip, sp, #8
  8001b3c:	e96d ce04 	strd	ip, lr, [sp, #-16]!
@@ -2284,7 +2284,7 @@ Disassembly of section .text:
  8001b98:	4299      	cmp	r1, r3
  8001b9a:	d909      	bls.n	8001bb0 <__udivmoddi4+0x60>
  8001b9c:	18eb      	adds	r3, r5, r3
- 8001b9e:	f107 30ff 	add.w	r0, r7, #4294967295	; 0xffffffff
+ 8001b9e:	f107 30ff 	add.w	r0, r7, #4294967295
  8001ba2:	f080 811b 	bcs.w	8001ddc <__udivmoddi4+0x28c>
  8001ba6:	4299      	cmp	r1, r3
  8001ba8:	f240 8118 	bls.w	8001ddc <__udivmoddi4+0x28c>
@@ -2299,7 +2299,7 @@ Disassembly of section .text:
  8001bc4:	45a4      	cmp	ip, r4
  8001bc6:	d909      	bls.n	8001bdc <__udivmoddi4+0x8c>
  8001bc8:	192c      	adds	r4, r5, r4
- 8001bca:	f100 33ff 	add.w	r3, r0, #4294967295	; 0xffffffff
+ 8001bca:	f100 33ff 	add.w	r3, r0, #4294967295
  8001bce:	f080 8107 	bcs.w	8001de0 <__udivmoddi4+0x290>
  8001bd2:	45a4      	cmp	ip, r4
  8001bd4:	f240 8104 	bls.w	8001de0 <__udivmoddi4+0x290>
@@ -2355,7 +2355,7 @@ Disassembly of section .text:
  8001c60:	4299      	cmp	r1, r3
  8001c62:	d907      	bls.n	8001c74 <__udivmoddi4+0x124>
  8001c64:	18eb      	adds	r3, r5, r3
- 8001c66:	f10c 30ff 	add.w	r0, ip, #4294967295	; 0xffffffff
+ 8001c66:	f10c 30ff 	add.w	r0, ip, #4294967295
  8001c6a:	d202      	bcs.n	8001c72 <__udivmoddi4+0x122>
  8001c6c:	4299      	cmp	r1, r3
  8001c6e:	f200 80cd 	bhi.w	8001e0c <__udivmoddi4+0x2bc>
@@ -2369,7 +2369,7 @@ Disassembly of section .text:
  8001c88:	45a0      	cmp	r8, r4
  8001c8a:	d907      	bls.n	8001c9c <__udivmoddi4+0x14c>
  8001c8c:	192c      	adds	r4, r5, r4
- 8001c8e:	f100 33ff 	add.w	r3, r0, #4294967295	; 0xffffffff
+ 8001c8e:	f100 33ff 	add.w	r3, r0, #4294967295
  8001c92:	d202      	bcs.n	8001c9a <__udivmoddi4+0x14a>
  8001c94:	45a0      	cmp	r8, r4
  8001c96:	f200 80b6 	bhi.w	8001e06 <__udivmoddi4+0x2b6>
@@ -2397,7 +2397,7 @@ Disassembly of section .text:
  8001ce2:	fa00 f107 	lsl.w	r1, r0, r7
  8001ce6:	d90b      	bls.n	8001d00 <__udivmoddi4+0x1b0>
  8001ce8:	eb1e 0303 	adds.w	r3, lr, r3
- 8001cec:	f109 30ff 	add.w	r0, r9, #4294967295	; 0xffffffff
+ 8001cec:	f109 30ff 	add.w	r0, r9, #4294967295
  8001cf0:	f080 8087 	bcs.w	8001e02 <__udivmoddi4+0x2b2>
  8001cf4:	429c      	cmp	r4, r3
  8001cf6:	f240 8084 	bls.w	8001e02 <__udivmoddi4+0x2b2>
@@ -2412,7 +2412,7 @@ Disassembly of section .text:
  8001d14:	45a2      	cmp	sl, r4
  8001d16:	d908      	bls.n	8001d2a <__udivmoddi4+0x1da>
  8001d18:	eb1e 0404 	adds.w	r4, lr, r4
- 8001d1c:	f100 33ff 	add.w	r3, r0, #4294967295	; 0xffffffff
+ 8001d1c:	f100 33ff 	add.w	r3, r0, #4294967295
  8001d20:	d26b      	bcs.n	8001dfa <__udivmoddi4+0x2aa>
  8001d22:	45a2      	cmp	sl, r4
  8001d24:	d969      	bls.n	8001dfa <__udivmoddi4+0x2aa>
@@ -2454,7 +2454,7 @@ Disassembly of section .text:
  8001d90:	fa04 f402 	lsl.w	r4, r4, r2
  8001d94:	d907      	bls.n	8001da6 <__udivmoddi4+0x256>
  8001d96:	1869      	adds	r1, r5, r1
- 8001d98:	f107 3cff 	add.w	ip, r7, #4294967295	; 0xffffffff
+ 8001d98:	f107 3cff 	add.w	ip, r7, #4294967295
  8001d9c:	d22f      	bcs.n	8001dfe <__udivmoddi4+0x2ae>
  8001d9e:	428b      	cmp	r3, r1
  8001da0:	d92d      	bls.n	8001dfe <__udivmoddi4+0x2ae>
@@ -2469,7 +2469,7 @@ Disassembly of section .text:
  8001dba:	428b      	cmp	r3, r1
  8001dbc:	d907      	bls.n	8001dce <__udivmoddi4+0x27e>
  8001dbe:	1869      	adds	r1, r5, r1
- 8001dc0:	f100 3cff 	add.w	ip, r0, #4294967295	; 0xffffffff
+ 8001dc0:	f100 3cff 	add.w	ip, r0, #4294967295
  8001dc4:	d217      	bcs.n	8001df6 <__udivmoddi4+0x2a6>
  8001dc6:	428b      	cmp	r3, r1
  8001dc8:	d915      	bls.n	8001df6 <__udivmoddi4+0x2a6>
@@ -3020,7 +3020,7 @@ Disassembly of section .text:
  80023d2:	32f0      	adds	r2, #240	; 0xf0
  80023d4:	31f0      	adds	r1, #240	; 0xf0
  80023d6:	243c      	movs	r4, #60	; 0x3c
- 80023d8:	f04f 35ff 	mov.w	r5, #4294967295	; 0xffffffff
+ 80023d8:	f04f 35ff 	mov.w	r5, #4294967295
  80023dc:	ecf0 7a01 	vldmia	r0!, {s15}
  80023e0:	ecf1 6a01 	vldmia	r1!, {s13}
  80023e4:	ecb2 7a01 	vldmia	r2!, {s14}
@@ -3425,13 +3425,13 @@ Disassembly of section .text:
  800285a:	f001 fb81 	bl	8003f60 <right_motor_set_speed>
  800285e:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  8002862:	f001 fb65 	bl	8003f30 <left_motor_set_speed>
- 8002866:	f44f 60af 	mov.w	r0, #1400	; 0x578
+ 8002866:	f44f 70c8 	mov.w	r0, #400	; 0x190
  800286a:	f006 f871 	bl	8008950 <chThdSleep>
  800286e:	4861      	ldr	r0, [pc, #388]	; (80029f4 <laChoreeDeReggaeton+0x1c4>)
  8002870:	f001 fb76 	bl	8003f60 <right_motor_set_speed>
  8002874:	485f      	ldr	r0, [pc, #380]	; (80029f4 <laChoreeDeReggaeton+0x1c4>)
  8002876:	f001 fb5b 	bl	8003f30 <left_motor_set_speed>
- 800287a:	f44f 60af 	mov.w	r0, #1400	; 0x578
+ 800287a:	f44f 70c8 	mov.w	r0, #400	; 0x190
  800287e:	f006 f867 	bl	8008950 <chThdSleep>
  8002882:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  8002886:	f001 fb6b 	bl	8003f60 <right_motor_set_speed>
@@ -3443,13 +3443,13 @@ Disassembly of section .text:
  800289c:	f001 fb60 	bl	8003f60 <right_motor_set_speed>
  80028a0:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  80028a4:	f001 fb44 	bl	8003f30 <left_motor_set_speed>
- 80028a8:	f44f 60af 	mov.w	r0, #1400	; 0x578
+ 80028a8:	f44f 70c8 	mov.w	r0, #400	; 0x190
  80028ac:	f006 f850 	bl	8008950 <chThdSleep>
  80028b0:	4850      	ldr	r0, [pc, #320]	; (80029f4 <laChoreeDeReggaeton+0x1c4>)
  80028b2:	f001 fb55 	bl	8003f60 <right_motor_set_speed>
  80028b6:	484f      	ldr	r0, [pc, #316]	; (80029f4 <laChoreeDeReggaeton+0x1c4>)
  80028b8:	f001 fb3a 	bl	8003f30 <left_motor_set_speed>
- 80028bc:	f44f 60af 	mov.w	r0, #1400	; 0x578
+ 80028bc:	f44f 70c8 	mov.w	r0, #400	; 0x190
  80028c0:	f006 f846 	bl	8008950 <chThdSleep>
  80028c4:	484b      	ldr	r0, [pc, #300]	; (80029f4 <laChoreeDeReggaeton+0x1c4>)
  80028c6:	f001 fb4b 	bl	8003f60 <right_motor_set_speed>
@@ -3461,43 +3461,43 @@ Disassembly of section .text:
  80028dc:	f001 fb40 	bl	8003f60 <right_motor_set_speed>
  80028e0:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  80028e4:	f001 fb24 	bl	8003f30 <left_motor_set_speed>
- 80028e8:	f44f 60af 	mov.w	r0, #1400	; 0x578
+ 80028e8:	f44f 70c8 	mov.w	r0, #400	; 0x190
  80028ec:	f006 f830 	bl	8008950 <chThdSleep>
  80028f0:	4840      	ldr	r0, [pc, #256]	; (80029f4 <laChoreeDeReggaeton+0x1c4>)
  80028f2:	f001 fb35 	bl	8003f60 <right_motor_set_speed>
  80028f6:	483f      	ldr	r0, [pc, #252]	; (80029f4 <laChoreeDeReggaeton+0x1c4>)
  80028f8:	f001 fb1a 	bl	8003f30 <left_motor_set_speed>
- 80028fc:	f44f 60af 	mov.w	r0, #1400	; 0x578
+ 80028fc:	f44f 70c8 	mov.w	r0, #400	; 0x190
  8002900:	f006 f826 	bl	8008950 <chThdSleep>
  8002904:	483b      	ldr	r0, [pc, #236]	; (80029f4 <laChoreeDeReggaeton+0x1c4>)
  8002906:	f001 fb2b 	bl	8003f60 <right_motor_set_speed>
  800290a:	483a      	ldr	r0, [pc, #232]	; (80029f4 <laChoreeDeReggaeton+0x1c4>)
  800290c:	f001 fb10 	bl	8003f30 <left_motor_set_speed>
- 8002910:	f44f 60af 	mov.w	r0, #1400	; 0x578
+ 8002910:	f44f 70c8 	mov.w	r0, #400	; 0x190
  8002914:	f006 f81c 	bl	8008950 <chThdSleep>
  8002918:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  800291c:	f001 fb20 	bl	8003f60 <right_motor_set_speed>
  8002920:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  8002924:	f001 fb04 	bl	8003f30 <left_motor_set_speed>
- 8002928:	f44f 60af 	mov.w	r0, #1400	; 0x578
+ 8002928:	f44f 70c8 	mov.w	r0, #400	; 0x190
  800292c:	f006 f810 	bl	8008950 <chThdSleep>
  8002930:	4830      	ldr	r0, [pc, #192]	; (80029f4 <laChoreeDeReggaeton+0x1c4>)
  8002932:	f001 fb15 	bl	8003f60 <right_motor_set_speed>
  8002936:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  800293a:	f001 faf9 	bl	8003f30 <left_motor_set_speed>
- 800293e:	f240 605e 	movw	r0, #1630	; 0x65e
+ 800293e:	f44f 70aa 	mov.w	r0, #340	; 0x154
  8002942:	f006 f805 	bl	8008950 <chThdSleep>
  8002946:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  800294a:	f001 fb09 	bl	8003f60 <right_motor_set_speed>
  800294e:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  8002952:	f001 faed 	bl	8003f30 <left_motor_set_speed>
- 8002956:	f44f 60af 	mov.w	r0, #1400	; 0x578
+ 8002956:	f44f 70c8 	mov.w	r0, #400	; 0x190
  800295a:	f005 fff9 	bl	8008950 <chThdSleep>
  800295e:	4825      	ldr	r0, [pc, #148]	; (80029f4 <laChoreeDeReggaeton+0x1c4>)
  8002960:	f001 fafe 	bl	8003f60 <right_motor_set_speed>
  8002964:	4823      	ldr	r0, [pc, #140]	; (80029f4 <laChoreeDeReggaeton+0x1c4>)
  8002966:	f001 fae3 	bl	8003f30 <left_motor_set_speed>
- 800296a:	f44f 60af 	mov.w	r0, #1400	; 0x578
+ 800296a:	f44f 70c8 	mov.w	r0, #400	; 0x190
  800296e:	f005 ffef 	bl	8008950 <chThdSleep>
  8002972:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  8002976:	f001 faf3 	bl	8003f60 <right_motor_set_speed>
@@ -3509,13 +3509,13 @@ Disassembly of section .text:
  800298c:	f001 fae8 	bl	8003f60 <right_motor_set_speed>
  8002990:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  8002994:	f001 facc 	bl	8003f30 <left_motor_set_speed>
- 8002998:	f44f 60af 	mov.w	r0, #1400	; 0x578
+ 8002998:	f44f 70c8 	mov.w	r0, #400	; 0x190
  800299c:	f005 ffd8 	bl	8008950 <chThdSleep>
  80029a0:	4814      	ldr	r0, [pc, #80]	; (80029f4 <laChoreeDeReggaeton+0x1c4>)
  80029a2:	f001 fadd 	bl	8003f60 <right_motor_set_speed>
  80029a6:	4813      	ldr	r0, [pc, #76]	; (80029f4 <laChoreeDeReggaeton+0x1c4>)
  80029a8:	f001 fac2 	bl	8003f30 <left_motor_set_speed>
- 80029ac:	f44f 60af 	mov.w	r0, #1400	; 0x578
+ 80029ac:	f44f 70c8 	mov.w	r0, #400	; 0x190
  80029b0:	f005 ffce 	bl	8008950 <chThdSleep>
  80029b4:	480f      	ldr	r0, [pc, #60]	; (80029f4 <laChoreeDeReggaeton+0x1c4>)
  80029b6:	f001 fad3 	bl	8003f60 <right_motor_set_speed>
@@ -3940,7 +3940,7 @@ Disassembly of section .text:
  8002dd2:	d104      	bne.n	8002dde <dcmi_lld_stop_stream.part.0+0x3e>
  8002dd4:	b003      	add	sp, #12
  8002dd6:	bd30      	pop	{r4, r5, pc}
- 8002dd8:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 8002dd8:	f04f 30ff 	mov.w	r0, #4294967295
  8002ddc:	e7f6      	b.n	8002dcc <dcmi_lld_stop_stream.part.0+0x2c>
  8002dde:	f7ff f9cf 	bl	8002180 <__stack_chk_fail>
  8002de2:	bf00      	nop
@@ -6074,7 +6074,7 @@ Disassembly of section .text:
  8004346:	b918      	cbnz	r0, 8004350 <_sbrk_r+0x20>
  8004348:	230c      	movs	r3, #12
  800434a:	6033      	str	r3, [r6, #0]
- 800434c:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 800434c:	f04f 30ff 	mov.w	r0, #4294967295
  8004350:	9a01      	ldr	r2, [sp, #4]
  8004352:	6823      	ldr	r3, [r4, #0]
  8004354:	429a      	cmp	r2, r3
@@ -7789,7 +7789,7 @@ Disassembly of section .text:
  8005468:	f8dc 4000 	ldr.w	r4, [ip]
  800546c:	9401      	str	r4, [sp, #4]
  800546e:	08d7      	lsrs	r7, r2, #3
- 8005470:	f04f 34ff 	mov.w	r4, #4294967295	; 0xffffffff
+ 8005470:	f04f 34ff 	mov.w	r4, #4294967295
  8005474:	428f      	cmp	r7, r1
  8005476:	601c      	str	r4, [r3, #0]
  8005478:	d217      	bcs.n	80054aa <get_next_good_spad+0x4a>
@@ -12290,7 +12290,7 @@ Disassembly of section .text:
  80081a4:	4b0b      	ldr	r3, [pc, #44]	; (80081d4 <_vt_init+0x34>)
  80081a6:	6811      	ldr	r1, [r2, #0]
  80081a8:	b082      	sub	sp, #8
- 80081aa:	f04f 34ff 	mov.w	r4, #4294967295	; 0xffffffff
+ 80081aa:	f04f 34ff 	mov.w	r4, #4294967295
  80081ae:	9101      	str	r1, [sp, #4]
  80081b0:	2100      	movs	r1, #0
  80081b2:	6299      	str	r1, [r3, #40]	; 0x28
@@ -12345,7 +12345,7 @@ Disassembly of section .text:
  8008226:	6832      	ldr	r2, [r6, #0]
  8008228:	1b09      	subs	r1, r1, r4
  800822a:	4295      	cmp	r5, r2
- 800822c:	f04f 34ff 	mov.w	r4, #4294967295	; 0xffffffff
+ 800822c:	f04f 34ff 	mov.w	r4, #4294967295
  8008230:	6099      	str	r1, [r3, #8]
  8008232:	6244      	str	r4, [r0, #36]	; 0x24
  8008234:	d106      	bne.n	8008244 <chVTDoSetI+0x64>
@@ -12386,7 +12386,7 @@ Disassembly of section .text:
  8008290:	6045      	str	r5, [r0, #4]
  8008292:	4299      	cmp	r1, r3
  8008294:	f04f 0500 	mov.w	r5, #0
- 8008298:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 8008298:	f04f 30ff 	mov.w	r0, #4294967295
  800829c:	60e5      	str	r5, [r4, #12]
  800829e:	6250      	str	r0, [r2, #36]	; 0x24
  80082a0:	d109      	bne.n	80082b6 <chVTDoResetI+0x56>
@@ -12502,7 +12502,7 @@ Disassembly of section .text:
  80083be:	601a      	str	r2, [r3, #0]
  80083c0:	e9d4 3200 	ldrd	r3, r2, [r4]
  80083c4:	605a      	str	r2, [r3, #4]
- 80083c6:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
+ 80083c6:	f04f 33ff 	mov.w	r3, #4294967295
  80083ca:	62a3      	str	r3, [r4, #40]	; 0x28
  80083cc:	4620      	mov	r0, r4
  80083ce:	f7ff ff9f 	bl	8008310 <chSchReadyI>
@@ -12519,7 +12519,7 @@ Disassembly of section .text:
  80083ec:	6aa3      	ldr	r3, [r4, #40]	; 0x28
  80083ee:	2200      	movs	r2, #0
  80083f0:	601a      	str	r2, [r3, #0]
- 80083f2:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
+ 80083f2:	f04f 33ff 	mov.w	r3, #4294967295
  80083f6:	62a3      	str	r3, [r4, #40]	; 0x28
  80083f8:	4620      	mov	r0, r4
  80083fa:	f7ff ff89 	bl	8008310 <chSchReadyI>
@@ -13223,7 +13223,7 @@ Disassembly of section .text:
  8008b08:	9a01      	ldr	r2, [sp, #4]
  8008b0a:	682b      	ldr	r3, [r5, #0]
  8008b0c:	429a      	cmp	r2, r3
- 8008b0e:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 8008b0e:	f04f 30ff 	mov.w	r0, #4294967295
  8008b12:	d101      	bne.n	8008b18 <chThdSuspendTimeoutS+0x48>
  8008b14:	b003      	add	sp, #12
  8008b16:	bdf0      	pop	{r4, r5, r6, r7, pc}
@@ -13296,7 +13296,7 @@ Disassembly of section .text:
  8008bbe:	9901      	ldr	r1, [sp, #4]
  8008bc0:	6813      	ldr	r3, [r2, #0]
  8008bc2:	4299      	cmp	r1, r3
- 8008bc4:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 8008bc4:	f04f 30ff 	mov.w	r0, #4294967295
  8008bc8:	d101      	bne.n	8008bce <chThdEnqueueTimeoutS+0x3e>
  8008bca:	b003      	add	sp, #12
  8008bcc:	bd30      	pop	{r4, r5, pc}
@@ -13388,7 +13388,7 @@ Disassembly of section .text:
  8008ca4:	b083      	sub	sp, #12
  8008ca6:	681a      	ldr	r2, [r3, #0]
  8008ca8:	9201      	str	r2, [sp, #4]
- 8008caa:	f04f 32ff 	mov.w	r2, #4294967295	; 0xffffffff
+ 8008caa:	f04f 32ff 	mov.w	r2, #4294967295
  8008cae:	6002      	str	r2, [r0, #0]
  8008cb0:	9901      	ldr	r1, [sp, #4]
  8008cb2:	681a      	ldr	r2, [r3, #0]
@@ -13475,7 +13475,7 @@ Disassembly of section .text:
  8008d74:	4c11      	ldr	r4, [pc, #68]	; (8008dbc <_tm_init+0x4c>)
  8008d76:	682b      	ldr	r3, [r5, #0]
  8008d78:	b089      	sub	sp, #36	; 0x24
- 8008d7a:	f04f 31ff 	mov.w	r1, #4294967295	; 0xffffffff
+ 8008d7a:	f04f 31ff 	mov.w	r1, #4294967295
  8008d7e:	9307      	str	r3, [sp, #28]
  8008d80:	2300      	movs	r3, #0
  8008d82:	2200      	movs	r2, #0
@@ -15292,7 +15292,7 @@ Disassembly of section .text:
  8009f04:	0976      	lsrs	r6, r6, #5
  8009f06:	4083      	lsls	r3, r0
  8009f08:	42b2      	cmp	r2, r6
- 8009f0a:	f103 33ff 	add.w	r3, r3, #4294967295	; 0xffffffff
+ 8009f0a:	f103 33ff 	add.w	r3, r3, #4294967295
  8009f0e:	f004 041f 	and.w	r4, r4, #31
  8009f12:	f857 0022 	ldr.w	r0, [r7, r2, lsl #2]
  8009f16:	d30b      	bcc.n	8009f30 <_mmcsd_get_slice+0x50>
@@ -17196,7 +17196,7 @@ Disassembly of section .text:
  800b20e:	429c      	cmp	r4, r3
  800b210:	d107      	bne.n	800b222 <read+0x22>
  800b212:	300c      	adds	r0, #12
- 800b214:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
+ 800b214:	f04f 33ff 	mov.w	r3, #4294967295
  800b218:	b002      	add	sp, #8
  800b21a:	e8bd 4010 	ldmia.w	sp!, {r4, lr}
  800b21e:	f7fe bb57 	b.w	80098d0 <chIQReadTimeout>
@@ -17235,7 +17235,7 @@ Disassembly of section .text:
  800b26e:	429c      	cmp	r4, r3
  800b270:	d107      	bne.n	800b282 <write+0x22>
  800b272:	3030      	adds	r0, #48	; 0x30
- 800b274:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
+ 800b274:	f04f 33ff 	mov.w	r3, #4294967295
  800b278:	b002      	add	sp, #8
  800b27a:	e8bd 4010 	ldmia.w	sp!, {r4, lr}
  800b27e:	f7fe bc7f 	b.w	8009b80 <chOQWriteTimeout>
@@ -17274,7 +17274,7 @@ Disassembly of section .text:
  800b2ce:	429a      	cmp	r2, r3
  800b2d0:	d107      	bne.n	800b2e2 <get+0x22>
  800b2d2:	300c      	adds	r0, #12
- 800b2d4:	f04f 31ff 	mov.w	r1, #4294967295	; 0xffffffff
+ 800b2d4:	f04f 31ff 	mov.w	r1, #4294967295
  800b2d8:	b003      	add	sp, #12
  800b2da:	f85d eb04 	ldr.w	lr, [sp], #4
  800b2de:	f7fe baa7 	b.w	8009830 <chIQGetTimeout>
@@ -17313,7 +17313,7 @@ Disassembly of section .text:
  800b32e:	429a      	cmp	r2, r3
  800b330:	d107      	bne.n	800b342 <put+0x22>
  800b332:	3030      	adds	r0, #48	; 0x30
- 800b334:	f04f 32ff 	mov.w	r2, #4294967295	; 0xffffffff
+ 800b334:	f04f 32ff 	mov.w	r2, #4294967295
  800b338:	b003      	add	sp, #12
  800b33a:	f85d eb04 	ldr.w	lr, [sp], #4
  800b33e:	f7fe bb87 	b.w	8009a50 <chOQPutTimeout>
@@ -17586,7 +17586,7 @@ Disassembly of section .text:
  800b5ee:	429c      	cmp	r4, r3
  800b5f0:	d107      	bne.n	800b602 <read+0x22>
  800b5f2:	300c      	adds	r0, #12
- 800b5f4:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
+ 800b5f4:	f04f 33ff 	mov.w	r3, #4294967295
  800b5f8:	b002      	add	sp, #8
  800b5fa:	e8bd 4010 	ldmia.w	sp!, {r4, lr}
  800b5fe:	f7fe b967 	b.w	80098d0 <chIQReadTimeout>
@@ -17625,7 +17625,7 @@ Disassembly of section .text:
  800b64e:	429c      	cmp	r4, r3
  800b650:	d107      	bne.n	800b662 <write+0x22>
  800b652:	3030      	adds	r0, #48	; 0x30
- 800b654:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
+ 800b654:	f04f 33ff 	mov.w	r3, #4294967295
  800b658:	b002      	add	sp, #8
  800b65a:	e8bd 4010 	ldmia.w	sp!, {r4, lr}
  800b65e:	f7fe ba8f 	b.w	8009b80 <chOQWriteTimeout>
@@ -17664,7 +17664,7 @@ Disassembly of section .text:
  800b6ae:	429a      	cmp	r2, r3
  800b6b0:	d107      	bne.n	800b6c2 <get+0x22>
  800b6b2:	300c      	adds	r0, #12
- 800b6b4:	f04f 31ff 	mov.w	r1, #4294967295	; 0xffffffff
+ 800b6b4:	f04f 31ff 	mov.w	r1, #4294967295
  800b6b8:	b003      	add	sp, #12
  800b6ba:	f85d eb04 	ldr.w	lr, [sp], #4
  800b6be:	f7fe b8b7 	b.w	8009830 <chIQGetTimeout>
@@ -17703,7 +17703,7 @@ Disassembly of section .text:
  800b70e:	429a      	cmp	r2, r3
  800b710:	d107      	bne.n	800b722 <put+0x22>
  800b712:	3030      	adds	r0, #48	; 0x30
- 800b714:	f04f 32ff 	mov.w	r2, #4294967295	; 0xffffffff
+ 800b714:	f04f 32ff 	mov.w	r2, #4294967295
  800b718:	b003      	add	sp, #12
  800b71a:	f85d eb04 	ldr.w	lr, [sp], #4
  800b71e:	f7fe b997 	b.w	8009a50 <chOQPutTimeout>
@@ -19840,7 +19840,7 @@ Disassembly of section .text:
  800ccbc:	d1f5      	bne.n	800ccaa <dmaInit+0x1a>
  800ccbe:	4a0d      	ldr	r2, [pc, #52]	; (800ccf4 <dmaInit+0x64>)
  800ccc0:	490d      	ldr	r1, [pc, #52]	; (800ccf8 <dmaInit+0x68>)
- 800ccc2:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
+ 800ccc2:	f04f 33ff 	mov.w	r3, #4294967295
  800ccc6:	608b      	str	r3, [r1, #8]
  800ccc8:	60cb      	str	r3, [r1, #12]
  800ccca:	6093      	str	r3, [r2, #8]
@@ -20004,7 +20004,7 @@ Disassembly of section .text:
  800ce56:	6822      	ldr	r2, [r4, #0]
  800ce58:	4d1c      	ldr	r5, [pc, #112]	; (800cecc <hal_lld_init+0x7c>)
  800ce5a:	b083      	sub	sp, #12
- 800ce5c:	f04f 31ff 	mov.w	r1, #4294967295	; 0xffffffff
+ 800ce5c:	f04f 31ff 	mov.w	r1, #4294967295
  800ce60:	9201      	str	r2, [sp, #4]
  800ce62:	2200      	movs	r2, #0
  800ce64:	6918      	ldr	r0, [r3, #16]
@@ -20312,7 +20312,7 @@ Disassembly of section .text:
  800d142:	f383 8811 	msr	BASEPRI, r3
  800d146:	f7fb fef3 	bl	8008f30 <_stats_start_measure_crit_isr>
  800d14a:	f7fa ff09 	bl	8007f60 <_dbg_check_lock_from_isr>
- 800d14e:	f04f 31ff 	mov.w	r1, #4294967295	; 0xffffffff
+ 800d14e:	f04f 31ff 	mov.w	r1, #4294967295
  800d152:	483a      	ldr	r0, [pc, #232]	; (800d23c <Vector88+0x17c>)
  800d154:	f7fb fcec 	bl	8008b30 <chThdResumeI>
  800d158:	f7fa ff22 	bl	8007fa0 <_dbg_check_unlock_from_isr>
@@ -20350,7 +20350,7 @@ Disassembly of section .text:
  800d1a6:	f383 8811 	msr	BASEPRI, r3
  800d1aa:	f7fb fec1 	bl	8008f30 <_stats_start_measure_crit_isr>
  800d1ae:	f7fa fed7 	bl	8007f60 <_dbg_check_lock_from_isr>
- 800d1b2:	f04f 31ff 	mov.w	r1, #4294967295	; 0xffffffff
+ 800d1b2:	f04f 31ff 	mov.w	r1, #4294967295
  800d1b6:	4822      	ldr	r0, [pc, #136]	; (800d240 <Vector88+0x180>)
  800d1b8:	f7fb fcba 	bl	8008b30 <chThdResumeI>
  800d1bc:	f7fa fef0 	bl	8007fa0 <_dbg_check_unlock_from_isr>
@@ -20381,7 +20381,7 @@ Disassembly of section .text:
  800d1f6:	f383 8811 	msr	BASEPRI, r3
  800d1fa:	f7fb fe99 	bl	8008f30 <_stats_start_measure_crit_isr>
  800d1fe:	f7fa feaf 	bl	8007f60 <_dbg_check_lock_from_isr>
- 800d202:	f04f 31ff 	mov.w	r1, #4294967295	; 0xffffffff
+ 800d202:	f04f 31ff 	mov.w	r1, #4294967295
  800d206:	480f      	ldr	r0, [pc, #60]	; (800d244 <Vector88+0x184>)
  800d208:	f7fb fc92 	bl	8008b30 <chThdResumeI>
  800d20c:	f7fa fec8 	bl	8007fa0 <_dbg_check_unlock_from_isr>
@@ -23205,7 +23205,7 @@ Disassembly of section .text:
  800eecc:	9a03      	ldr	r2, [sp, #12]
  800eece:	f8d8 3000 	ldr.w	r3, [r8]
  800eed2:	429a      	cmp	r2, r3
- 800eed4:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 800eed4:	f04f 30ff 	mov.w	r0, #4294967295
  800eed8:	d11b      	bne.n	800ef12 <i2c_lld_master_transmit_timeout+0x112>
  800eeda:	b005      	add	sp, #20
  800eedc:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
@@ -23243,7 +23243,7 @@ Disassembly of section .text:
  800ef40:	9301      	str	r3, [sp, #4]
  800ef42:	462e      	mov	r6, r5
  800ef44:	f04f 4e80 	mov.w	lr, #1073741824	; 0x40000000
- 800ef48:	f04f 37ff 	mov.w	r7, #4294967295	; 0xffffffff
+ 800ef48:	f04f 37ff 	mov.w	r7, #4294967295
  800ef4c:	e017      	b.n	800ef7e <otg_disable_ep.isra.0+0x4e>
  800ef4e:	f8c2 6900 	str.w	r6, [r2, #2304]	; 0x900
  800ef52:	18c4      	adds	r4, r0, r3
@@ -23818,7 +23818,7 @@ Disassembly of section .text:
  800f56a:	b163      	cbz	r3, 800f586 <usb_lld_start+0x96>
  800f56c:	f243 0308 	movw	r3, #12296	; 0x3008
  800f570:	61b3      	str	r3, [r6, #24]
- 800f572:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
+ 800f572:	f04f 33ff 	mov.w	r3, #4294967295
  800f576:	6173      	str	r3, [r6, #20]
  800f578:	6e6b      	ldr	r3, [r5, #100]	; 0x64
  800f57a:	b1c3      	cbz	r3, 800f5ae <usb_lld_start+0xbe>
@@ -23897,7 +23897,7 @@ Disassembly of section .text:
  800f640:	6892      	ldr	r2, [r2, #8]
  800f642:	429a      	cmp	r2, r3
  800f644:	d2f0      	bcs.n	800f628 <usb_lld_reset+0x28>
- 800f646:	f04f 32ff 	mov.w	r2, #4294967295	; 0xffffffff
+ 800f646:	f04f 32ff 	mov.w	r2, #4294967295
  800f64a:	f04f 1301 	mov.w	r3, #65537	; 0x10001
  800f64e:	f8c5 2818 	str.w	r2, [r5, #2072]	; 0x818
  800f652:	f8c5 381c 	str.w	r3, [r5, #2076]	; 0x81c
@@ -24027,7 +24027,7 @@ Disassembly of section .text:
  800f7b2:	688a      	ldr	r2, [r1, #8]
  800f7b4:	01ab      	lsls	r3, r5, #6
  800f7b6:	f043 0320 	orr.w	r3, r3, #32
- 800f7ba:	f105 3bff 	add.w	fp, r5, #4294967295	; 0xffffffff
+ 800f7ba:	f105 3bff 	add.w	fp, r5, #4294967295
  800f7be:	2a00      	cmp	r2, #0
  800f7c0:	d039      	beq.n	800f836 <usb_lld_init_endpoint+0x106>
  800f7c2:	8b8a      	ldrh	r2, [r1, #28]
@@ -26485,7 +26485,7 @@ Disassembly of section .text:
  8011082:	9301      	str	r3, [sp, #4]
  8011084:	ee18 0a10 	vmov	r0, s16
  8011088:	f7f0 f9b6 	bl	80013f8 <__aeabi_f2d>
- 801108c:	f108 38ff 	add.w	r8, r8, #4294967295	; 0xffffffff
+ 801108c:	f108 38ff 	add.w	r8, r8, #4294967295
  8011090:	f1b8 0f08 	cmp.w	r8, #8
  8011094:	e9cd 0104 	strd	r0, r1, [sp, #16]
  8011098:	f200 8173 	bhi.w	8011382 <chvprintf+0x552>
@@ -26529,7 +26529,7 @@ Disassembly of section .text:
  8011106:	9a01      	ldr	r2, [sp, #4]
  8011108:	9808      	ldr	r0, [sp, #32]
  801110a:	232e      	movs	r3, #46	; 0x2e
- 801110c:	f108 38ff 	add.w	r8, r8, #4294967295	; 0xffffffff
+ 801110c:	f108 38ff 	add.w	r8, r8, #4294967295
  8011110:	4442      	add	r2, r8
  8011112:	700b      	strb	r3, [r1, #0]
  8011114:	9201      	str	r2, [sp, #4]
@@ -26579,7 +26579,7 @@ Disassembly of section .text:
  801118c:	4443      	add	r3, r8
  801118e:	4698      	mov	r8, r3
  8011190:	eba8 0805 	sub.w	r8, r8, r5
- 8011194:	f108 33ff 	add.w	r3, r8, #4294967295	; 0xffffffff
+ 8011194:	f108 33ff 	add.w	r3, r8, #4294967295
  8011198:	eba4 0408 	sub.w	r4, r4, r8
  801119c:	9301      	str	r3, [sp, #4]
  801119e:	e00b      	b.n	80111b8 <chvprintf+0x388>
@@ -26624,10 +26624,10 @@ Disassembly of section .text:
  80111f8:	6833      	ldr	r3, [r6, #0]
  80111fa:	f815 1b01 	ldrb.w	r1, [r5], #1
  80111fe:	689b      	ldr	r3, [r3, #8]
- 8011200:	f108 38ff 	add.w	r8, r8, #4294967295	; 0xffffffff
+ 8011200:	f108 38ff 	add.w	r8, r8, #4294967295
  8011204:	4630      	mov	r0, r6
  8011206:	4798      	blx	r3
- 8011208:	f1b8 3fff 	cmp.w	r8, #4294967295	; 0xffffffff
+ 8011208:	f1b8 3fff 	cmp.w	r8, #4294967295
  801120c:	d1f4      	bne.n	80111f8 <chvprintf+0x3c8>
  801120e:	9b01      	ldr	r3, [sp, #4]
  8011210:	f10b 0b01 	add.w	fp, fp, #1
@@ -26674,7 +26674,7 @@ Disassembly of section .text:
  801127e:	4281      	cmp	r1, r0
  8011280:	d1f9      	bne.n	8011276 <chvprintf+0x446>
  8011282:	eba4 0408 	sub.w	r4, r4, r8
- 8011286:	f108 33ff 	add.w	r3, r8, #4294967295	; 0xffffffff
+ 8011286:	f108 33ff 	add.w	r3, r8, #4294967295
  801128a:	2c00      	cmp	r4, #0
  801128c:	9301      	str	r3, [sp, #4]
  801128e:	9d03      	ldr	r5, [sp, #12]
@@ -26775,7 +26775,7 @@ Disassembly of section .text:
  8011372:	460d      	mov	r5, r1
  8011374:	f1b8 0f00 	cmp.w	r8, #0
  8011378:	f43f ae5b 	beq.w	8011032 <chvprintf+0x202>
- 801137c:	f108 38ff 	add.w	r8, r8, #4294967295	; 0xffffffff
+ 801137c:	f108 38ff 	add.w	r8, r8, #4294967295
  8011380:	e659      	b.n	8011036 <chvprintf+0x206>
  8011382:	ed9f 7b03 	vldr	d7, [pc, #12]	; 8011390 <chvprintf+0x560>
  8011386:	4d07      	ldr	r5, [pc, #28]	; (80113a4 <chvprintf+0x574>)
@@ -26790,7 +26790,7 @@ Disassembly of section .text:
  80113a4:	05f5e100 	.word	0x05f5e100
  80113a8:	2b00      	cmp	r3, #0
  80113aa:	d1e7      	bne.n	801137c <chvprintf+0x54c>
- 80113ac:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
+ 80113ac:	f04f 33ff 	mov.w	r3, #4294967295
  80113b0:	9301      	str	r3, [sp, #4]
  80113b2:	2720      	movs	r7, #32
  80113b4:	e700      	b.n	80111b8 <chvprintf+0x388>
@@ -26801,7 +26801,7 @@ Disassembly of section .text:
  80113c2:	4249      	negs	r1, r1
  80113c4:	9303      	str	r3, [sp, #12]
  80113c6:	e799      	b.n	80112fc <chvprintf+0x4cc>
- 80113c8:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
+ 80113c8:	f04f 33ff 	mov.w	r3, #4294967295
  80113cc:	9301      	str	r3, [sp, #4]
  80113ce:	2720      	movs	r7, #32
  80113d0:	e6f4      	b.n	80111bc <chvprintf+0x38c>
@@ -28239,7 +28239,7 @@ Disassembly of section .text:
  80125b8:	4641      	mov	r1, r8
  80125ba:	4630      	mov	r0, r6
  80125bc:	f7f1 feb8 	bl	8004330 <_sbrk_r>
- 80125c0:	f1b0 3fff 	cmp.w	r0, #4294967295	; 0xffffffff
+ 80125c0:	f1b0 3fff 	cmp.w	r0, #4294967295
  80125c4:	4683      	mov	fp, r0
  80125c6:	f000 8104 	beq.w	80127d2 <_malloc_r+0x402>
  80125ca:	eb04 0009 	add.w	r0, r4, r9
@@ -28453,7 +28453,7 @@ Disassembly of section .text:
  8012804:	f040 8083 	bne.w	801290e <_malloc_r+0x53e>
  8012808:	f010 0f03 	tst.w	r0, #3
  801280c:	f1a9 0308 	sub.w	r3, r9, #8
- 8012810:	f100 30ff 	add.w	r0, r0, #4294967295	; 0xffffffff
+ 8012810:	f100 30ff 	add.w	r0, r0, #4294967295
  8012814:	d1f3      	bne.n	80127fe <_malloc_r+0x42e>
  8012816:	687b      	ldr	r3, [r7, #4]
  8012818:	ea23 0304 	bic.w	r3, r3, r4
@@ -28591,7 +28591,7 @@ Disassembly of section .text:
  801295c:	b2ca      	uxtb	r2, r1
  801295e:	4603      	mov	r3, r0
  8012960:	e002      	b.n	8012968 <memset+0x18>
- 8012962:	f114 34ff 	adds.w	r4, r4, #4294967295	; 0xffffffff
+ 8012962:	f114 34ff 	adds.w	r4, r4, #4294967295
  8012966:	d338      	bcc.n	80129da <memset+0x8a>
  8012968:	f803 2b01 	strb.w	r2, [r3], #1
  801296c:	079d      	lsls	r5, r3, #30
@@ -28699,7 +28699,7 @@ Disassembly of section .text:
  8012a6e:	e7f7      	b.n	8012a60 <snprintf+0x70>
  8012a70:	238b      	movs	r3, #139	; 0x8b
  8012a72:	6023      	str	r3, [r4, #0]
- 8012a74:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 8012a74:	f04f 30ff 	mov.w	r0, #4294967295
  8012a78:	e7f2      	b.n	8012a60 <snprintf+0x70>
  8012a7a:	bf00      	nop
  8012a7c:	20000e98 	.word	0x20000e98
@@ -28836,7 +28836,7 @@ Disassembly of section .text:
  8012be4:	4619      	mov	r1, r3
  8012be6:	9307      	str	r3, [sp, #28]
  8012be8:	461f      	mov	r7, r3
- 8012bea:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 8012bea:	f04f 30ff 	mov.w	r0, #4294967295
  8012bee:	7863      	ldrb	r3, [r4, #1]
  8012bf0:	9005      	str	r0, [sp, #20]
  8012bf2:	f104 0b01 	add.w	fp, r4, #1
@@ -28908,7 +28908,7 @@ Disassembly of section .text:
  8012cde:	f013 0f40 	tst.w	r3, #64	; 0x40
  8012ce2:	9b06      	ldr	r3, [sp, #24]
  8012ce4:	bf18      	it	ne
- 8012ce6:	f04f 33ff 	movne.w	r3, #4294967295	; 0xffffffff
+ 8012ce6:	f04f 33ff 	movne.w	r3, #4294967295
  8012cea:	9306      	str	r3, [sp, #24]
  8012cec:	9806      	ldr	r0, [sp, #24]
  8012cee:	b041      	add	sp, #260	; 0x104
@@ -29080,7 +29080,7 @@ Disassembly of section .text:
  8012ed0:	3330      	adds	r3, #48	; 0x30
  8012ed2:	ea54 0005 	orrs.w	r0, r4, r5
  8012ed6:	f801 3c01 	strb.w	r3, [r1, #-1]
- 8012eda:	f101 32ff 	add.w	r2, r1, #4294967295	; 0xffffffff
+ 8012eda:	f101 32ff 	add.w	r2, r1, #4294967295
  8012ede:	d1ee      	bne.n	8012ebe <_svfprintf_r+0x37e>
  8012ee0:	9803      	ldr	r0, [sp, #12]
  8012ee2:	920d      	str	r2, [sp, #52]	; 0x34
@@ -29385,14 +29385,14 @@ Disassembly of section .text:
  80131ee:	ed8d 7a16 	vstr	s14, [sp, #88]	; 0x58
  80131f2:	f105 0408 	add.w	r4, r5, #8
  80131f6:	e9dd 0116 	ldrd	r0, r1, [sp, #88]	; 0x58
- 80131fa:	f04f 32ff 	mov.w	r2, #4294967295	; 0xffffffff
+ 80131fa:	f04f 32ff 	mov.w	r2, #4294967295
  80131fe:	4b1b      	ldr	r3, [pc, #108]	; (801326c <_svfprintf_r+0x72c>)
  8013200:	940b      	str	r4, [sp, #44]	; 0x2c
  8013202:	ed8d 7b10 	vstr	d7, [sp, #64]	; 0x40
  8013206:	f7ee ff73 	bl	80020f0 <__aeabi_dcmpun>
  801320a:	2800      	cmp	r0, #0
  801320c:	f040 8331 	bne.w	8013872 <_svfprintf_r+0xd32>
- 8013210:	f04f 32ff 	mov.w	r2, #4294967295	; 0xffffffff
+ 8013210:	f04f 32ff 	mov.w	r2, #4294967295
  8013214:	4b15      	ldr	r3, [pc, #84]	; (801326c <_svfprintf_r+0x72c>)
  8013216:	e9dd 0116 	ldrd	r0, r1, [sp, #88]	; 0x58
  801321a:	f7ee fbcb 	bl	80019b4 <__aeabi_dcmple>
@@ -30534,7 +30534,7 @@ Disassembly of section .text:
  8013e24:	4613      	mov	r3, r2
  8013e26:	2b09      	cmp	r3, #9
  8013e28:	f800 1c01 	strb.w	r1, [r0, #-1]
- 8013e2c:	f100 32ff 	add.w	r2, r0, #4294967295	; 0xffffffff
+ 8013e2c:	f100 32ff 	add.w	r2, r0, #4294967295
  8013e30:	dcee      	bgt.n	8013e10 <_svfprintf_r+0x12d0>
  8013e32:	3330      	adds	r3, #48	; 0x30
  8013e34:	3802      	subs	r0, #2
@@ -30640,7 +30640,7 @@ Disassembly of section .text:
  8013f36:	9a09      	ldr	r2, [sp, #36]	; 0x24
  8013f38:	230c      	movs	r3, #12
  8013f3a:	6013      	str	r3, [r2, #0]
- 8013f3c:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
+ 8013f3c:	f04f 33ff 	mov.w	r3, #4294967295
  8013f40:	9306      	str	r3, [sp, #24]
  8013f42:	f7fe bed3 	b.w	8012cec <_svfprintf_r+0x1ac>
  8013f46:	9d05      	ldr	r5, [sp, #20]
@@ -30675,7 +30675,7 @@ Disassembly of section .text:
  8013f9e:	4770      	bx	lr
  8013fa0:	238a      	movs	r3, #138	; 0x8a
  8013fa2:	6003      	str	r3, [r0, #0]
- 8013fa4:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 8013fa4:	f04f 30ff 	mov.w	r0, #4294967295
  8013fa8:	4770      	bx	lr
  8013faa:	bf00      	nop
  8013fac:	0000      	movs	r0, r0
@@ -30741,7 +30741,7 @@ Disassembly of section .text:
  8014050:	3b04      	subs	r3, #4
  8014052:	b91a      	cbnz	r2, 801405c <quorem+0xac>
  8014054:	459a      	cmp	sl, r3
- 8014056:	f107 37ff 	add.w	r7, r7, #4294967295	; 0xffffffff
+ 8014056:	f107 37ff 	add.w	r7, r7, #4294967295
  801405a:	d3f8      	bcc.n	801404e <quorem+0x9e>
  801405c:	6107      	str	r7, [r0, #16]
  801405e:	4604      	mov	r4, r0
@@ -30779,7 +30779,7 @@ Disassembly of section .text:
  80140b6:	3b04      	subs	r3, #4
  80140b8:	b91a      	cbnz	r2, 80140c2 <quorem+0x112>
  80140ba:	459a      	cmp	sl, r3
- 80140bc:	f107 37ff 	add.w	r7, r7, #4294967295	; 0xffffffff
+ 80140bc:	f107 37ff 	add.w	r7, r7, #4294967295
  80140c0:	d3f8      	bcc.n	80140b4 <quorem+0x104>
  80140c2:	6127      	str	r7, [r4, #16]
  80140c4:	4640      	mov	r0, r8
@@ -30838,7 +30838,7 @@ Disassembly of section .text:
  8014150:	f000 80c0 	beq.w	80142d4 <_dtoa_r+0x1f4>
  8014154:	4b69      	ldr	r3, [pc, #420]	; (80142fc <_dtoa_r+0x21c>)
  8014156:	9a25      	ldr	r2, [sp, #148]	; 0x94
- 8014158:	f103 3bff 	add.w	fp, r3, #4294967295	; 0xffffffff
+ 8014158:	f103 3bff 	add.w	fp, r3, #4294967295
  801415c:	6013      	str	r3, [r2, #0]
  801415e:	4658      	mov	r0, fp
  8014160:	b01b      	add	sp, #108	; 0x6c
@@ -30991,7 +30991,7 @@ Disassembly of section .text:
  8014308:	08019d20 	.word	0x08019d20
  801430c:	08019d2c 	.word	0x08019d2c
  8014310:	08016314 	.word	0x08016314
- 8014314:	f04f 34ff 	mov.w	r4, #4294967295	; 0xffffffff
+ 8014314:	f04f 34ff 	mov.w	r4, #4294967295
  8014318:	2501      	movs	r5, #1
  801431a:	e9cd 4509 	strd	r4, r5, [sp, #36]	; 0x24
  801431e:	2300      	movs	r3, #0
@@ -31298,7 +31298,7 @@ Disassembly of section .text:
  8014684:	f813 5c01 	ldrb.w	r5, [r3, #-1]
  8014688:	461c      	mov	r4, r3
  801468a:	2d39      	cmp	r5, #57	; 0x39
- 801468c:	f104 33ff 	add.w	r3, r4, #4294967295	; 0xffffffff
+ 801468c:	f104 33ff 	add.w	r3, r4, #4294967295
  8014690:	d0f5      	beq.n	801467e <_dtoa_r+0x59e>
  8014692:	3501      	adds	r5, #1
  8014694:	701d      	strb	r5, [r3, #0]
@@ -31352,7 +31352,7 @@ Disassembly of section .text:
  8014704:	f7ed f942 	bl	800198c <__aeabi_dcmpeq>
  8014708:	2800      	cmp	r0, #0
  801470a:	f47f ad81 	bne.w	8014210 <_dtoa_r+0x130>
- 801470e:	f108 33ff 	add.w	r3, r8, #4294967295	; 0xffffffff
+ 801470e:	f108 33ff 	add.w	r3, r8, #4294967295
  8014712:	9306      	str	r3, [sp, #24]
  8014714:	e57c      	b.n	8014210 <_dtoa_r+0x130>
  8014716:	9f0b      	ldr	r7, [sp, #44]	; 0x2c
@@ -31442,7 +31442,7 @@ Disassembly of section .text:
  80147e8:	f002 0201 	and.w	r2, r2, #1
  80147ec:	920a      	str	r2, [sp, #40]	; 0x28
  80147ee:	9a09      	ldr	r2, [sp, #36]	; 0x24
- 80147f0:	f10b 33ff 	add.w	r3, fp, #4294967295	; 0xffffffff
+ 80147f0:	f10b 33ff 	add.w	r3, fp, #4294967295
  80147f4:	441a      	add	r2, r3
  80147f6:	465f      	mov	r7, fp
  80147f8:	9209      	str	r2, [sp, #36]	; 0x24
@@ -31580,7 +31580,7 @@ Disassembly of section .text:
  8014948:	f814 2c02 	ldrb.w	r2, [r4, #-2]
  801494c:	461c      	mov	r4, r3
  801494e:	2a30      	cmp	r2, #48	; 0x30
- 8014950:	f104 33ff 	add.w	r3, r4, #4294967295	; 0xffffffff
+ 8014950:	f104 33ff 	add.w	r3, r4, #4294967295
  8014954:	d0f8      	beq.n	8014948 <_dtoa_r+0x868>
  8014956:	e00b      	b.n	8014970 <_dtoa_r+0x890>
  8014958:	459b      	cmp	fp, r3
@@ -31588,7 +31588,7 @@ Disassembly of section .text:
  801495e:	f813 2c01 	ldrb.w	r2, [r3, #-1]
  8014962:	461c      	mov	r4, r3
  8014964:	2a39      	cmp	r2, #57	; 0x39
- 8014966:	f104 33ff 	add.w	r3, r4, #4294967295	; 0xffffffff
+ 8014966:	f104 33ff 	add.w	r3, r4, #4294967295
  801496a:	d0f5      	beq.n	8014958 <_dtoa_r+0x878>
  801496c:	3201      	adds	r2, #1
  801496e:	701a      	strb	r2, [r3, #0]
@@ -31817,7 +31817,7 @@ Disassembly of section .text:
  8014bac:	4621      	mov	r1, r4
  8014bae:	4648      	mov	r0, r9
  8014bb0:	f000 fb06 	bl	80151c0 <_Balloc>
- 8014bb4:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
+ 8014bb4:	f04f 33ff 	mov.w	r3, #4294967295
  8014bb8:	930e      	str	r3, [sp, #56]	; 0x38
  8014bba:	9309      	str	r3, [sp, #36]	; 0x24
  8014bbc:	2301      	movs	r3, #1
@@ -32082,7 +32082,7 @@ Disassembly of section .text:
  8014e64:	4614      	mov	r4, r2
  8014e66:	f814 3c01 	ldrb.w	r3, [r4, #-1]
  8014e6a:	2b30      	cmp	r3, #48	; 0x30
- 8014e6c:	f104 32ff 	add.w	r2, r4, #4294967295	; 0xffffffff
+ 8014e6c:	f104 32ff 	add.w	r2, r4, #4294967295
  8014e70:	d0f8      	beq.n	8014e64 <_dtoa_r+0xd84>
  8014e72:	9b16      	ldr	r3, [sp, #88]	; 0x58
  8014e74:	9306      	str	r3, [sp, #24]
@@ -32888,7 +32888,7 @@ Disassembly of section .text:
  801563a:	2001      	movs	r0, #1
  801563c:	bc30      	pop	{r4, r5}
  801563e:	4770      	bx	lr
- 8015640:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 8015640:	f04f 30ff 	mov.w	r0, #4294967295
  8015644:	e7fa      	b.n	801563c <__mcmp+0x2c>
  8015646:	bf00      	nop
 	...
@@ -33144,7 +33144,7 @@ Disassembly of section .text:
  80158e0:	89a3      	ldrh	r3, [r4, #12]
  80158e2:	2200      	movs	r2, #0
  80158e4:	f043 0340 	orr.w	r3, r3, #64	; 0x40
- 80158e8:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 80158e8:	f04f 30ff 	mov.w	r0, #4294967295
  80158ec:	81a3      	strh	r3, [r4, #12]
  80158ee:	e9c8 2201 	strd	r2, r2, [r8, #4]
  80158f2:	b003      	add	sp, #12

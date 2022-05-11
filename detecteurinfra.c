@@ -14,23 +14,35 @@
 #include <audio_processing.h>
 #include "selector.h"
 
+#define THREADSIZE 256
 #define INITIAL_SPEED 100
 #define SPEED_CHOREE 1000
+#define ZERO 0
+#define SELECTOR 5
+#define DISTANCE_SEUIL 55
+#define TEMPS_NONANTE_DEGRES_INITIAL_SPEED 3270
+#define CENTMS 100
+#define SPEED_OFF 0
+#define TEMPO_ROULER 400
+#define ATTENTE_DEMARRER 3000
+#define TEMPS_QUARANTECINQ_DEGRES 165
+#define TEMPS_TOURS_DEGRES  2970
+#define TEMPS_CENTQUATREVINGT_DEGRES 670
+#define TEMPS_NONANTE_DEGRES_CHOREE_SPEED 340
 
-
-static THD_WORKING_AREA(waDetecteurDistance, 256);
+static THD_WORKING_AREA(waDetecteurDistance, THREADSIZE);
 static THD_FUNCTION(DetecteurDistance, arg) {
 
     chRegSetThreadName(__FUNCTION__);
     (void)arg;
 
     while(1){
-			uint16_t distance = 0;
+			uint16_t distance = ZERO;
 
 	       int selecteur = get_selector();
 
 	      //selection du mode choregraphie ou mode Cirque
-	     if(selecteur == 5){
+	     if(selecteur == SELECTOR){
 	    	laChoreeDeReggaeton();
 	     }
 
@@ -40,7 +52,7 @@ static THD_FUNCTION(DetecteurDistance, arg) {
 	    	 float speed = get_speed_coeff();
 	    	 bool direction = get_direction(); //receive direction, going left or right, from the Thread of audio processing
 
-	        if ((distance < 55) && speed!=0){
+	        if ((distance < DISTANCE_SEUIL) && speed!=ZERO){
 
 	        	if (direction) {
 	        	 right_motor_set_speed(-INITIAL_SPEED); //turn right of 90deg
@@ -49,7 +61,7 @@ static THD_FUNCTION(DetecteurDistance, arg) {
 	        	 right_motor_set_speed(INITIAL_SPEED); //turn left of 90deg
 	        	 left_motor_set_speed(-INITIAL_SPEED);
 	        	}
-	        	 chThdSleepMilliseconds(3270);
+	        	 chThdSleepMilliseconds(TEMPS_NONANTE_DEGRES_INITIAL_SPEED);
 	        } else {
 	        	left_motor_set_speed(INITIAL_SPEED*speed); //going forward with speed depending on the frequency (100step/s by default)
 	        	right_motor_set_speed(INITIAL_SPEED*speed);
@@ -57,7 +69,7 @@ static THD_FUNCTION(DetecteurDistance, arg) {
 	     }
     }
 
-	chThdSleepMilliseconds(100);
+	chThdSleepMilliseconds(CENTMS);
 }
 
 void startDetecteur(void){
@@ -66,76 +78,76 @@ void startDetecteur(void){
 
 
 void laChoreeDeReggaeton(void){
-	chThdSleepMilliseconds(3000);
+	chThdSleepMilliseconds(ATTENTE_DEMARRER);
 
 	right_motor_set_speed(-SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE);
-	chThdSleepMilliseconds(165);   //toure de 45 degr�s
+	chThdSleepMilliseconds(TEMPS_QUARANTECINQ_DEGRES);   //toure de 45 degr�s
 
 	right_motor_set_speed(SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE); //devant
-	chThdSleepMilliseconds(1400);
+	chThdSleepMilliseconds(TEMPO_ROULER);
 	right_motor_set_speed(-SPEED_CHOREE);
 	left_motor_set_speed(-SPEED_CHOREE); //derri�re
-	chThdSleepMilliseconds(1400);
+	chThdSleepMilliseconds(TEMPO_ROULER);
 
 	right_motor_set_speed(SPEED_CHOREE);
 	left_motor_set_speed(-SPEED_CHOREE); //tour de 90 degr�s
-	chThdSleepMilliseconds(340);
+	chThdSleepMilliseconds(TEMPS_NONANTE_DEGRES_CHOREE_SPEED);
 
 	right_motor_set_speed(SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE); //devant
-	chThdSleepMilliseconds(1400);
+	chThdSleepMilliseconds(TEMPO_ROULER);
 	right_motor_set_speed(-SPEED_CHOREE);
 	left_motor_set_speed(-SPEED_CHOREE);  //derri�re
-	chThdSleepMilliseconds(1400);
+	chThdSleepMilliseconds(TEMPO_ROULER);
 
 	right_motor_set_speed(-SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE);
-	chThdSleepMilliseconds(165);   //toure de 45 degr�s
+	chThdSleepMilliseconds(TEMPS_QUARANTECINQ_DEGRES);   //toure de 45 degr�s
 
 	right_motor_set_speed(SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE); //devant
-	chThdSleepMilliseconds(1400);
+	chThdSleepMilliseconds(TEMPO_ROULER);
 	right_motor_set_speed(-SPEED_CHOREE); //derri�re
 	left_motor_set_speed(-SPEED_CHOREE);
-	chThdSleepMilliseconds(1400);
+	chThdSleepMilliseconds(TEMPO_ROULER);
 	right_motor_set_speed(-SPEED_CHOREE); //derri�re
 	left_motor_set_speed(-SPEED_CHOREE);
-	chThdSleepMilliseconds(1400);
+	chThdSleepMilliseconds(TEMPO_ROULER);
 	right_motor_set_speed(SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE); //devant
-	chThdSleepMilliseconds(1400);
+	chThdSleepMilliseconds(TEMPO_ROULER);
 
 	right_motor_set_speed(-SPEED_CHOREE);
-	left_motor_set_speed(SPEED_CHOREE);  //tour et quart
-	chThdSleepMilliseconds(1630);
+	left_motor_set_speed(SPEED_CHOREE);  //nonante
+	chThdSleepMilliseconds(TEMPS_NONANTE_DEGRES_CHOREE_SPEED);
 
 	right_motor_set_speed(SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE); //devant
-	chThdSleepMilliseconds(1400);
+	chThdSleepMilliseconds(TEMPO_ROULER);
 	right_motor_set_speed(-SPEED_CHOREE); //derri�re
 	left_motor_set_speed(-SPEED_CHOREE);
-	chThdSleepMilliseconds(1400);
+	chThdSleepMilliseconds(TEMPO_ROULER);
 
 	right_motor_set_speed(SPEED_CHOREE);
 	left_motor_set_speed(-SPEED_CHOREE); //tour de 180 degr�s
-	chThdSleepMilliseconds(670);
+	chThdSleepMilliseconds(TEMPS_CENTQUATREVINGT_DEGRES);
 
 	right_motor_set_speed(SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE); //devant
-	chThdSleepMilliseconds(1400);
+	chThdSleepMilliseconds(TEMPO_ROULER);
 	right_motor_set_speed(-SPEED_CHOREE); //derri�re
 	left_motor_set_speed(-SPEED_CHOREE);
-	chThdSleepMilliseconds(1400);
+	chThdSleepMilliseconds(TEMPO_ROULER);
 
 	right_motor_set_speed(-SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE);  //tour et quart
-	chThdSleepMilliseconds(2970);
+	chThdSleepMilliseconds(TEMPS_TOURS_DEGRES);
 
-	right_motor_set_speed(0);
-	left_motor_set_speed(0);
+	right_motor_set_speed(SPEED_OFF);
+	left_motor_set_speed(SPEED_OFF);
 
-	chThdSleepMilliseconds(3000);
+	chThdSleepMilliseconds(ATTENTE_DEMARRER);
 
 }
