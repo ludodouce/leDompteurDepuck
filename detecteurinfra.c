@@ -24,16 +24,15 @@
 #define TEMPS_NONANTE_DEGRES_INITIAL_SPEED 3270
 #define CENTMS 100
 #define SPEED_OFF 0
-#define TEMPO_ROULER 580
+#define TEMPO_ROULER 630
 #define ATTENTE_DEMARRER 3000
 #define TEMPS_QUARANTECINQ_DEGRES 165
 #define TEMPS_TOURS_DEGRES  2970
 #define TEMPS_CENTQUATREVINGT_DEGRES 670
 #define TEMPS_NONANTE_DEGRES_CHOREE_SPEED 340
 
-static int ti;
 static bool stop_audio = false;
-static BSEMAPHORE_DECL(Stop_Audio, TRUE);
+static BSEMAPHORE_DECL(Stop_Audio, FALSE); //sem pour eviter d'utiliser les ressources de processaudio pour rien
 
 static THD_WORKING_AREA(waDetecteurDistance, THREADSIZE);
 static THD_FUNCTION(DetecteurDistance, arg) {
@@ -50,7 +49,9 @@ static THD_FUNCTION(DetecteurDistance, arg) {
 	     if(selecteur == SELECTOR){
 	    	 stop_audio = true;
 	    	laChoreeDeReggaeton();
+
 	     }else{
+		     chBSemSignal(&Stop_Audio); //signal pour reutiliser process audio
 		     stop_audio = false;
 	    	 distance = VL53L0X_get_dist_mm(); //receive distance in mm from the Thread of the ToF
 	    	 float speed = get_speed_coeff();
@@ -71,9 +72,6 @@ static THD_FUNCTION(DetecteurDistance, arg) {
 	        	right_motor_set_speed(INITIAL_SPEED*speed);
 	        }
 	     }
-	     ti=ti+1;
-	     chprintf((BaseSequentialStream*)&SD3, "time_detecteur = %d \n", ti);
-	     chThdYield();
     }
 
 }
@@ -155,12 +153,10 @@ void laChoreeDeReggaeton(void){ //toute la choree
 	left_motor_set_speed(SPEED_OFF);
 
 	chThdSleepMilliseconds(ATTENTE_DEMARRER);
-	chBSemSignal(&Stop_Audio);
 }
 
 void get_StopAudioSem(void){
 	chBSemWait(&Stop_Audio);
-	return;
 }
 
 _Bool get_stopAudio(void){

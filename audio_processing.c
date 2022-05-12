@@ -7,7 +7,6 @@
 #include <motors.h>
 #include <audio/microphone.h>
 #include <audio_processing.h>
-#include <communications.h>
 #include <fft.h>
 #include <arm_math.h>
 #include <leds.h>
@@ -28,7 +27,6 @@ static float micFront_output[FFT_SIZE];
 static float micBack_output[FFT_SIZE];
 static float speed_coeff;
 static bool direction;
-static int t;
 
 
 #define MIN_VALUE_THRESHOLD	30000
@@ -206,6 +204,8 @@ void processAudioData(int16_t *data, uint16_t num_samples){
 	bool stop=get_stopAudio();
 
 	if(stop){
+		speed_coeff = 0;
+		clear_leds();
 		get_StopAudioSem();
 	}
 
@@ -267,8 +267,6 @@ void processAudioData(int16_t *data, uint16_t num_samples){
 		mustSend++;
 
 		sound_remote(micLeft_output,micRight_output,micFront_output,micBack_output);
-		t=t+1;
-		chprintf((BaseSequentialStream*)&SD3, "time_audio = %d \n", t);
 	}
 }
 
