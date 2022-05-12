@@ -1,6 +1,6 @@
 
-build/Noisy.elf:     file format elf32-littlearm
-build/Noisy.elf
+build/DompteurDepuck.elf:     file format elf32-littlearm
+build/DompteurDepuck.elf
 architecture: arm, flags 0x00000112:
 EXEC_P, HAS_SYMS, D_PAGED
 start address 0x080001c1
@@ -64,13 +64,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
  21 .debug_ranges 000046f0  00000000  00000000  001565d8  2**0
                   CONTENTS, READONLY, DEBUGGING
- 22 .debug_line   00030555  00000000  00000000  0015acc8  2**0
+ 22 .debug_line   0002f997  00000000  00000000  0015acc8  2**0
                   CONTENTS, READONLY, DEBUGGING
- 23 .debug_str    0000c052  00000000  00000000  0018b21d  2**0
+ 23 .debug_str    0000bf32  00000000  00000000  0018a65f  2**0
                   CONTENTS, READONLY, DEBUGGING
- 24 .debug_frame  0000a038  00000000  00000000  00197270  2**2
+ 24 .debug_frame  0000a038  00000000  00000000  00196594  2**2
                   CONTENTS, READONLY, DEBUGGING
- 25 .debug_loc    00022b34  00000000  00000000  001a12a8  2**0
+ 25 .debug_loc    00022b34  00000000  00000000  001a05cc  2**0
                   CONTENTS, READONLY, DEBUGGING
 SYMBOL TABLE:
 08000000 l    d  startup	00000000 startup
