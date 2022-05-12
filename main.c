@@ -13,6 +13,7 @@
 
 #include <audio_processing.h>
 #include <fft.h>
+#include <communications.h>
 #include <arm_math.h>
 #include <sensors/VL53L0X/VL53L0X.h>
 #include <detecteurinfra.h>
@@ -22,7 +23,7 @@
 #define SERIALCONFIG 115200,0,0,0,
 #define TRUE 1
 
-
+static int tim;
 static void serial_start(void)
 {
 	//serial config pour la communication
@@ -57,7 +58,9 @@ int main(void)
     /* Infinite loop. */
     while (TRUE) {
 
-      //waits until a result must be sent to the computer
+        //waits until a result must be sent to the computer
+    tim=tim+1;
+    chprintf((BaseSequentialStream*)&SD3, "time_main = %d \n", tim);
     wait_send_to_computer();
     chThdSleepMilliseconds(CENTMILIS);
     }

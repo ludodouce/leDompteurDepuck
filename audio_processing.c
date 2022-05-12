@@ -11,7 +11,6 @@
 #include <fft.h>
 #include <arm_math.h>
 #include <leds.h>
-#include "selector.h"
 #include <detecteurinfra.h>
 
 //semaphore
@@ -74,8 +73,7 @@ static int t;
  */
 void led_mon(float left, float right, float front, float back) {
 	//fonction qui g�re la gestion de l'allumage des LEDs suivant la provenance du son
-	int select = get_selector();
-	if (select!=SELECTORVALUE) { //seulement si le mode chor�e n'est pas activ�e
+	//seulement si le mode chor�e n'est pas activ�e
 	if ((right > left)){	//compare l'intensit�
 		direction = true;	//choisit la direction o� tourner
 			if (front > back) {	//compare l'intensit�
@@ -129,7 +127,6 @@ void led_mon(float left, float right, float front, float back) {
 		} else {
 			clear_leds();
 		}
-	}
 }
 
 /*
@@ -170,13 +167,10 @@ void sound_remote(float* data_L, float* data_R, float* data_F, float* data_B){
 	//condition pour les fr�quences pour allumer le robot
 
 	if((max_norm_index_left >= NORM_INDEX_MIN_LEFT && max_norm_index_left <= NORM_INDEX_MAX_LEFT) && max_norm_left > LEFT_VALUE_MIN){ // 1015.625Hz et 1093.75Hz
-		int selector = get_selector();
-
-		if(selector != SELECTORVALUE){ //fonctionne seulement s'il n'est pas dans le mode chor�e
+		//fonctionne seulement s'il n'est pas dans le mode chor�e
 		allumer = !allumer;
 		speed_coeff=allumer;
 		chThdSleepMilliseconds(DEUXMILLEMILIS);
-			}
 		}
 	if (allumer) {
 		speed_coeff=SPEED_ON;		//envoie la vitesse pour allumer ou eteindre le robot
