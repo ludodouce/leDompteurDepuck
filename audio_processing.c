@@ -7,10 +7,12 @@
 #include <motors.h>
 #include <audio/microphone.h>
 #include <audio_processing.h>
+#include <communications.h>
 #include <fft.h>
 #include <arm_math.h>
 #include <leds.h>
 #include "selector.h"
+#include <detecteurinfra.h>
 
 //semaphore
 static BSEMAPHORE_DECL(sendToComputer_sem, TRUE);
@@ -27,6 +29,7 @@ static float micFront_output[FFT_SIZE];
 static float micBack_output[FFT_SIZE];
 static float speed_coeff;
 static bool direction;
+static int t;
 
 
 #define MIN_VALUE_THRESHOLD	30000
@@ -70,15 +73,12 @@ static bool direction;
  * of the source of the sound by comparing the intensity perceived by M1 (back mic), M2 (left mic), M3 (right mic), M4 (front mic)
  */
 void led_mon(float left, float right, float front, float back) {
-	//fonction qui gère la gestion de l'allumage des LEDs suivant la provenance du son
+	//fonction qui gï¿½re la gestion de l'allumage des LEDs suivant la provenance du son
 	int select = get_selector();
-
-	if (select!=SELECTORVALUE) { //seulement si le mode chorée n'est pas activée
-
-	if ((right > left)){	//compare l'intensité
-		direction = true;	//choisit la direction où tourner
-
-			if (front > back) {	//compare l'intensité
+	if (select!=SELECTORVALUE) { //seulement si le mode chorï¿½e n'est pas activï¿½e
+	if ((right > left)){	//compare l'intensitï¿½
+		direction = true;	//choisit la direction oï¿½ tourner
+			if (front > back) {	//compare l'intensitï¿½
 				if (abs(right-front)<IN_BETWEEN_FRONT){
 					clear_leds();	//efface les LEDs deja allumee puis allume la led desiree
 					set_rgb_led(LED2,GREEN);
@@ -103,7 +103,6 @@ void led_mon(float left, float right, float front, float back) {
 			}
 		} else if ((right < left)) {
 			direction = false;		//retient de tourner dans l'autre direction
-
 			if (front > back) {
 						if (abs(front-left)<IN_BETWEEN_FRONT) {
 							clear_leds();
@@ -139,7 +138,6 @@ void led_mon(float left, float right, float front, float back) {
 */
 
 void sound_remote(float* data_L, float* data_R, float* data_F, float* data_B){
-
 	float max_norm_left = MIN_VALUE_THRESHOLD;
 	float max_norm_front = MIN_VALUE_THRESHOLD;
 	float max_norm_back = MIN_VALUE_THRESHOLD;
@@ -169,12 +167,12 @@ void sound_remote(float* data_L, float* data_R, float* data_F, float* data_B){
 	//rapport au deux micros pour former les zones (rapport + justesse du code).
 	led_mon(max_norm_left,max_norm_right,max_norm_front,max_norm_back);
 
-	//condition pour les fréquences pour allumer le robot
+	//condition pour les frï¿½quences pour allumer le robot
 
 	if((max_norm_index_left >= NORM_INDEX_MIN_LEFT && max_norm_index_left <= NORM_INDEX_MAX_LEFT) && max_norm_left > LEFT_VALUE_MIN){ // 1015.625Hz et 1093.75Hz
 		int selector = get_selector();
 
-		if(selector != SELECTORVALUE){ //fonctionne seulement s'il n'est pas dans le mode chorée
+		if(selector != SELECTORVALUE){ //fonctionne seulement s'il n'est pas dans le mode chorï¿½e
 		allumer = !allumer;
 		speed_coeff=allumer;
 		chThdSleepMilliseconds(DEUXMILLEMILIS);
@@ -211,6 +209,11 @@ void processAudioData(int16_t *data, uint16_t num_samples){
 
 	static uint16_t nb_samples = ZERO;
 	static uint8_t mustSend = ZERO;
+	bool stop=get_stopAudio();
+
+	if(stop){
+		get_StopAudioSem();
+	}
 
 	//loop to fill the buffers
 	for(uint16_t i = ZERO ; i < num_samples ; i+=MICRO_NB){
@@ -265,11 +268,13 @@ void processAudioData(int16_t *data, uint16_t num_samples){
 			//signals to send the result to the computer
 			chBSemSignal(&sendToComputer_sem);
 			mustSend = ZERO;
-		}
+		} //ICI y'a des bailles ï¿½ enlever
 		nb_samples = ZERO;
 		mustSend++;
 
 		sound_remote(micLeft_output,micRight_output,micFront_output,micBack_output);
+		t=t+1;
+		chprintf((BaseSequentialStream*)&SD3, "time_audio = %d \n", t);
 	}
 }
 

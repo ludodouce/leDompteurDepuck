@@ -1,7 +1,7 @@
 /*
  * detecteurinfra.c
  *
- *  Created on: 10 avr. 2022
+ *  Created on: 29 avr. 2022
  *      Author: ludo
  */
 
@@ -13,6 +13,7 @@
 #include <chprintf.h>
 #include <audio_processing.h>
 #include "selector.h"
+#include <stdbool.h>
 
 #define THREADSIZE 256
 #define INITIAL_SPEED 100
@@ -30,6 +31,10 @@
 #define TEMPS_CENTQUATREVINGT_DEGRES 670
 #define TEMPS_NONANTE_DEGRES_CHOREE_SPEED 340
 
+static int ti;
+static bool stop_audio = false;
+static BSEMAPHORE_DECL(Stop_Audio, TRUE);
+
 static THD_WORKING_AREA(waDetecteurDistance, THREADSIZE);
 static THD_FUNCTION(DetecteurDistance, arg) {
 
@@ -43,11 +48,10 @@ static THD_FUNCTION(DetecteurDistance, arg) {
 
 	      //selection du mode choregraphie ou mode Cirque
 	     if(selecteur == SELECTOR){
+	    	 stop_audio = true;
 	    	laChoreeDeReggaeton();
-	     }
-
-	     else{
-
+	     }else{
+		     stop_audio = false;
 	    	 distance = VL53L0X_get_dist_mm(); //receive distance in mm from the Thread of the ToF
 	    	 float speed = get_speed_coeff();
 	    	 bool direction = get_direction(); //receive direction, going left or right, from the Thread of audio processing
@@ -67,6 +71,9 @@ static THD_FUNCTION(DetecteurDistance, arg) {
 	        	right_motor_set_speed(INITIAL_SPEED*speed);
 	        }
 	     }
+	     ti=ti+1;
+	     chprintf((BaseSequentialStream*)&SD3, "time_detecteur = %d \n", ti);
+	     chThdYield();
     }
 
 }
@@ -148,5 +155,14 @@ void laChoreeDeReggaeton(void){ //toute la choree
 	left_motor_set_speed(SPEED_OFF);
 
 	chThdSleepMilliseconds(ATTENTE_DEMARRER);
+	chBSemSignal(&Stop_Audio);
+}
 
+void get_StopAudioSem(void){
+	chBSemWait(&Stop_Audio);
+	return;
+}
+
+_Bool get_stopAudio(void){
+	return stop_audio;
 }
