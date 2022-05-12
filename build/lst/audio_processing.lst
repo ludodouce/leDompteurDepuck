@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -28,7 +28,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
   25              	led_mon.part.0:
   26              	.LFB297:
   27              		.file 1 "audio_processing.c"
-  28              		.loc 1 73 0
+  28              		.loc 1 72 0
   29              		.cfi_startproc
   30              		@ args = 0, pretend = 0, frame = 8
   31              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -41,30 +41,30 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
   38 0002 6A4C     		ldr	r4, .L49
   39 0004 83B0     		sub	sp, sp, #12
   40              		.cfi_def_cfa_offset 24
-  41              		.loc 1 77 0
+  41              		.loc 1 78 0
   42 0006 F4EEC00A 		vcmpe.f32	s1, s0
-  43              		.loc 1 73 0
+  43              		.loc 1 72 0
   44 000a 2368     		ldr	r3, [r4]
   45 000c 0193     		str	r3, [sp, #4]
-  46              		.loc 1 77 0
+  46              		.loc 1 78 0
   47 000e F1EE10FA 		vmrs	APSR_nzcv, FPSCR
   48 0012 29DD     		ble	.L34
-  49              		.loc 1 78 0
+  49              		.loc 1 79 0
   50 0014 664B     		ldr	r3, .L49+4
-  51              		.loc 1 79 0
+  51              		.loc 1 81 0
   52 0016 B4EEE11A 		vcmpe.f32	s2, s3
-  53              		.loc 1 78 0
+  53              		.loc 1 79 0
   54 001a 0125     		movs	r5, #1
-  55              		.loc 1 79 0
+  55              		.loc 1 81 0
   56 001c F1EE10FA 		vmrs	APSR_nzcv, FPSCR
-  57              		.loc 1 78 0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 2
+  57              		.loc 1 79 0
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 2
 
 
   58 0020 1D70     		strb	r5, [r3]
-  59              		.loc 1 79 0
+  59              		.loc 1 81 0
   60 0022 49DD     		ble	.L35
-  61              		.loc 1 80 0
+  61              		.loc 1 82 0
   62 0024 70EEC17A 		vsub.f32	s15, s1, s2
   63 0028 47F22E52 		movw	r2, #29998
   64 002c FDEEE77A 		vcvt.s32.f32	s15, s15
@@ -73,22 +73,22 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
   67 0038 1733     		adds	r3, r3, #23
   68 003a 9342     		cmp	r3, r2
   69 003c 40F28680 		bls	.L44
-  70              		.loc 1 83 0
+  70              		.loc 1 85 0
   71 0040 F4EEC10A 		vcmpe.f32	s1, s2
   72 0044 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
   73 0048 40F18A80 		bpl	.L8
   74              	.L22:
-  75              		.loc 1 84 0
+  75              		.loc 1 86 0
   76 004c FFF7FEFF 		bl	clear_leds
   77              	.LVL1:
-  78              		.loc 1 85 0
+  78              		.loc 1 87 0
   79 0050 019A     		ldr	r2, [sp, #4]
   80 0052 2368     		ldr	r3, [r4]
   81 0054 9A42     		cmp	r2, r3
   82 0056 40F0A680 		bne	.L41
   83 005a 0121     		movs	r1, #1
   84 005c 0020     		movs	r0, #0
-  85              		.loc 1 131 0
+  85              		.loc 1 134 0
   86 005e 03B0     		add	sp, sp, #12
   87              		.cfi_remember_state
   88              		.cfi_def_cfa_offset 12
@@ -98,27 +98,27 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
   92              		.cfi_restore 5
   93              		.cfi_restore 4
   94              		.cfi_def_cfa_offset 0
-  95              		.loc 1 88 0
+  95              		.loc 1 90 0
   96 0064 FFF7FEBF 		b	set_led
   97              	.LVL2:
   98              	.L34:
   99              		.cfi_restore_state
- 100              		.loc 1 102 0
+ 100              		.loc 1 104 0
  101 0068 58D5     		bpl	.L36
- 102              		.loc 1 103 0
+ 102              		.loc 1 105 0
  103 006a 514B     		ldr	r3, .L49+4
- 104              		.loc 1 104 0
+ 104              		.loc 1 107 0
  105 006c B4EEE11A 		vcmpe.f32	s2, s3
- 106              		.loc 1 103 0
+ 106              		.loc 1 105 0
  107 0070 0025     		movs	r5, #0
- 108              		.loc 1 104 0
+ 108              		.loc 1 107 0
  109 0072 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
- 110              		.loc 1 103 0
+ 110              		.loc 1 105 0
  111 0076 1D70     		strb	r5, [r3]
- 112              		.loc 1 104 0
+ 112              		.loc 1 107 0
  113 0078 3DDC     		bgt	.L45
- 114              		.loc 1 116 0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 3
+ 114              		.loc 1 119 0
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 3
 
 
  115 007a 70EE617A 		vsub.f32	s15, s0, s3
@@ -129,22 +129,22 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  120 008e 1F32     		adds	r2, r2, #31
  121 0090 9A42     		cmp	r2, r3
  122 0092 72D9     		bls	.L46
- 123              		.loc 1 119 0
+ 123              		.loc 1 122 0
  124 0094 B4EEE10A 		vcmpe.f32	s0, s3
  125 0098 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
  126 009c 1ED4     		bmi	.L26
  127              	.L27:
- 128              		.loc 1 112 0
+ 128              		.loc 1 115 0
  129 009e FFF7FEFF 		bl	clear_leds
  130              	.LVL3:
- 131              		.loc 1 113 0
+ 131              		.loc 1 116 0
  132 00a2 019A     		ldr	r2, [sp, #4]
  133 00a4 2368     		ldr	r3, [r4]
  134 00a6 9A42     		cmp	r2, r3
  135 00a8 7DD1     		bne	.L41
  136 00aa 0121     		movs	r1, #1
  137 00ac 0320     		movs	r0, #3
- 138              		.loc 1 131 0
+ 138              		.loc 1 134 0
  139 00ae 03B0     		add	sp, sp, #12
  140              		.cfi_remember_state
  141              		.cfi_def_cfa_offset 12
@@ -154,12 +154,12 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  145              		.cfi_restore 5
  146              		.cfi_restore 4
  147              		.cfi_def_cfa_offset 0
- 148              		.loc 1 88 0
+ 148              		.loc 1 90 0
  149 00b4 FFF7FEBF 		b	set_led
  150              	.LVL4:
  151              	.L35:
  152              		.cfi_restore_state
- 153              		.loc 1 91 0
+ 153              		.loc 1 93 0
  154 00b8 70EEE17A 		vsub.f32	s15, s1, s3
  155 00bc 49F63E42 		movw	r2, #39998
  156 00c0 FDEEE77A 		vcvt.s32.f32	s15, s15
@@ -168,17 +168,17 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  159 00cc 1F33     		adds	r3, r3, #31
  160 00ce 9342     		cmp	r3, r2
  161 00d0 2DD9     		bls	.L47
- 162              		.loc 1 94 0
+ 162              		.loc 1 96 0
  163 00d2 F4EEE10A 		vcmpe.f32	s1, s3
  164 00d6 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
  165 00da 41D5     		bpl	.L8
  166              	.L26:
- 167              		.loc 1 95 0
+ 167              		.loc 1 97 0
  168 00dc FFF7FEFF 		bl	clear_leds
  169              	.LVL5:
- 170              		.loc 1 96 0
+ 170              		.loc 1 98 0
  171 00e0 019A     		ldr	r2, [sp, #4]
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 4
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 4
 
 
  172 00e2 2368     		ldr	r3, [r4]
@@ -186,7 +186,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  174 00e6 5ED1     		bne	.L41
  175 00e8 0121     		movs	r1, #1
  176 00ea 0220     		movs	r0, #2
- 177              		.loc 1 131 0
+ 177              		.loc 1 134 0
  178 00ec 03B0     		add	sp, sp, #12
  179              		.cfi_remember_state
  180              		.cfi_def_cfa_offset 12
@@ -196,12 +196,12 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  184              		.cfi_restore 5
  185              		.cfi_restore 4
  186              		.cfi_def_cfa_offset 0
- 187              		.loc 1 88 0
+ 187              		.loc 1 90 0
  188 00f2 FFF7FEBF 		b	set_led
  189              	.LVL6:
  190              	.L45:
  191              		.cfi_restore_state
- 192              		.loc 1 105 0
+ 192              		.loc 1 108 0
  193 00f6 71EE407A 		vsub.f32	s15, s2, s0
  194 00fa 47F22E53 		movw	r3, #29998
  195 00fe FDEEE77A 		vcvt.s32.f32	s15, s15
@@ -210,18 +210,18 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  198 010a 1732     		adds	r2, r2, #23
  199 010c 9A42     		cmp	r2, r3
  200 010e 3FD9     		bls	.L48
- 201              		.loc 1 108 0
+ 201              		.loc 1 111 0
  202 0110 B4EEC10A 		vcmpe.f32	s0, s2
  203 0114 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
  204 0118 98D4     		bmi	.L22
  205 011a C0E7     		b	.L27
  206              	.L36:
- 207              		.loc 1 128 0
+ 207              		.loc 1 131 0
  208 011c 019A     		ldr	r2, [sp, #4]
  209 011e 2368     		ldr	r3, [r4]
  210 0120 9A42     		cmp	r2, r3
  211 0122 40D1     		bne	.L41
- 212              		.loc 1 131 0
+ 212              		.loc 1 134 0
  213 0124 03B0     		add	sp, sp, #12
  214              		.cfi_remember_state
  215              		.cfi_def_cfa_offset 12
@@ -231,18 +231,18 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  219              		.cfi_restore 5
  220              		.cfi_restore 4
  221              		.cfi_def_cfa_offset 0
- 222              		.loc 1 128 0
+ 222              		.loc 1 131 0
  223 012a FFF7FEBF 		b	clear_leds
  224              	.LVL7:
  225              	.L47:
  226              		.cfi_restore_state
- 227              		.loc 1 92 0
+ 227              		.loc 1 94 0
  228 012e FFF7FEFF 		bl	clear_leds
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 5
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 5
 
 
  229              	.LVL8:
- 230              		.loc 1 93 0
+ 230              		.loc 1 95 0
  231 0132 019A     		ldr	r2, [sp, #4]
  232 0134 2368     		ldr	r3, [r4]
  233 0136 9A42     		cmp	r2, r3
@@ -253,7 +253,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  238              	.L39:
  239 0140 6422     		movs	r2, #100
  240              	.L42:
- 241              		.loc 1 131 0
+ 241              		.loc 1 134 0
  242 0142 03B0     		add	sp, sp, #12
  243              		.cfi_remember_state
  244              		.cfi_def_cfa_offset 12
@@ -263,15 +263,15 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  248              		.cfi_restore 5
  249              		.cfi_restore 4
  250              		.cfi_def_cfa_offset 0
- 251              		.loc 1 93 0
+ 251              		.loc 1 95 0
  252 0148 FFF7FEBF 		b	set_rgb_led
  253              	.LVL9:
  254              	.L44:
  255              		.cfi_restore_state
- 256              		.loc 1 81 0
+ 256              		.loc 1 83 0
  257 014c FFF7FEFF 		bl	clear_leds
  258              	.LVL10:
- 259              		.loc 1 82 0
+ 259              		.loc 1 84 0
  260 0150 019A     		ldr	r2, [sp, #4]
  261 0152 2368     		ldr	r3, [r4]
  262 0154 9A42     		cmp	r2, r3
@@ -282,38 +282,38 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  267 015e EFE7     		b	.L39
  268              	.LVL11:
  269              	.L8:
- 270              		.loc 1 87 0
+ 270              		.loc 1 89 0
  271 0160 FFF7FEFF 		bl	clear_leds
  272              	.LVL12:
- 273              		.loc 1 88 0
+ 273              		.loc 1 90 0
  274 0164 019A     		ldr	r2, [sp, #4]
  275 0166 2368     		ldr	r3, [r4]
  276 0168 9A42     		cmp	r2, r3
  277 016a 1CD1     		bne	.L41
  278 016c 0121     		movs	r1, #1
  279 016e 0846     		mov	r0, r1
- 280              		.loc 1 131 0
+ 280              		.loc 1 134 0
  281 0170 03B0     		add	sp, sp, #12
  282              		.cfi_remember_state
  283              		.cfi_def_cfa_offset 12
  284              		@ sp needed
  285 0172 BDE83040 		pop	{r4, r5, lr}
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 6
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 6
 
 
  286              		.cfi_restore 14
  287              		.cfi_restore 5
  288              		.cfi_restore 4
  289              		.cfi_def_cfa_offset 0
- 290              		.loc 1 88 0
+ 290              		.loc 1 90 0
  291 0176 FFF7FEBF 		b	set_led
  292              	.LVL13:
  293              	.L46:
  294              		.cfi_restore_state
- 295              		.loc 1 117 0
+ 295              		.loc 1 120 0
  296 017a FFF7FEFF 		bl	clear_leds
  297              	.LVL14:
- 298              		.loc 1 118 0
+ 298              		.loc 1 121 0
  299 017e 019A     		ldr	r2, [sp, #4]
  300 0180 2368     		ldr	r3, [r4]
  301 0182 9A42     		cmp	r2, r3
@@ -325,10 +325,10 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  307 018e D8E7     		b	.L42
  308              	.LVL15:
  309              	.L48:
- 310              		.loc 1 106 0
+ 310              		.loc 1 109 0
  311 0190 FFF7FEFF 		bl	clear_leds
  312              	.LVL16:
- 313              		.loc 1 107 0
+ 313              		.loc 1 110 0
  314 0194 019A     		ldr	r2, [sp, #4]
  315 0196 2368     		ldr	r3, [r4]
  316 0198 9A42     		cmp	r2, r3
@@ -339,7 +339,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  321 01a2 0320     		movs	r0, #3
  322 01a4 CDE7     		b	.L42
  323              	.L41:
- 324              		.loc 1 128 0
+ 324              		.loc 1 131 0
  325 01a6 FFF7FEFF 		bl	__stack_chk_fail
  326              	.LVL17:
  327              	.L50:
@@ -358,13 +358,13 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  340              		.thumb
  341              		.thumb_func
  342              		.fpu fpv4-sp-d16
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 7
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 7
 
 
  343              		.type	led_mon, %function
  344              	led_mon:
  345              	.LFB290:
- 346              		.loc 1 73 0
+ 346              		.loc 1 72 0
  347              		.cfi_startproc
  348              		@ args = 0, pretend = 0, frame = 8
  349              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -382,14 +382,14 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  361 0006 154C     		ldr	r4, .L57
  362 0008 82B0     		sub	sp, sp, #8
  363              		.cfi_def_cfa_offset 32
- 364              		.loc 1 73 0
+ 364              		.loc 1 72 0
  365 000a 2368     		ldr	r3, [r4]
  366 000c 0193     		str	r3, [sp, #4]
  367 000e B0EE408A 		vmov.f32	s16, s0
  368 0012 F0EE608A 		vmov.f32	s17, s1
  369 0016 B0EE419A 		vmov.f32	s18, s2
  370 001a F0EE619A 		vmov.f32	s19, s3
- 371              		.loc 1 75 0
+ 371              		.loc 1 74 0
  372 001e FFF7FEFF 		bl	get_selector
  373              	.LVL19:
  374              		.loc 1 76 0
@@ -403,7 +403,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  382 0032 B0EE491A 		vmov.f32	s2, s18
  383 0036 F0EE680A 		vmov.f32	s1, s17
  384 003a B0EE480A 		vmov.f32	s0, s16
- 385              		.loc 1 131 0
+ 385              		.loc 1 134 0
  386 003e 02B0     		add	sp, sp, #8
  387              		.cfi_remember_state
  388              		.cfi_def_cfa_offset 24
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  397 0044 BDE81040 		pop	{r4, lr}
  398              		.cfi_restore 14
  399              		.cfi_restore 4
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 8
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 8
 
 
  400              		.cfi_def_cfa_offset 0
@@ -463,7 +463,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  439              		.type	sound_remote, %function
  440              	sound_remote:
  441              	.LFB291:
- 442              		.loc 1 138 0
+ 442              		.loc 1 141 0
  443              		.cfi_startproc
  444              		@ args = 0, pretend = 0, frame = 8
  445              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -478,27 +478,27 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  454 0002 2DED048B 		vpush.64	{d8, d9}
  455              		.cfi_def_cfa_offset 36
  456              		.cfi_offset 80, -36
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 9
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 9
 
 
  457              		.cfi_offset 81, -32
  458              		.cfi_offset 82, -28
  459              		.cfi_offset 83, -24
  460 0006 474E     		ldr	r6, .L94
- 461              		.loc 1 142 0
+ 461              		.loc 1 146 0
  462 0008 9FED478A 		vldr.32	s16, .L94+4
- 463              		.loc 1 138 0
+ 463              		.loc 1 141 0
  464 000c 3468     		ldr	r4, [r6]
  465 000e 83B0     		sub	sp, sp, #12
  466              		.cfi_def_cfa_offset 48
- 467              		.loc 1 141 0
+ 467              		.loc 1 145 0
  468 0010 B0EE489A 		vmov.f32	s18, s16
- 469              		.loc 1 138 0
+ 469              		.loc 1 141 0
  470 0014 0194     		str	r4, [sp, #4]
  471              	.LVL26:
- 472              		.loc 1 140 0
+ 472              		.loc 1 144 0
  473 0016 F0EE488A 		vmov.f32	s17, s16
- 474              		.loc 1 139 0
+ 474              		.loc 1 143 0
  475 001a F0EE489A 		vmov.f32	s19, s16
  476 001e F030     		adds	r0, r0, #240
  477              	.LVL27:
@@ -509,73 +509,73 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  482 0024 F031     		adds	r1, r1, #240
  483              	.LVL30:
  484              	.LBB34:
- 485              		.loc 1 148 0
+ 485              		.loc 1 152 0
  486 0026 3C24     		movs	r4, #60
  487              	.LBE34:
- 488              		.loc 1 144 0
+ 488              		.loc 1 148 0
  489 0028 4FF0FF35 		mov	r5, #-1
  490              	.LVL31:
  491              	.L68:
  492              	.LBB35:
- 493              		.loc 1 149 0
+ 493              		.loc 1 153 0
  494 002c F0EC017A 		vldmia.32	r0!, {s15}
- 495              		.loc 1 153 0
+ 495              		.loc 1 157 0
  496 0030 F1EC016A 		vldmia.32	r1!, {s13}
- 497              		.loc 1 156 0
+ 497              		.loc 1 160 0
  498 0034 B2EC017A 		vldmia.32	r2!, {s14}
- 499              		.loc 1 149 0
+ 499              		.loc 1 153 0
  500 0038 F4EEE97A 		vcmpe.f32	s15, s19
  501 003c F1EE10FA 		vmrs	APSR_nzcv, FPSCR
  502              	.LVL32:
- 503              		.loc 1 150 0
+ 503              		.loc 1 154 0
  504 0040 C8BF     		it	gt
  505 0042 F0EE679A 		vmovgt.f32	s19, s15
- 506              		.loc 1 154 0
+ 506              		.loc 1 158 0
  507 0046 F4EE486A 		vcmp.f32	s13, s16
- 508              		.loc 1 159 0
+ 508              		.loc 1 163 0
  509 004a F3EC017A 		vldmia.32	r3!, {s15}
  510              	.LVL33:
- 511              		.loc 1 151 0
+ 511              		.loc 1 155 0
  512 004e C8BF     		it	gt
  513 0050 25B2     		sxthgt	r5, r4
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 10
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 10
 
 
  514              	.LVL34:
- 515              		.loc 1 154 0
+ 515              		.loc 1 158 0
  516 0052 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
- 517              		.loc 1 157 0
+ 517              		.loc 1 161 0
  518 0056 B4EE687A 		vcmp.f32	s14, s17
- 519              		.loc 1 148 0
+ 519              		.loc 1 152 0
  520 005a 04F10104 		add	r4, r4, #1
  521              	.LVL35:
- 522              		.loc 1 154 0
+ 522              		.loc 1 158 0
  523 005e C8BF     		it	gt
  524 0060 B0EE668A 		vmovgt.f32	s16, s13
  525              	.LVL36:
- 526              		.loc 1 157 0
+ 526              		.loc 1 161 0
  527 0064 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
- 528              		.loc 1 160 0
+ 528              		.loc 1 164 0
  529 0068 F4EE497A 		vcmp.f32	s15, s18
- 530              		.loc 1 148 0
+ 530              		.loc 1 152 0
  531 006c A4B2     		uxth	r4, r4
- 532              		.loc 1 157 0
+ 532              		.loc 1 161 0
  533 006e C8BF     		it	gt
  534 0070 F0EE478A 		vmovgt.f32	s17, s14
  535              	.LVL37:
- 536              		.loc 1 160 0
+ 536              		.loc 1 164 0
  537 0074 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
  538 0078 C8BF     		it	gt
  539 007a B0EE679A 		vmovgt.f32	s18, s15
  540              	.LVL38:
- 541              		.loc 1 148 0
+ 541              		.loc 1 152 0
  542 007e 512C     		cmp	r4, #81
  543 0080 D4D1     		bne	.L68
  544              	.LVL39:
  545              	.LBE35:
  546              	.LBB36:
  547              	.LBB37:
- 548              		.loc 1 75 0
+ 548              		.loc 1 74 0
  549 0082 FFF7FEFF 		bl	get_selector
  550              	.LVL40:
  551              		.loc 1 76 0
@@ -590,15 +590,15 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  560              	.L69:
  561              	.LBE37:
  562              	.LBE36:
- 563              		.loc 1 170 0
+ 563              		.loc 1 174 0
  564 009e A5F14103 		sub	r3, r5, #65
  565 00a2 9BB2     		uxth	r3, r3
  566 00a4 052B     		cmp	r3, #5
  567 00a6 06D8     		bhi	.L91
- 568              		.loc 1 170 0 is_stmt 0 discriminator 1
+ 568              		.loc 1 174 0 is_stmt 0 discriminator 1
  569 00a8 DFED207A 		vldr.32	s15, .L94+8
  570 00ac F4EEE79A 		vcmpe.f32	s19, s15
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 11
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 11
 
 
  571 00b0 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
@@ -608,27 +608,27 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  575              	.LVL42:
  576 00b8 1E4F     		ldr	r7, .L94+16
  577              	.L71:
- 578              		.loc 1 179 0 is_stmt 1
+ 578              		.loc 1 183 0 is_stmt 1
  579 00ba 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
  580 00bc 63B1     		cbz	r3, .L74
- 581              		.loc 1 184 0
+ 581              		.loc 1 188 0
  582 00be 462D     		cmp	r5, #70
  583 00c0 14DD     		ble	.L92
- 584              		.loc 1 185 0
+ 584              		.loc 1 189 0
  585 00c2 1D4B     		ldr	r3, .L94+20
  586 00c4 A3FB0535 		umull	r3, r5, r3, r5
  587 00c8 2D09     		lsrs	r5, r5, #4
  588 00ca 07EE905A 		vmov	s15, r5	@ int
  589 00ce F8EEE77A 		vcvt.f32.s32	s15, s15
  590 00d2 C7ED007A 		vstr.32	s15, [r7]
- 591              		.loc 1 187 0
+ 591              		.loc 1 191 0
  592 00d6 01E0     		b	.L59
  593              	.L74:
- 594              		.loc 1 182 0
+ 594              		.loc 1 186 0
  595 00d8 0023     		movs	r3, #0
  596 00da 3B60     		str	r3, [r7]	@ float
  597              	.L59:
- 598              		.loc 1 187 0
+ 598              		.loc 1 191 0
  599 00dc 019A     		ldr	r2, [sp, #4]
  600 00de 3368     		ldr	r3, [r6]
  601 00e0 9A42     		cmp	r2, r3
@@ -648,48 +648,48 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  615              	.LVL44:
  616              	.L92:
  617              		.cfi_restore_state
- 618              		.loc 1 180 0
+ 618              		.loc 1 184 0
  619 00ec 4FF07E53 		mov	r3, #1065353216
  620 00f0 3B60     		str	r3, [r7]	@ float
  621 00f2 F3E7     		b	.L59
  622              	.LVL45:
  623              	.L82:
  624              	.LBB38:
- 625              		.loc 1 171 0
+ 625              		.loc 1 175 0
  626 00f4 FFF7FEFF 		bl	get_selector
  627              	.LVL46:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 12
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 12
 
 
- 628              		.loc 1 173 0
+ 628              		.loc 1 177 0
  629 00f8 0528     		cmp	r0, #5
- 630              		.loc 1 174 0
+ 630              		.loc 1 178 0
  631 00fa 0D4C     		ldr	r4, .L94+12
  632              	.LVL47:
- 633              		.loc 1 175 0
+ 633              		.loc 1 179 0
  634 00fc 0D4F     		ldr	r7, .L94+16
- 635              		.loc 1 173 0
+ 635              		.loc 1 177 0
  636 00fe DCD0     		beq	.L71
- 637              		.loc 1 174 0
+ 637              		.loc 1 178 0
  638 0100 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
  639 0102 83F00103 		eor	r3, r3, #1
- 640              		.loc 1 175 0
+ 640              		.loc 1 179 0
  641 0106 07EE903A 		vmov	s15, r3	@ int
  642 010a F8EE677A 		vcvt.f32.u32	s15, s15
- 643              		.loc 1 176 0
+ 643              		.loc 1 180 0
  644 010e 4FF4FA60 		mov	r0, #2000
  645              	.LVL48:
- 646              		.loc 1 174 0
+ 646              		.loc 1 178 0
  647 0112 2370     		strb	r3, [r4]
- 648              		.loc 1 175 0
+ 648              		.loc 1 179 0
  649 0114 C7ED007A 		vstr.32	s15, [r7]
- 650              		.loc 1 176 0
+ 650              		.loc 1 180 0
  651 0118 FFF7FEFF 		bl	chThdSleep
  652              	.LVL49:
  653 011c CDE7     		b	.L71
  654              	.L93:
  655              	.LBE38:
- 656              		.loc 1 187 0
+ 656              		.loc 1 191 0
  657 011e FFF7FEFF 		bl	__stack_chk_fail
  658              	.LVL50:
  659              	.L95:
@@ -715,10 +715,10 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  679              		.type	processAudioData, %function
  680              	processAudioData:
  681              	.LFB292:
- 682              		.loc 1 198 0
+ 682              		.loc 1 202 0
  683              		.cfi_startproc
  684              		@ args = 0, pretend = 0, frame = 8
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 13
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 13
 
 
  685              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -740,25 +740,25 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  701 000a 3A88     		ldrh	r2, [r7]
  702 000c 83B0     		sub	sp, sp, #12
  703              		.cfi_def_cfa_offset 48
- 704              		.loc 1 198 0
+ 704              		.loc 1 202 0
  705 000e 0193     		str	r3, [sp, #4]
  706              	.LVL52:
  707              	.LBB54:
- 708              		.loc 1 212 0
+ 708              		.loc 1 216 0
  709 0010 0029     		cmp	r1, #0
  710 0012 00F09680 		beq	.L97
  711 0016 DFF8A091 		ldr	r9, .L113+12
  712 001a DFF8A481 		ldr	r8, .L113+20
  713 001e DFF8A8E1 		ldr	lr, .L113+28
  714 0022 DFF8A0C1 		ldr	ip, .L113+24
- 715              		.loc 1 221 0
+ 715              		.loc 1 225 0
  716 0026 DFED637A 		vldr.32	s15, .L113+8
- 717              		.loc 1 212 0
+ 717              		.loc 1 216 0
  718 002a 0025     		movs	r5, #0
  719 002c 04E0     		b	.L100
  720              	.LVL53:
  721              	.L98:
- 722              		.loc 1 212 0 is_stmt 0 discriminator 2
+ 722              		.loc 1 216 0 is_stmt 0 discriminator 2
  723 002e 0435     		adds	r5, r5, #4
  724              	.LVL54:
  725 0030 ADB2     		uxth	r5, r5
@@ -767,18 +767,18 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  728 0034 40F2B880 		bls	.L111
  729              	.LVL56:
  730              	.L100:
- 731              		.loc 1 214 0 is_stmt 1
+ 731              		.loc 1 218 0 is_stmt 1
  732 0038 30F91530 		ldrsh	r3, [r0, r5, lsl #1]
  733 003c 07EE103A 		vmov	s14, r3	@ int
  734 0040 9400     		lsls	r4, r2, #2
  735 0042 B8EEC77A 		vcvt.f32.s32	s14, s14
  736 0046 09EB040A 		add	r10, r9, r4
- 737              		.loc 1 215 0
+ 737              		.loc 1 219 0
  738 004a 00EB4503 		add	r3, r0, r5, lsl #1
- 739              		.loc 1 214 0
+ 739              		.loc 1 218 0
  740 004e 8AED007A 		vstr.32	s14, [r10]
- 741              		.loc 1 215 0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 14
+ 741              		.loc 1 219 0
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 14
 
 
  742 0052 B3F902A0 		ldrsh	r10, [r3, #2]
@@ -786,133 +786,133 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  744 005a B8EEC77A 		vcvt.f32.s32	s14, s14
  745 005e 08EB040A 		add	r10, r8, r4
  746 0062 8AED007A 		vstr.32	s14, [r10]
- 747              		.loc 1 216 0
+ 747              		.loc 1 220 0
  748 0066 B3F904A0 		ldrsh	r10, [r3, #4]
  749 006a 07EE10AA 		vmov	s14, r10	@ int
  750 006e B8EEC77A 		vcvt.f32.s32	s14, s14
  751 0072 0EEB040A 		add	r10, lr, r4
  752 0076 8AED007A 		vstr.32	s14, [r10]
- 753              		.loc 1 217 0
+ 753              		.loc 1 221 0
  754 007a B3F90630 		ldrsh	r3, [r3, #6]
  755 007e 07EE103A 		vmov	s14, r3	@ int
- 756              		.loc 1 221 0
+ 756              		.loc 1 225 0
  757 0082 531C     		adds	r3, r2, #1
  758 0084 9BB2     		uxth	r3, r3
- 759              		.loc 1 217 0
+ 759              		.loc 1 221 0
  760 0086 B8EEC77A 		vcvt.f32.s32	s14, s14
- 761              		.loc 1 226 0
+ 761              		.loc 1 230 0
  762 008a 0232     		adds	r2, r2, #2
- 763              		.loc 1 221 0
+ 763              		.loc 1 225 0
  764 008c 9B00     		lsls	r3, r3, #2
- 765              		.loc 1 217 0
+ 765              		.loc 1 221 0
  766 008e 6444     		add	r4, r4, ip
- 767              		.loc 1 226 0
+ 767              		.loc 1 230 0
  768 0090 92B2     		uxth	r2, r2
- 769              		.loc 1 217 0
+ 769              		.loc 1 221 0
  770 0092 84ED007A 		vstr.32	s14, [r4]
- 771              		.loc 1 221 0
+ 771              		.loc 1 225 0
  772 0096 09EB030B 		add	fp, r9, r3
- 773              		.loc 1 222 0
+ 773              		.loc 1 226 0
  774 009a 08EB030A 		add	r10, r8, r3
- 775              		.loc 1 223 0
+ 775              		.loc 1 227 0
  776 009e 0EEB0304 		add	r4, lr, r3
- 777              		.loc 1 229 0
+ 777              		.loc 1 233 0
  778 00a2 B2F5006F 		cmp	r2, #2048
- 779              		.loc 1 224 0
+ 779              		.loc 1 228 0
  780 00a6 6344     		add	r3, r3, ip
- 781              		.loc 1 221 0
+ 781              		.loc 1 225 0
  782 00a8 CBED007A 		vstr.32	s15, [fp]
- 783              		.loc 1 222 0
+ 783              		.loc 1 226 0
  784 00ac CAED007A 		vstr.32	s15, [r10]
- 785              		.loc 1 223 0
+ 785              		.loc 1 227 0
  786 00b0 C4ED007A 		vstr.32	s15, [r4]
- 787              		.loc 1 224 0
+ 787              		.loc 1 228 0
  788 00b4 C3ED007A 		vstr.32	s15, [r3]
- 789              		.loc 1 229 0
+ 789              		.loc 1 233 0
  790 00b8 B9D3     		bcc	.L98
  791 00ba 3A80     		strh	r2, [r7]	@ movhi
  792              	.LVL57:
  793              	.L99:
  794              	.LBE54:
- 795              		.loc 1 241 0
+ 795              		.loc 1 245 0
  796 00bc 3E49     		ldr	r1, .L113+12
  797              	.LVL58:
- 798              		.loc 1 260 0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 15
+ 798              		.loc 1 264 0
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 15
 
 
  799 00be 3F4C     		ldr	r4, .L113+16
- 800              		.loc 1 241 0
+ 800              		.loc 1 245 0
  801 00c0 4FF48060 		mov	r0, #1024
  802              	.LVL59:
  803 00c4 FFF7FEFF 		bl	doFFT_optimized
  804              	.LVL60:
- 805              		.loc 1 242 0
+ 805              		.loc 1 246 0
  806 00c8 3D49     		ldr	r1, .L113+20
  807 00ca 4FF48060 		mov	r0, #1024
  808 00ce FFF7FEFF 		bl	doFFT_optimized
  809              	.LVL61:
- 810              		.loc 1 243 0
+ 810              		.loc 1 247 0
  811 00d2 3C49     		ldr	r1, .L113+24
  812 00d4 4FF48060 		mov	r0, #1024
  813 00d8 FFF7FEFF 		bl	doFFT_optimized
  814              	.LVL62:
- 815              		.loc 1 244 0
+ 815              		.loc 1 248 0
  816 00dc 3A49     		ldr	r1, .L113+28
  817 00de 4FF48060 		mov	r0, #1024
  818 00e2 FFF7FEFF 		bl	doFFT_optimized
  819              	.LVL63:
- 820              		.loc 1 253 0
+ 820              		.loc 1 257 0
  821 00e6 4FF48062 		mov	r2, #1024
  822 00ea 3849     		ldr	r1, .L113+32
  823 00ec 3248     		ldr	r0, .L113+12
  824 00ee FFF7FEFF 		bl	arm_cmplx_mag_f32
  825              	.LVL64:
- 826              		.loc 1 254 0
+ 826              		.loc 1 258 0
  827 00f2 4FF48062 		mov	r2, #1024
  828 00f6 3649     		ldr	r1, .L113+36
  829 00f8 3148     		ldr	r0, .L113+20
  830 00fa FFF7FEFF 		bl	arm_cmplx_mag_f32
  831              	.LVL65:
- 832              		.loc 1 255 0
+ 832              		.loc 1 259 0
  833 00fe 4FF48062 		mov	r2, #1024
  834 0102 3449     		ldr	r1, .L113+40
  835 0104 2F48     		ldr	r0, .L113+24
  836 0106 FFF7FEFF 		bl	arm_cmplx_mag_f32
  837              	.LVL66:
- 838              		.loc 1 256 0
+ 838              		.loc 1 260 0
  839 010a 4FF48062 		mov	r2, #1024
  840 010e 3249     		ldr	r1, .L113+44
  841 0110 2D48     		ldr	r0, .L113+28
  842 0112 FFF7FEFF 		bl	arm_cmplx_mag_f32
  843              	.LVL67:
- 844              		.loc 1 260 0
+ 844              		.loc 1 264 0
  845 0116 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
  846 0118 082B     		cmp	r3, #8
  847 011a 1CD8     		bhi	.L102
  848 011c 0133     		adds	r3, r3, #1
  849 011e DBB2     		uxtb	r3, r3
  850              	.L103:
- 851              		.loc 1 268 0
+ 851              		.loc 1 272 0
  852 0120 0199     		ldr	r1, [sp, #4]
  853 0122 3268     		ldr	r2, [r6]
- 854              		.loc 1 266 0
+ 854              		.loc 1 270 0
  855 0124 2370     		strb	r3, [r4]
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 16
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 16
 
 
- 856              		.loc 1 268 0
+ 856              		.loc 1 272 0
  857 0126 9142     		cmp	r1, r2
- 858              		.loc 1 265 0
+ 858              		.loc 1 269 0
  859 0128 4FF00003 		mov	r3, #0
  860 012c 3B80     		strh	r3, [r7]	@ movhi
- 861              		.loc 1 268 0
+ 861              		.loc 1 272 0
  862 012e 39D1     		bne	.L110
  863 0130 294B     		ldr	r3, .L113+44
  864 0132 284A     		ldr	r2, .L113+40
  865 0134 2549     		ldr	r1, .L113+32
  866 0136 2648     		ldr	r0, .L113+36
- 867              		.loc 1 270 0
+ 867              		.loc 1 274 0
  868 0138 03B0     		add	sp, sp, #12
  869              		.cfi_remember_state
  870              		.cfi_def_cfa_offset 36
@@ -928,17 +928,17 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  880              		.cfi_restore 5
  881              		.cfi_restore 4
  882              		.cfi_def_cfa_offset 0
- 883              		.loc 1 268 0
+ 883              		.loc 1 272 0
  884 013e FFF7FEBF 		b	sound_remote
  885              	.LVL68:
  886              	.L97:
  887              		.cfi_restore_state
- 888              		.loc 1 234 0
+ 888              		.loc 1 238 0
  889 0142 B2F5006F 		cmp	r2, #2048
  890 0146 B9D2     		bcs	.L99
  891              	.LVL69:
  892              	.L96:
- 893              		.loc 1 270 0
+ 893              		.loc 1 274 0
  894 0148 019A     		ldr	r2, [sp, #4]
  895 014a 3368     		ldr	r3, [r6]
  896 014c 9A42     		cmp	r2, r3
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  910              	.LBB59:
  911              	.LBB60:
  912              	.LBB61:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 17
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 17
 
 
  913              		.file 2 "../lib/e-puck2_main-processor/ChibiOS//os/ext/CMSIS/include/core_cmFunc.h"
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  967 0186 9368     		ldr	r3, [r2, #8]
  968 0188 8A68     		ldr	r2, [r1, #8]
  969 018a 9A42     		cmp	r2, r3
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 18
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 18
 
 
  970 018c 02D2     		bcs	.L105
@@ -1059,7 +1059,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  1005              	.LBE70:
  1006              	.LBE56:
  1007              	.LBE55:
- 1008              		.loc 1 270 0
+ 1008              		.loc 1 274 0
  1009 01a4 FFF7FEFF 		bl	__stack_chk_fail
  1010              	.LVL84:
  1011              	.L111:
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  1024 01c8 00000000 		.word	micBack_cmplx_input
  1025 01cc 00000000 		.word	micRight_output
  1026 01d0 00000000 		.word	micLeft_output
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 19
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 19
 
 
  1027 01d4 00000000 		.word	micFront_output
@@ -1100,7 +1100,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  1043              		.type	wait_send_to_computer, %function
  1044              	wait_send_to_computer:
  1045              	.LFB293:
- 1046              		.loc 1 273 0
+ 1046              		.loc 1 277 0
  1047              		.cfi_startproc
  1048              		@ args = 0, pretend = 0, frame = 8
  1049              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -1110,7 +1110,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  1053 0002 084B     		ldr	r3, .L120
  1054 0004 83B0     		sub	sp, sp, #12
  1055              		.cfi_def_cfa_offset 16
- 1056              		.loc 1 273 0
+ 1056              		.loc 1 277 0
  1057 0006 1A68     		ldr	r2, [r3]
  1058 0008 0192     		str	r2, [sp, #4]
  1059              	.LVL85:
@@ -1124,7 +1124,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  1067 0012 0548     		ldr	r0, .L120+4
  1068              	.LBE72:
  1069              	.LBE71:
- 1070              		.loc 1 275 0
+ 1070              		.loc 1 279 0
  1071 0014 03B0     		add	sp, sp, #12
  1072              		.cfi_remember_state
  1073              		.cfi_def_cfa_offset 4
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  1081 001a FFF7FEBF 		b	chSemWait
  1082              	.LVL86:
  1083              	.L119:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 20
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 20
 
 
  1084              		.cfi_restore_state
@@ -1165,7 +1165,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  1105              		.type	get_speed_coeff, %function
  1106              	get_speed_coeff:
  1107              	.LFB294:
- 1108              		.loc 1 277 0
+ 1108              		.loc 1 281 0
  1109              		.cfi_startproc
  1110              		@ args = 0, pretend = 0, frame = 8
  1111              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -1173,18 +1173,18 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  1113              		.cfi_def_cfa_offset 4
  1114              		.cfi_offset 14, -4
  1115 0002 084B     		ldr	r3, .L126
- 1116              		.loc 1 278 0
+ 1116              		.loc 1 282 0
  1117 0004 0849     		ldr	r1, .L126+4
- 1118              		.loc 1 277 0
+ 1118              		.loc 1 281 0
  1119 0006 1A68     		ldr	r2, [r3]
- 1120              		.loc 1 279 0
+ 1120              		.loc 1 283 0
  1121 0008 91ED000A 		vldr.32	s0, [r1]
- 1122              		.loc 1 277 0
+ 1122              		.loc 1 281 0
  1123 000c 83B0     		sub	sp, sp, #12
  1124              		.cfi_def_cfa_offset 16
- 1125              		.loc 1 277 0
+ 1125              		.loc 1 281 0
  1126 000e 0192     		str	r2, [sp, #4]
- 1127              		.loc 1 279 0
+ 1127              		.loc 1 283 0
  1128 0010 019A     		ldr	r2, [sp, #4]
  1129 0012 1B68     		ldr	r3, [r3]
  1130 0014 9A42     		cmp	r2, r3
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  1138              		.cfi_restore_state
  1139 001e FFF7FEFF 		bl	__stack_chk_fail
  1140              	.LVL88:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 21
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 21
 
 
  1141              	.L127:
@@ -1220,7 +1220,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  1157              		.type	get_direction, %function
  1158              	get_direction:
  1159              	.LFB295:
- 1160              		.loc 1 280 0
+ 1160              		.loc 1 284 0
  1161              		.cfi_startproc
  1162              		@ args = 0, pretend = 0, frame = 8
  1163              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -1228,18 +1228,18 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  1165              		.cfi_def_cfa_offset 4
  1166              		.cfi_offset 14, -4
  1167 0002 074B     		ldr	r3, .L132
- 1168              		.loc 1 281 0
+ 1168              		.loc 1 285 0
  1169 0004 0749     		ldr	r1, .L132+4
- 1170              		.loc 1 280 0
+ 1170              		.loc 1 284 0
  1171 0006 1A68     		ldr	r2, [r3]
- 1172              		.loc 1 282 0
+ 1172              		.loc 1 286 0
  1173 0008 0878     		ldrb	r0, [r1]	@ zero_extendqisi2
- 1174              		.loc 1 280 0
+ 1174              		.loc 1 284 0
  1175 000a 83B0     		sub	sp, sp, #12
  1176              		.cfi_def_cfa_offset 16
- 1177              		.loc 1 280 0
+ 1177              		.loc 1 284 0
  1178 000c 0192     		str	r2, [sp, #4]
- 1179              		.loc 1 282 0
+ 1179              		.loc 1 286 0
  1180 000e 019A     		ldr	r2, [sp, #4]
  1181 0010 1B68     		ldr	r3, [r3]
  1182 0012 9A42     		cmp	r2, r3
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  1195              	.L132:
  1196 0020 00000000 		.word	__stack_chk_guard
  1197 0024 00000000 		.word	.LANCHOR0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 22
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 22
 
 
  1198              		.cfi_endproc
@@ -1275,7 +1275,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  1209              		.type	get_audio_buffer_ptr, %function
  1210              	get_audio_buffer_ptr:
  1211              	.LFB296:
- 1212              		.loc 1 283 0
+ 1212              		.loc 1 287 0
  1213              		.cfi_startproc
  1214              		@ args = 0, pretend = 0, frame = 8
  1215              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -1286,49 +1286,49 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  1220 0002 164B     		ldr	r3, .L147
  1221 0004 83B0     		sub	sp, sp, #12
  1222              		.cfi_def_cfa_offset 16
- 1223              		.loc 1 283 0
+ 1223              		.loc 1 287 0
  1224 0006 1A68     		ldr	r2, [r3]
  1225 0008 0192     		str	r2, [sp, #4]
- 1226              		.loc 1 284 0
+ 1226              		.loc 1 288 0
  1227 000a 88B1     		cbz	r0, .L137
- 1228              		.loc 1 287 0
+ 1228              		.loc 1 291 0
  1229 000c 0128     		cmp	r0, #1
  1230 000e 17D0     		beq	.L138
- 1231              		.loc 1 290 0
+ 1231              		.loc 1 294 0
  1232 0010 0228     		cmp	r0, #2
  1233 0012 19D0     		beq	.L139
- 1234              		.loc 1 293 0
+ 1234              		.loc 1 297 0
  1235 0014 0328     		cmp	r0, #3
  1236 0016 15D0     		beq	.L140
- 1237              		.loc 1 296 0
+ 1237              		.loc 1 300 0
  1238 0018 0428     		cmp	r0, #4
  1239 001a 17D0     		beq	.L141
- 1240              		.loc 1 299 0
+ 1240              		.loc 1 303 0
  1241 001c 0528     		cmp	r0, #5
  1242 001e 17D0     		beq	.L142
- 1243              		.loc 1 302 0
+ 1243              		.loc 1 306 0
  1244 0020 0628     		cmp	r0, #6
  1245 0022 17D0     		beq	.L143
- 1246              		.loc 1 309 0
+ 1246              		.loc 1 313 0
  1247 0024 0E4A     		ldr	r2, .L147+4
- 1248              		.loc 1 305 0
+ 1248              		.loc 1 309 0
  1249 0026 0728     		cmp	r0, #7
- 1250              		.loc 1 309 0
+ 1250              		.loc 1 313 0
  1251 0028 0CBF     		ite	eq
  1252 002a 1046     		moveq	r0, r2
  1253              	.LVL91:
  1254 002c 0020     		movne	r0, #0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 23
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 23
 
 
  1255 002e 00E0     		b	.L134
  1256              	.LVL92:
  1257              	.L137:
- 1258              		.loc 1 285 0
+ 1258              		.loc 1 289 0
  1259 0030 0C48     		ldr	r0, .L147+8
  1260              	.LVL93:
  1261              	.L134:
- 1262              		.loc 1 311 0
+ 1262              		.loc 1 315 0
  1263 0032 019A     		ldr	r2, [sp, #4]
  1264 0034 1B68     		ldr	r3, [r3]
  1265 0036 9A42     		cmp	r2, r3
@@ -1341,44 +1341,44 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  1272              	.LVL94:
  1273              	.L138:
  1274              		.cfi_restore_state
- 1275              		.loc 1 288 0
+ 1275              		.loc 1 292 0
  1276 0040 0948     		ldr	r0, .L147+12
  1277              	.LVL95:
  1278 0042 F6E7     		b	.L134
  1279              	.LVL96:
  1280              	.L140:
- 1281              		.loc 1 294 0
+ 1281              		.loc 1 298 0
  1282 0044 0948     		ldr	r0, .L147+16
  1283              	.LVL97:
  1284 0046 F4E7     		b	.L134
  1285              	.LVL98:
  1286              	.L139:
- 1287              		.loc 1 291 0
+ 1287              		.loc 1 295 0
  1288 0048 0948     		ldr	r0, .L147+20
  1289              	.LVL99:
  1290 004a F2E7     		b	.L134
  1291              	.LVL100:
  1292              	.L141:
- 1293              		.loc 1 297 0
+ 1293              		.loc 1 301 0
  1294 004c 0948     		ldr	r0, .L147+24
  1295              	.LVL101:
  1296 004e F0E7     		b	.L134
  1297              	.LVL102:
  1298              	.L142:
- 1299              		.loc 1 300 0
+ 1299              		.loc 1 304 0
  1300 0050 0948     		ldr	r0, .L147+28
  1301              	.LVL103:
  1302 0052 EEE7     		b	.L134
  1303              	.LVL104:
  1304              	.L143:
- 1305              		.loc 1 303 0
+ 1305              		.loc 1 307 0
  1306 0054 0948     		ldr	r0, .L147+32
  1307              	.LVL105:
  1308 0056 ECE7     		b	.L134
  1309              	.L146:
- 1310              		.loc 1 311 0
+ 1310              		.loc 1 315 0
  1311 0058 FFF7FEFF 		bl	__stack_chk_fail
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 24
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 24
 
 
  1312              	.LVL106:
@@ -1397,11 +1397,11 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  1325              		.cfi_endproc
  1326              	.LFE296:
  1327              		.size	get_audio_buffer_ptr, .-get_audio_buffer_ptr
- 1328              		.section	.bss.allumer.14225,"aw",%nobits
+ 1328              		.section	.bss.allumer.14217,"aw",%nobits
  1329              		.set	.LANCHOR1,. + 0
- 1330              		.type	allumer.14225, %object
- 1331              		.size	allumer.14225, 1
- 1332              	allumer.14225:
+ 1330              		.type	allumer.14217, %object
+ 1331              		.size	allumer.14217, 1
+ 1332              	allumer.14217:
  1333 0000 00       		.space	1
  1334              		.section	.bss.direction,"aw",%nobits
  1335              		.set	.LANCHOR0,. + 0
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  1357      00000000 
  1357      00000000 
  1357      00000000 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 25
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 25
 
 
  1357      00000000 
@@ -1492,21 +1492,21 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  1387      00000000 
  1387      00000000 
  1387      00000000 
- 1388              		.section	.bss.mustSend.14236,"aw",%nobits
+ 1388              		.section	.bss.mustSend.14228,"aw",%nobits
  1389              		.set	.LANCHOR4,. + 0
- 1390              		.type	mustSend.14236, %object
- 1391              		.size	mustSend.14236, 1
- 1392              	mustSend.14236:
+ 1390              		.type	mustSend.14228, %object
+ 1391              		.size	mustSend.14228, 1
+ 1392              	mustSend.14228:
  1393 0000 00       		.space	1
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 26
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 26
 
 
- 1394              		.section	.bss.nb_samples.14235,"aw",%nobits
+ 1394              		.section	.bss.nb_samples.14227,"aw",%nobits
  1395              		.align	1
  1396              		.set	.LANCHOR3,. + 0
- 1397              		.type	nb_samples.14235, %object
- 1398              		.size	nb_samples.14235, 2
- 1399              	nb_samples.14235:
+ 1397              		.type	nb_samples.14227, %object
+ 1398              		.size	nb_samples.14227, 2
+ 1399              	nb_samples.14227:
  1400 0000 0000     		.space	2
  1401              		.section	.bss.speed_coeff,"aw",%nobits
  1402              		.align	2
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  1446              		.file 25 "../lib/e-puck2_main-processor/ChibiOS//os/hal/include/hal_ioblock.h"
  1447              		.file 26 "../lib/e-puck2_main-processor/ChibiOS//os/hal/ports/STM32/LLD/GPIOv2/pal_lld.h"
  1448              		.file 27 "../lib/e-puck2_main-processor/ChibiOS//os/hal/include/adc.h"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 27
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 27
 
 
  1449              		.file 28 "../lib/e-puck2_main-processor/ChibiOS//os/hal/ports/STM32/STM32F4xx/adc_lld.h"
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  1503 0019 48000000 		.4byte	.Ldebug_ranges0+0x48
  1504 001d 00000000 		.4byte	0
  1505 0021 00000000 		.4byte	.Ldebug_line0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 28
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 28
 
 
  1506 0025 02       		.uleb128 0x2
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  1560 008b 07       		.byte	0x7
  1561 008c 21160000 		.4byte	.LASF11
  1562 0090 04       		.uleb128 0x4
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 29
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 29
 
 
  1563 0091 E61F0000 		.4byte	.LASF12
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  1617 0103 A2000000 		.4byte	0xa2
  1618 0107 06       		.uleb128 0x6
  1619 0108 FC000000 		.4byte	0xfc
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 30
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 30
 
 
  1620 010c 05       		.uleb128 0x5
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  1674 0184 08       		.byte	0x8
  1675 0185 50       		.byte	0x50
  1676 0186 FC000000 		.4byte	0xfc
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 31
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 31
 
 
  1677 018a 04       		.uleb128 0x4
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  1731 01fc 0A       		.byte	0xa
  1732 01fd CA       		.byte	0xca
  1733 01fe E4020000 		.4byte	0x2e4
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 32
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 32
 
 
  1734 0202 10       		.byte	0x10
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  1788 026f 28       		.byte	0x28
  1789 0270 0A       		.uleb128 0xa
  1790 0271 2D050000 		.4byte	.LASF51
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 33
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 33
 
 
  1791 0275 0A       		.byte	0xa
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  1845 02e6 B0010000 		.4byte	0x1b0
  1846 02ea 04       		.uleb128 0x4
  1847 02eb 6C050000 		.4byte	.LASF60
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 34
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 34
 
 
  1848 02ef 09       		.byte	0x9
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  1902 035c 9101     		.2byte	0x191
  1903 035e 0E030000 		.4byte	0x30e
  1904 0362 00       		.byte	0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 35
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 35
 
 
  1905 0363 0A       		.uleb128 0xa
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  1959 03d4 0A       		.byte	0xa
  1960 03d5 6B01     		.2byte	0x16b
  1961 03d7 1D040000 		.4byte	0x41d
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 36
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 36
 
 
  1962 03db 0A       		.uleb128 0xa
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  2016 044f 0A       		.uleb128 0xa
  2017 0450 CE150000 		.4byte	.LASF78
  2018 0454 0A       		.byte	0xa
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 37
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 37
 
 
  2019 0455 8001     		.2byte	0x180
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  2073 04ca 0A       		.byte	0xa
  2074 04cb C201     		.2byte	0x1c2
  2075 04cd 30050000 		.4byte	0x530
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 38
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 38
 
 
  2076 04d1 0A       		.uleb128 0xa
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  2130 054a 3E000000 		.4byte	0x3e
  2131 054e 07       		.byte	0x7
  2132 054f 00       		.byte	0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 39
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 39
 
 
  2133 0550 15       		.uleb128 0x15
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  2187 05bc CC       		.byte	0xcc
  2188 05bd 07010000 		.4byte	0x107
  2189 05c1 18       		.byte	0x18
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 40
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 40
 
 
  2190 05c2 08       		.uleb128 0x8
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  2244 062e 08       		.uleb128 0x8
  2245 062f E6230000 		.4byte	.LASF110
  2246 0633 0D       		.byte	0xd
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 41
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 41
 
 
  2247 0634 D6       		.byte	0xd6
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  2301 069c 07010000 		.4byte	0x107
  2302 06a0 0C       		.byte	0xc
  2303 06a1 00       		.byte	0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 42
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 42
 
 
  2304 06a2 04       		.uleb128 0x4
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  2358 070d 0401     		.2byte	0x104
  2359 070f 07010000 		.4byte	0x107
  2360 0713 04       		.byte	0x4
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 43
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 43
 
 
  2361 0714 00       		.byte	0
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  2415 0787 42545200 		.ascii	"BTR\000"
  2416 078b 0D       		.byte	0xd
  2417 078c 1401     		.2byte	0x114
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 44
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 44
 
 
  2418 078e 07010000 		.4byte	0x107
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  2472 080a FC000000 		.4byte	0xfc
  2473 080e 1002     		.2byte	0x210
  2474 0810 11       		.uleb128 0x11
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 45
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 45
 
 
  2475 0811 C91A0000 		.4byte	.LASF133
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  2529 0890 14       		.uleb128 0x14
  2530 0891 3E000000 		.4byte	0x3e
  2531 0895 0B       		.byte	0xb
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 46
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 46
 
 
  2532 0896 00       		.byte	0
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  2586 0909 0A       		.uleb128 0xa
  2587 090a 3B1D0000 		.4byte	.LASF144
  2588 090e 0D       		.byte	0xd
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 47
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 47
 
 
  2589 090f 3E01     		.2byte	0x13e
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  2643 0980 5801     		.2byte	0x158
  2644 0982 130A0000 		.4byte	0xa13
  2645 0986 09       		.uleb128 0x9
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 48
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 48
 
 
  2646 0987 435200   		.ascii	"CR\000"
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  2700 09fa 3C1C0000 		.4byte	.LASF157
  2701 09fe 0D       		.byte	0xd
  2702 09ff 6301     		.2byte	0x163
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 49
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 49
 
 
  2703 0a01 07010000 		.4byte	0x107
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  2757 0a74 14       		.byte	0x14
  2758 0a75 00       		.byte	0
  2759 0a76 1A       		.uleb128 0x1a
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 50
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 50
 
 
  2760 0a77 31080000 		.4byte	.LASF162
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  2814 0aee 4502     		.2byte	0x245
  2815 0af0 07010000 		.4byte	0x107
  2816 0af4 10       		.byte	0x10
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 51
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 51
 
 
  2817 0af5 09       		.uleb128 0x9
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  2871 0b67 41524700 		.ascii	"ARG\000"
  2872 0b6b 0D       		.byte	0xd
  2873 0b6c C302     		.2byte	0x2c3
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 52
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 52
 
 
  2874 0b6e 07010000 		.4byte	0x107
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  2928 0be3 07010000 		.4byte	0x107
  2929 0be7 2C       		.byte	0x2c
  2930 0be8 0A       		.uleb128 0xa
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 53
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 53
 
 
  2931 0be9 F3280000 		.4byte	.LASF178
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  2985 0c60 00       		.byte	0
  2986 0c61 1A       		.uleb128 0x1a
  2987 0c62 4D220000 		.4byte	.LASF182
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 54
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 54
 
 
  2988 0c66 0D       		.byte	0xd
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  3042 0cd7 07010000 		.4byte	0x107
  3043 0cdb 1C       		.byte	0x1c
  3044 0cdc 0A       		.uleb128 0xa
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 55
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 55
 
 
  3045 0cdd 5F070000 		.4byte	.LASF187
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  3099 0d50 0D       		.byte	0xd
  3100 0d51 1103     		.2byte	0x311
  3101 0d53 07010000 		.4byte	0x107
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 56
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 56
 
 
  3102 0d57 18       		.byte	0x18
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  3156 0dc7 F7       		.byte	0xf7
  3157 0dc8 7A0D0000 		.4byte	0xd7a
  3158 0dcc 04       		.byte	0x4
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 57
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 57
 
 
  3159 0dcd 18       		.uleb128 0x18
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  3213 0e3a 09       		.uleb128 0x9
  3214 0e3b 73323700 		.ascii	"s27\000"
  3215 0e3f 0F       		.byte	0xf
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 58
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 58
 
 
  3216 0e40 0101     		.2byte	0x101
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  3270 0eb0 0B01     		.2byte	0x10b
  3271 0eb2 7A0D0000 		.4byte	0xd7a
  3272 0eb6 50       		.byte	0x50
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 59
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 59
 
 
  3273 0eb7 09       		.uleb128 0x9
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  3327 0f22 61       		.byte	0x61
  3328 0f23 C6000000 		.4byte	0xc6
  3329 0f27 0C       		.byte	0xc
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 60
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 60
 
 
  3330 0f28 00       		.byte	0
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  3384 0f92 1C010000 		.4byte	0x11c
  3385 0f96 00       		.byte	0
  3386 0f97 00       		.byte	0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 61
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 61
 
 
  3387 0f98 04       		.uleb128 0x4
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  3441 0fff 39       		.byte	0x39
  3442 1000 95010000 		.4byte	0x195
  3443 1004 00       		.byte	0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 62
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 62
 
 
  3444 1005 08       		.uleb128 0x8
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  3498 1079 1E       		.uleb128 0x1e
  3499 107a 3F1F0000 		.4byte	.LASF221
  3500 107e 0A       		.byte	0xa
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 63
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 63
 
 
  3501 107f 2701     		.2byte	0x127
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  3555 10ed 3E       		.byte	0x3e
  3556 10ee 86120000 		.4byte	0x1286
  3557 10f2 0C       		.byte	0xc
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 64
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 64
 
 
  3558 10f3 08       		.uleb128 0x8
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  3612 115f C6000000 		.4byte	0xc6
  3613 1163 04       		.byte	0x4
  3614 1164 08       		.uleb128 0x8
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 65
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 65
 
 
  3615 1165 DF020000 		.4byte	.LASF234
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  3669 11d1 D10D0000 		.4byte	.LASF243
  3670 11d5 15       		.byte	0x15
  3671 11d6 40       		.byte	0x40
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 66
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 66
 
 
  3672 11d7 C6000000 		.4byte	0xc6
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  3726 1246 080B0000 		.4byte	.LASF251
  3727 124a 15       		.byte	0x15
  3728 124b 6E       		.byte	0x6e
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 67
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 67
 
 
  3729 124c 40120000 		.4byte	0x1240
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  3783 12bb 08       		.uleb128 0x8
  3784 12bc 4B030000 		.4byte	.LASF260
  3785 12c0 16       		.byte	0x16
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 68
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 68
 
 
  3786 12c1 3F       		.byte	0x3f
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  3840 132d 08       		.uleb128 0x8
  3841 132e 4C200000 		.4byte	.LASF269
  3842 1332 17       		.byte	0x17
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 69
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 69
 
 
  3843 1333 4F       		.byte	0x4f
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  3897 139f 04       		.byte	0x4
  3898 13a0 0A130000 		.4byte	0x130a
  3899 13a4 0B       		.uleb128 0xb
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 70
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 70
 
 
  3900 13a5 04       		.byte	0x4
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  3954 1423 2D140000 		.4byte	0x142d
  3955 1427 0E       		.uleb128 0xe
  3956 1428 C1030000 		.4byte	0x3c1
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 71
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 71
 
 
  3957 142c 00       		.byte	0
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  4011 1495 8F140000 		.4byte	0x148f
  4012 1499 A4140000 		.4byte	0x14a4
  4013 149d 14       		.uleb128 0x14
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 72
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 72
 
 
  4014 149e 3E000000 		.4byte	0x3e
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  4068 1520 0E       		.uleb128 0xe
  4069 1521 A4130000 		.4byte	0x13a4
  4070 1525 0E       		.uleb128 0xe
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 73
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 73
 
 
  4071 1526 33000000 		.4byte	0x33
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  4125 1592 19       		.byte	0x19
  4126 1593 38       		.byte	0x38
  4127 1594 FC000000 		.4byte	0xfc
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 74
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 74
 
 
  4128 1598 00       		.byte	0
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  4182 1610 04       		.byte	0x4
  4183 1611 F1150000 		.4byte	0x15f1
  4184 1615 20       		.uleb128 0x20
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 75
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 75
 
 
  4185 1616 C0150000 		.4byte	0x15c0
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  4239 1681 06       		.uleb128 0x6
  4240 1682 66160000 		.4byte	0x1666
  4241 1686 17       		.uleb128 0x17
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 76
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 76
 
 
  4242 1687 2C       		.byte	0x2c
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  4296 16f3 1A       		.byte	0x1a
  4297 16f4 B9       		.byte	0xb9
  4298 16f5 07010000 		.4byte	0x107
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 77
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 77
 
 
  4299 16f9 20       		.byte	0x20
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  4353 1762 08       		.uleb128 0x8
  4354 1763 80200000 		.4byte	.LASF314
  4355 1767 1A       		.byte	0x1a
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 78
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 78
 
 
  4356 1768 CD       		.byte	0xcd
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  4410 17d1 7B170000 		.4byte	0x177b
  4411 17d5 8C       		.byte	0x8c
  4412 17d6 08       		.uleb128 0x8
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 79
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 79
 
 
  4413 17d7 FC0B0000 		.4byte	.LASF323
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  4467 1848 22       		.uleb128 0x22
  4468 1849 C2130000 		.4byte	.LASF332
  4469 184d 03       		.byte	0x3
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 80
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 80
 
 
  4470 184e 22       		.uleb128 0x22
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  4524 18c3 1C       		.byte	0x1c
  4525 18c4 A301     		.2byte	0x1a3
  4526 18c6 5B180000 		.4byte	0x185b
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 81
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 81
 
 
  4527 18ca 00       		.byte	0
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  4581 193f 34       		.byte	0x34
  4582 1940 00       		.byte	0
  4583 1941 1A       		.uleb128 0x1a
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 82
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 82
 
 
  4584 1942 7C1D0000 		.4byte	.LASF351
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  4638 19b9 0A       		.uleb128 0xa
  4639 19ba 6E090000 		.4byte	.LASF355
  4640 19be 1C       		.byte	0x1c
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 83
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 83
 
 
  4641 19bf 6401     		.2byte	0x164
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  4695 1a34 1C       		.byte	0x1c
  4696 1a35 9201     		.2byte	0x192
  4697 1a37 96190000 		.4byte	0x1996
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 84
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 84
 
 
  4698 1a3b 05       		.uleb128 0x5
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  4752 1aad D01A0000 		.4byte	0x1ad0
  4753 1ab1 22       		.uleb128 0x22
  4754 1ab2 3A0A0000 		.4byte	.LASF368
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 85
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 85
 
 
  4755 1ab6 00       		.byte	0
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  4809 1b21 0601     		.2byte	0x106
  4810 1b23 AA1B0000 		.4byte	0x1baa
  4811 1b27 0A       		.uleb128 0xa
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 86
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 86
 
 
  4812 1b28 82170000 		.4byte	.LASF342
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  4866 1b9d 63616E00 		.ascii	"can\000"
  4867 1ba1 1E       		.byte	0x1e
  4868 1ba2 3F01     		.2byte	0x13f
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 87
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 87
 
 
  4869 1ba4 B01B0000 		.4byte	0x1bb0
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  4923 1c0f 6E1C0000 		.4byte	0x1c6e
  4924 1c13 18       		.uleb128 0x18
  4925 1c14 64616300 		.ascii	"dac\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 88
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 88
 
 
  4926 1c18 20       		.byte	0x20
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  4980 1c8b 1B01     		.2byte	0x11b
  4981 1c8d 911C0000 		.4byte	0x1c91
  4982 1c91 0C       		.uleb128 0xc
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 89
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 89
 
 
  4983 1c92 ED0C0000 		.4byte	.LASF396
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  5037 1d07 1A       		.uleb128 0x1a
  5038 1d08 481B0000 		.4byte	.LASF398
  5039 1d0c 20       		.byte	0x20
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 90
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 90
 
 
  5040 1d0d 2001     		.2byte	0x120
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  5094 1d84 0D       		.uleb128 0xd
  5095 1d85 941D0000 		.4byte	0x1d94
  5096 1d89 0E       		.uleb128 0xe
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 91
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 91
 
 
  5097 1d8a 661D0000 		.4byte	0x1d66
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  5151 1dfd 0C       		.byte	0xc
  5152 1dfe 00       		.byte	0
  5153 1dff 1A       		.uleb128 0x1a
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 92
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 92
 
 
  5154 1e00 38130000 		.4byte	.LASF409
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  5208 1e75 00       		.byte	0
  5209 1e76 22       		.uleb128 0x22
  5210 1e77 C0280000 		.4byte	.LASF415
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 93
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 93
 
 
  5211 1e7b 01       		.byte	0x1
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  5265 1eea 0B       		.uleb128 0xb
  5266 1eeb 04       		.byte	0x4
  5267 1eec 8E1E0000 		.4byte	0x1e8e
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 94
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 94
 
 
  5268 1ef0 17       		.uleb128 0x17
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  5322 1f5b 22       		.byte	0x22
  5323 1f5c 86       		.byte	0x86
  5324 1f5d 8E1E0000 		.4byte	0x1e8e
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 95
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 95
 
 
  5325 1f61 21       		.uleb128 0x21
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  5379 1fd0 A701     		.2byte	0x1a7
  5380 1fd2 FC000000 		.4byte	0xfc
  5381 1fd6 08       		.byte	0x8
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 96
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 96
 
 
  5382 1fd7 09       		.uleb128 0x9
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  5436 2048 25       		.byte	0x25
  5437 2049 A301     		.2byte	0x1a3
  5438 204b 07010000 		.4byte	0x107
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 97
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 97
 
 
  5439 204f 10       		.byte	0x10
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  5493 20c4 34       		.byte	0x34
  5494 20c5 0A       		.uleb128 0xa
  5495 20c6 C8010000 		.4byte	.LASF440
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 98
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 98
 
 
  5496 20ca 25       		.byte	0x25
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  5550 213c 1F210000 		.4byte	0x211f
  5551 2140 00       		.byte	0
  5552 2141 0A       		.uleb128 0xa
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 99
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 99
 
 
  5553 2142 F2170000 		.4byte	.LASF447
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  5607 21b8 51060000 		.4byte	.LASF453
  5608 21bc 00       		.byte	0
  5609 21bd 22       		.uleb128 0x22
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 100
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 100
 
 
  5610 21be 870E0000 		.4byte	.LASF454
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  5664 222e 01       		.byte	0x1
  5665 222f 65000000 		.4byte	0x65
  5666 2233 27       		.byte	0x27
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 101
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 101
 
 
  5667 2234 7D01     		.2byte	0x17d
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  5721 22a8 8E040000 		.4byte	.LASF474
  5722 22ac 3C       		.byte	0x3c
  5723 22ad 27       		.byte	0x27
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 102
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 102
 
 
  5724 22ae 9801     		.2byte	0x198
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  5778 2324 7A1A0000 		.4byte	0x1a7a
  5779 2328 30       		.byte	0x30
  5780 2329 0A       		.uleb128 0xa
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 103
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 103
 
 
  5781 232a F4010000 		.4byte	.LASF480
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  5835 2399 E2       		.byte	0xe2
  5836 239a 9E230000 		.4byte	0x239e
  5837 239e 0C       		.uleb128 0xc
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 104
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 104
 
 
  5838 239f 74280000 		.4byte	.LASF488
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  5892 2414 04       		.uleb128 0x4
  5893 2415 C1080000 		.4byte	.LASF489
  5894 2419 29       		.byte	0x29
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 105
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 105
 
 
  5895 241a EB       		.byte	0xeb
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  5949 248b 29       		.byte	0x29
  5950 248c 1501     		.2byte	0x115
  5951 248e D6000000 		.4byte	0xd6
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 106
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 106
 
 
  5952 2492 12       		.byte	0x12
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  6006 2500 2B       		.byte	0x2b
  6007 2501 7901     		.2byte	0x179
  6008 2503 63250000 		.4byte	0x2563
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 107
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 107
 
 
  6009 2507 0A       		.uleb128 0xa
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  6063 257a 7F250000 		.4byte	0x257f
  6064 257e 00       		.byte	0
  6065 257f 0B       		.uleb128 0xb
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 108
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 108
 
 
  6066 2580 04       		.byte	0x4
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  6120 25f6 FC000000 		.4byte	0xfc
  6121 25fa 00       		.byte	0
  6122 25fb 0A       		.uleb128 0xa
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 109
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 109
 
 
  6123 25fc 61140000 		.4byte	.LASF502
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  6177 2675 2B       		.byte	0x2b
  6178 2676 C001     		.2byte	0x1c0
  6179 2678 EF240000 		.4byte	0x24ef
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 110
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 110
 
 
  6180 267c 15       		.uleb128 0x15
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  6234 26ed 04       		.byte	0x4
  6235 26ee 08       		.uleb128 0x8
  6236 26ef 82170000 		.4byte	.LASF342
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 111
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 111
 
 
  6237 26f3 2C       		.byte	0x2c
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  6291 275e 2C       		.byte	0x2c
  6292 275f 6E       		.byte	0x6e
  6293 2760 FE130000 		.4byte	0x13fe
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 112
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 112
 
 
  6294 2764 04       		.byte	0x4
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  6348 27d0 07       		.byte	0x7
  6349 27d1 01       		.byte	0x1
  6350 27d2 65000000 		.4byte	0x65
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 113
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 113
 
 
  6351 27d6 2E       		.byte	0x2e
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  6405 2845 F7       		.byte	0xf7
  6406 2846 35160000 		.4byte	0x1635
  6407 284a 08       		.byte	0x8
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 114
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 114
 
 
  6408 284b 18       		.uleb128 0x18
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  6462 28bc 0A       		.uleb128 0xa
  6463 28bd 9A170000 		.4byte	.LASF540
  6464 28c1 2F       		.byte	0x2f
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 115
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 115
 
 
  6465 28c2 1901     		.2byte	0x119
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  6519 292c 57150000 		.4byte	.LASF548
  6520 2930 2F       		.byte	0x2f
  6521 2931 EC       		.byte	0xec
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 116
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 116
 
 
  6522 2932 C7150000 		.4byte	0x15c7
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  6576 299f C3020000 		.4byte	.LASF553
  6577 29a3 01       		.byte	0x1
  6578 29a4 22       		.uleb128 0x22
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 117
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 117
 
 
  6579 29a5 8F250000 		.4byte	.LASF554
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  6633 2a1b 20       		.byte	0x20
  6634 2a1c 0A       		.uleb128 0xa
  6635 2a1d 0D010000 		.4byte	.LASF479
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 118
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 118
 
 
  6636 2a21 31       		.byte	0x31
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  6690 2a92 0B180000 		.4byte	0x180b
  6691 2a96 04       		.byte	0x4
  6692 2a97 0A       		.uleb128 0xa
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 119
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 119
 
 
  6693 2a98 CF080000 		.4byte	.LASF561
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  6747 2b10 E1000000 		.4byte	0xe1
  6748 2b14 08       		.byte	0x8
  6749 2b15 0A       		.uleb128 0xa
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 120
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 120
 
 
  6750 2b16 C7260000 		.4byte	.LASF566
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  6804 2b8b A4160000 		.4byte	.LASF574
  6805 2b8f 33       		.byte	0x33
  6806 2b90 B101     		.2byte	0x1b1
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 121
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 121
 
 
  6807 2b92 E1000000 		.4byte	0xe1
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  6861 2c06 9F350000 		.4byte	0x359f
  6862 2c0a 68       		.byte	0x68
  6863 2c0b 00       		.byte	0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 122
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 122
 
 
  6864 2c0c 04       		.uleb128 0x4
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  6918 2c7b 04       		.byte	0x4
  6919 2c7c 22       		.uleb128 0x22
  6920 2c7d 3A120000 		.4byte	.LASF594
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 123
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 123
 
 
  6921 2c81 05       		.byte	0x5
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  6975 2cef 32       		.byte	0x32
  6976 2cf0 3901     		.2byte	0x139
  6977 2cf2 D9130000 		.4byte	0x13d9
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 124
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 124
 
 
  6978 2cf6 04       		.byte	0x4
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  7032 2d6f 00       		.byte	0
  7033 2d70 1A       		.uleb128 0x1a
  7034 2d71 5C060000 		.4byte	.LASF610
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 125
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 125
 
 
  7035 2d75 32       		.byte	0x32
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  7089 2dec 34       		.byte	0x34
  7090 2ded 39       		.byte	0x39
  7091 2dee 07010000 		.4byte	0x107
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 126
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 126
 
 
  7092 2df2 08       		.byte	0x8
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  7146 2e5b 08       		.uleb128 0x8
  7147 2e5c A7220000 		.4byte	.LASF623
  7148 2e60 34       		.byte	0x34
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 127
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 127
 
 
  7149 2e61 4A       		.byte	0x4a
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  7203 2eca 07010000 		.4byte	0x107
  7204 2ece 04       		.byte	0x4
  7205 2ecf 08       		.uleb128 0x8
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 128
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 128
 
 
  7206 2ed0 311A0000 		.4byte	.LASF630
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  7260 2f3f 34       		.byte	0x34
  7261 2f40 6B       		.byte	0x6b
  7262 2f41 07010000 		.4byte	0x107
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 129
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 129
 
 
  7263 2f45 04       		.byte	0x4
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  7317 2fb1 28       		.byte	0x28
  7318 2fb2 08       		.uleb128 0x8
  7319 2fb3 931C0000 		.4byte	.LASF644
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 130
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 130
 
 
  7320 2fb7 34       		.byte	0x34
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  7374 3026 34       		.byte	0x34
  7375 3027 84       		.byte	0x84
  7376 3028 07010000 		.4byte	0x107
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 131
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 131
 
 
  7377 302c 0004     		.2byte	0x400
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  7431 30a1 4404     		.2byte	0x444
  7432 30a3 28       		.uleb128 0x28
  7433 30a4 686300   		.ascii	"hc\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 132
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 132
 
 
  7434 30a7 34       		.byte	0x34
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  7488 311c 34       		.byte	0x34
  7489 311d 9F       		.byte	0x9f
  7490 311e 07010000 		.4byte	0x107
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 133
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 133
 
 
  7491 3122 1C08     		.2byte	0x81c
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  7545 3197 4008     		.2byte	0x840
  7546 3199 27       		.uleb128 0x27
  7547 319a 7D0D0000 		.4byte	.LASF680
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 134
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 134
 
 
  7548 319e 34       		.byte	0x34
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  7602 3210 06       		.uleb128 0x6
  7603 3211 00320000 		.4byte	0x3200
  7604 3215 13       		.uleb128 0x13
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 135
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 135
 
 
  7605 3216 07010000 		.4byte	0x107
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  7659 3297 14       		.uleb128 0x14
  7660 3298 3E000000 		.4byte	0x3e
  7661 329c 0F       		.byte	0xf
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 136
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 136
 
 
  7662 329d 00       		.byte	0
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  7716 3310 C9       		.byte	0xc9
  7717 3311 FC000000 		.4byte	0xfc
  7718 3315 08       		.byte	0x8
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 137
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 137
 
 
  7719 3316 00       		.byte	0
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  7773 3379 CF       		.byte	0xcf
  7774 337a BB330000 		.4byte	0x33bb
  7775 337e 08       		.uleb128 0x8
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 138
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 138
 
 
  7776 337f DF070000 		.4byte	.LASF693
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  7830 33eb 33       		.byte	0x33
  7831 33ec 0B01     		.2byte	0x10b
  7832 33ee F4330000 		.4byte	0x33f4
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 139
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 139
 
 
  7833 33f2 00       		.byte	0
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  7887 345d 33000000 		.4byte	0x33
  7888 3461 10       		.byte	0x10
  7889 3462 00       		.byte	0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 140
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 140
 
 
  7890 3463 1A       		.uleb128 0x1a
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  7944 34d8 33       		.byte	0x33
  7945 34d9 4901     		.2byte	0x149
  7946 34db 01350000 		.4byte	0x3501
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 141
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 141
 
 
  7947 34df 18       		.byte	0x18
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  8001 3550 092D0000 		.4byte	0x2d09
  8002 3554 0C       		.byte	0xc
  8003 3555 00       		.byte	0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 142
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 142
 
 
  8004 3556 1A       		.uleb128 0x1a
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  8058 35cd 00       		.byte	0
  8059 35ce 22       		.uleb128 0x22
  8060 35cf 6E1B0000 		.4byte	.LASF721
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 143
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 143
 
 
  8061 35d3 01       		.byte	0x1
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  8115 363f E8       		.byte	0xe8
  8116 3640 20370000 		.4byte	0x3720
  8117 3644 54       		.byte	0x54
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 144
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 144
 
 
  8118 3645 28       		.uleb128 0x28
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  8172 36af DA       		.byte	0xda
  8173 36b0 15370000 		.4byte	0x3715
  8174 36b4 08       		.uleb128 0x8
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 145
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 145
 
 
  8175 36b5 131A0000 		.4byte	.LASF525
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  8229 3721 C6000000 		.4byte	0xc6
  8230 3725 30370000 		.4byte	0x3730
  8231 3729 14       		.uleb128 0x14
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 146
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 146
 
 
  8232 372a 3E000000 		.4byte	0x3e
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  8286 3793 261B0000 		.4byte	.LASF741
  8287 3797 07       		.byte	0x7
  8288 3798 00       		.byte	0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 147
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 147
 
 
  8289 3799 04       		.uleb128 0x4
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  8343 3805 09380000 		.4byte	0x3809
  8344 3809 0D       		.uleb128 0xd
  8345 380a 14380000 		.4byte	0x3814
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 148
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 148
 
 
  8346 380e 0E       		.uleb128 0xe
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  8400 3879 BE       		.byte	0xbe
  8401 387a 3B380000 		.4byte	0x383b
  8402 387e 05       		.uleb128 0x5
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 149
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 149
 
 
  8403 387f 73380000 		.4byte	0x3873
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  8457 38f2 65000000 		.4byte	0x65
  8458 38f6 01390000 		.4byte	0x3901
  8459 38fa 14       		.uleb128 0x14
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 150
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 150
 
 
  8460 38fb 3E000000 		.4byte	0x3e
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  8514 396a 39       		.byte	0x39
  8515 396b E9       		.byte	0xe9
  8516 396c 2C000000 		.4byte	0x2c
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 151
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 151
 
 
  8517 3970 16       		.uleb128 0x16
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  8571 39df 3A       		.byte	0x3a
  8572 39e0 13       		.byte	0x13
  8573 39e1 283A0000 		.4byte	0x3a28
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 152
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 152
 
 
  8574 39e5 54       		.byte	0x54
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  8628 3a4e 543A0000 		.4byte	0x3a54
  8629 3a52 00       		.byte	0
  8630 3a53 00       		.byte	0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 153
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 153
 
 
  8631 3a54 0B       		.uleb128 0xb
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  8685 3abd 543A0000 		.4byte	0x3a54
  8686 3ac1 08       		.byte	0x8
  8687 3ac2 00       		.byte	0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 154
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 154
 
 
  8688 3ac3 04       		.uleb128 0x4
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  8742 3b30 14       		.byte	0x14
  8743 3b31 00       		.byte	0
  8744 3b32 0B       		.uleb128 0xb
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 155
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 155
 
 
  8745 3b33 04       		.byte	0x4
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  8799 3ba2 3F       		.byte	0x3f
  8800 3ba3 2C000000 		.4byte	0x2c
  8801 3ba7 18       		.byte	0x18
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 156
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 156
 
 
  8802 3ba8 08       		.uleb128 0x8
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  8856 3c18 3B       		.byte	0x3b
  8857 3c19 5D       		.byte	0x5d
  8858 3c1a 4F3C0000 		.4byte	0x3c4f
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 157
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 157
 
 
  8859 3c1e 08       		.uleb128 0x8
@@ -9418,7 +9418,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  8913 3c8a 77       		.byte	0x77
  8914 3c8b 2C000000 		.4byte	0x2c
  8915 3c8f 04       		.byte	0x4
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 158
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 158
 
 
  8916 3c90 00       		.byte	0
@@ -9478,7 +9478,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  8970 3cf9 3B       		.byte	0x3b
  8971 3cfa C3       		.byte	0xc3
  8972 3cfb C1030000 		.4byte	0x3c1
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 159
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 159
 
 
  8973 3cff 1C       		.byte	0x1c
@@ -9538,7 +9538,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  9027 3d6b 43       		.byte	0x43
  9028 3d6c 18       		.uleb128 0x18
  9029 3d6d 5F6C6200 		.ascii	"_lb\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 160
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 160
 
 
  9030 3d71 3B       		.byte	0x3b
@@ -9598,7 +9598,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  9084 3de0 04       		.byte	0x4
  9085 3de1 EA3D0000 		.4byte	0x3dea
  9086 3de5 05       		.uleb128 0x5
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 161
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 161
 
 
  9087 3de6 DF3D0000 		.4byte	0x3ddf
@@ -9658,7 +9658,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  9141 3e5f 34       		.byte	0x34
  9142 3e60 0A       		.uleb128 0xa
  9143 3e61 C9230000 		.4byte	.LASF838
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 162
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 162
 
 
  9144 3e65 3B       		.byte	0x3b
@@ -9718,7 +9718,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  9198 3eda 3B       		.byte	0x3b
  9199 3edb 7C02     		.2byte	0x27c
  9200 3edd 4F3C0000 		.4byte	0x3c4f
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 163
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 163
 
 
  9201 3ee1 4801     		.2byte	0x148
@@ -9778,7 +9778,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  9255 3f5f 2C000000 		.4byte	0x2c
  9256 3f63 00       		.byte	0
  9257 3f64 0B       		.uleb128 0xb
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 164
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 164
 
 
  9258 3f65 04       		.byte	0x4
@@ -9838,7 +9838,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  9312 3fdf EB3F0000 		.4byte	0x3feb
  9313 3fe3 08       		.byte	0x8
  9314 3fe4 00       		.byte	0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 165
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 165
 
 
  9315 3fe5 0B       		.uleb128 0xb
@@ -9898,7 +9898,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  9369 4058 04       		.byte	0x4
  9370 4059 0A       		.uleb128 0xa
  9371 405a 30180000 		.4byte	.LASF861
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 166
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 166
 
 
  9372 405e 3B       		.byte	0x3b
@@ -9958,7 +9958,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  9426 40d3 3B       		.byte	0x3b
  9427 40d4 6602     		.2byte	0x266
  9428 40d6 57410000 		.4byte	0x4157
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 167
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 167
 
 
  9429 40da 88       		.byte	0x88
@@ -10018,7 +10018,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  9483 4150 14       		.uleb128 0x14
  9484 4151 3E000000 		.4byte	0x3e
  9485 4155 07       		.byte	0x7
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 168
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 168
 
 
  9486 4156 00       		.byte	0
@@ -10078,7 +10078,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  9540 41c8 67410000 		.4byte	0x4167
  9541 41cc 00       		.byte	0
  9542 41cd 13       		.uleb128 0x13
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 169
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 169
 
 
  9543 41ce 11110000 		.4byte	0x1111
@@ -10138,7 +10138,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  9597 4245 38390000 		.4byte	0x3938
  9598 4249 04       		.uleb128 0x4
  9599 424a 74120000 		.4byte	.LASF886
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 170
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 170
 
 
  9600 424e 3D       		.byte	0x3d
@@ -10198,7 +10198,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  9654 42b9 3D       		.byte	0x3d
  9655 42ba 2E       		.byte	0x2e
  9656 42bb 12430000 		.4byte	0x4312
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 171
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 171
 
 
  9657 42bf 18       		.uleb128 0x18
@@ -10258,7 +10258,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  9711 4326 4F430000 		.4byte	0x434f
  9712 432a 18       		.uleb128 0x18
  9713 432b 62756600 		.ascii	"buf\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 172
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 172
 
 
  9714 432f 3D       		.byte	0x3d
@@ -10318,7 +10318,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  9768 4398 21       		.byte	0x21
  9769 4399 80430000 		.4byte	0x4380
  9770 439d 00       		.byte	0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 173
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 173
 
 
  9771 439e 18       		.uleb128 0x18
@@ -10378,7 +10378,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  9825 4403 16       		.uleb128 0x16
  9826 4404 860D0000 		.4byte	.LASF904
  9827 4408 3E       		.byte	0x3e
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 174
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 174
 
 
  9828 4409 10       		.byte	0x10
@@ -10438,7 +10438,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  9882 4478 40       		.byte	0x40
  9883 4479 12       		.byte	0x12
  9884 447a 35440000 		.4byte	0x4435
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 175
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 175
 
 
  9885 447e 02       		.uleb128 0x2
@@ -10498,7 +10498,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  9939 44e9 07       		.byte	0x7
  9940 44ea 01       		.byte	0x1
  9941 44eb 65000000 		.4byte	0x65
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 176
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 176
 
 
  9942 44ef 42       		.byte	0x42
@@ -10523,7 +10523,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  9961 4514 32       		.uleb128 0x32
  9962 4515 68140000 		.4byte	.LASF933
  9963 4519 01       		.byte	0x1
- 9964 451a 11       		.byte	0x11
+ 9964 451a 10       		.byte	0x10
  9965 451b 70120000 		.4byte	0x1270
  9966 451f 05       		.uleb128 0x5
  9967 4520 03       		.byte	0x3
@@ -10538,7 +10538,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  9976 4536 32       		.uleb128 0x32
  9977 4537 8A030000 		.4byte	.LASF934
  9978 453b 01       		.byte	0x1
- 9979 453c 14       		.byte	0x14
+ 9979 453c 13       		.byte	0x13
  9980 453d 25450000 		.4byte	0x4525
  9981 4541 05       		.uleb128 0x5
  9982 4542 03       		.byte	0x3
@@ -10546,7 +10546,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  9984 4547 32       		.uleb128 0x32
  9985 4548 FF220000 		.4byte	.LASF935
  9986 454c 01       		.byte	0x1
- 9987 454d 15       		.byte	0x15
+ 9987 454d 14       		.byte	0x14
  9988 454e 25450000 		.4byte	0x4525
  9989 4552 05       		.uleb128 0x5
  9990 4553 03       		.byte	0x3
@@ -10554,18 +10554,18 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  9992 4558 32       		.uleb128 0x32
  9993 4559 91150000 		.4byte	.LASF936
  9994 455d 01       		.byte	0x1
- 9995 455e 16       		.byte	0x16
+ 9995 455e 15       		.byte	0x15
  9996 455f 25450000 		.4byte	0x4525
  9997 4563 05       		.uleb128 0x5
  9998 4564 03       		.byte	0x3
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 177
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 177
 
 
  9999 4565 00000000 		.4byte	micFront_cmplx_input
  10000 4569 32       		.uleb128 0x32
  10001 456a C60C0000 		.4byte	.LASF937
  10002 456e 01       		.byte	0x1
- 10003 456f 17       		.byte	0x17
+ 10003 456f 16       		.byte	0x16
  10004 4570 25450000 		.4byte	0x4525
  10005 4574 05       		.uleb128 0x5
  10006 4575 03       		.byte	0x3
@@ -10580,7 +10580,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  10015 458b 32       		.uleb128 0x32
  10016 458c 99090000 		.4byte	.LASF938
  10017 4590 01       		.byte	0x1
- 10018 4591 19       		.byte	0x19
+ 10018 4591 18       		.byte	0x18
  10019 4592 7A450000 		.4byte	0x457a
  10020 4596 05       		.uleb128 0x5
  10021 4597 03       		.byte	0x3
@@ -10588,7 +10588,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  10023 459c 32       		.uleb128 0x32
  10024 459d C8250000 		.4byte	.LASF939
  10025 45a1 01       		.byte	0x1
- 10026 45a2 1A       		.byte	0x1a
+ 10026 45a2 19       		.byte	0x19
  10027 45a3 7A450000 		.4byte	0x457a
  10028 45a7 05       		.uleb128 0x5
  10029 45a8 03       		.byte	0x3
@@ -10596,7 +10596,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  10031 45ad 32       		.uleb128 0x32
  10032 45ae E4040000 		.4byte	.LASF940
  10033 45b2 01       		.byte	0x1
- 10034 45b3 1B       		.byte	0x1b
+ 10034 45b3 1A       		.byte	0x1a
  10035 45b4 7A450000 		.4byte	0x457a
  10036 45b8 05       		.uleb128 0x5
  10037 45b9 03       		.byte	0x3
@@ -10604,7 +10604,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  10039 45be 32       		.uleb128 0x32
  10040 45bf CD040000 		.4byte	.LASF941
  10041 45c3 01       		.byte	0x1
- 10042 45c4 1C       		.byte	0x1c
+ 10042 45c4 1B       		.byte	0x1b
  10043 45c5 7A450000 		.4byte	0x457a
  10044 45c9 05       		.uleb128 0x5
  10045 45ca 03       		.byte	0x3
@@ -10612,18 +10612,18 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  10047 45cf 32       		.uleb128 0x32
  10048 45d0 7F1C0000 		.4byte	.LASF942
  10049 45d4 01       		.byte	0x1
- 10050 45d5 1D       		.byte	0x1d
+ 10050 45d5 1C       		.byte	0x1c
  10051 45d6 25000000 		.4byte	0x25
  10052 45da 05       		.uleb128 0x5
  10053 45db 03       		.byte	0x3
  10054 45dc 00000000 		.4byte	speed_coeff
  10055 45e0 32       		.uleb128 0x32
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 178
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 178
 
 
  10056 45e1 52090000 		.4byte	.LASF943
  10057 45e5 01       		.byte	0x1
- 10058 45e6 1E       		.byte	0x1e
+ 10058 45e6 1D       		.byte	0x1d
  10059 45e7 C0150000 		.4byte	0x15c0
  10060 45eb 05       		.uleb128 0x5
  10061 45ec 03       		.byte	0x3
@@ -10631,7 +10631,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  10063 45f1 33       		.uleb128 0x33
  10064 45f2 EE1C0000 		.4byte	.LASF944
  10065 45f6 01       		.byte	0x1
- 10066 45f7 1B01     		.2byte	0x11b
+ 10066 45f7 1F01     		.2byte	0x11f
  10067 45f9 80430000 		.4byte	0x4380
  10068 45fd 00000000 		.4byte	.LFB296
  10069 4601 80000000 		.4byte	.LFE296-.LFB296
@@ -10641,7 +10641,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  10073 460b 34       		.uleb128 0x34
  10074 460c 16240000 		.4byte	.LASF772
  10075 4610 01       		.byte	0x1
- 10076 4611 1B01     		.2byte	0x11b
+ 10076 4611 1F01     		.2byte	0x11f
  10077 4613 73440000 		.4byte	0x4473
  10078 4617 00000000 		.4byte	.LLST31
  10079 461b 35       		.uleb128 0x35
@@ -10651,7 +10651,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  10083 4625 33       		.uleb128 0x33
  10084 4626 D8170000 		.4byte	.LASF945
  10085 462a 01       		.byte	0x1
- 10086 462b 1801     		.2byte	0x118
+ 10086 462b 1C01     		.2byte	0x11c
  10087 462d C0150000 		.4byte	0x15c0
  10088 4631 00000000 		.4byte	.LFB295
  10089 4635 28000000 		.4byte	.LFE295-.LFB295
@@ -10665,7 +10665,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  10097 4649 33       		.uleb128 0x33
  10098 464a EE140000 		.4byte	.LASF946
  10099 464e 01       		.byte	0x1
- 10100 464f 1501     		.2byte	0x115
+ 10100 464f 1901     		.2byte	0x119
  10101 4651 25000000 		.4byte	0x25
  10102 4655 00000000 		.4byte	.LFB294
  10103 4659 2C000000 		.4byte	.LFE294-.LFB294
@@ -10678,11 +10678,11 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  10110 466c 00       		.byte	0
  10111 466d 36       		.uleb128 0x36
  10112 466e 220D0000 		.4byte	.LASF947
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 179
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 179
 
 
  10113 4672 01       		.byte	0x1
- 10114 4673 1101     		.2byte	0x111
+ 10114 4673 1501     		.2byte	0x115
  10115 4675 00000000 		.4byte	.LFB293
  10116 4679 2C000000 		.4byte	.LFE293-.LFB293
  10117 467d 01       		.uleb128 0x1
@@ -10693,7 +10693,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  10122 4688 0A000000 		.4byte	.LBB71
  10123 468c 30000000 		.4byte	.Ldebug_ranges0+0x30
  10124 4690 01       		.byte	0x1
- 10125 4691 1201     		.2byte	0x112
+ 10125 4691 1601     		.2byte	0x116
  10126 4693 38       		.uleb128 0x38
  10127 4694 B34B0000 		.4byte	0x4bb3
  10128 4698 06       		.uleb128 0x6
@@ -10719,7 +10719,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  10148 46c1 3B       		.uleb128 0x3b
  10149 46c2 69000000 		.4byte	.LASF948
  10150 46c6 01       		.byte	0x1
- 10151 46c7 C6       		.byte	0xc6
+ 10151 46c7 CA       		.byte	0xca
  10152 46c8 00000000 		.4byte	.LFB292
  10153 46cc E8010000 		.4byte	.LFE292-.LFB292
  10154 46d0 01       		.uleb128 0x1
@@ -10728,34 +10728,34 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  10157 46d6 3C       		.uleb128 0x3c
  10158 46d7 0B200000 		.4byte	.LASF949
  10159 46db 01       		.byte	0x1
- 10160 46dc C6       		.byte	0xc6
+ 10160 46dc CA       		.byte	0xca
  10161 46dd 2F440000 		.4byte	0x442f
  10162 46e1 D0000000 		.4byte	.LLST24
  10163 46e5 3C       		.uleb128 0x3c
  10164 46e6 D5010000 		.4byte	.LASF950
  10165 46ea 01       		.byte	0x1
- 10166 46eb C6       		.byte	0xc6
+ 10166 46eb CA       		.byte	0xca
  10167 46ec E1000000 		.4byte	0xe1
  10168 46f0 15010000 		.4byte	.LLST25
  10169 46f4 32       		.uleb128 0x32
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 180
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 180
 
 
  10170 46f5 37070000 		.4byte	.LASF951
  10171 46f9 01       		.byte	0x1
- 10172 46fa D0       		.byte	0xd0
+ 10172 46fa D4       		.byte	0xd4
  10173 46fb E1000000 		.4byte	0xe1
  10174 46ff 05       		.uleb128 0x5
  10175 4700 03       		.byte	0x3
- 10176 4701 00000000 		.4byte	nb_samples.14235
+ 10176 4701 00000000 		.4byte	nb_samples.14227
  10177 4705 32       		.uleb128 0x32
  10178 4706 A5280000 		.4byte	.LASF952
  10179 470a 01       		.byte	0x1
- 10180 470b D1       		.byte	0xd1
+ 10180 470b D5       		.byte	0xd5
  10181 470c C6000000 		.4byte	0xc6
  10182 4710 05       		.uleb128 0x5
  10183 4711 03       		.byte	0x3
- 10184 4712 00000000 		.4byte	mustSend.14236
+ 10184 4712 00000000 		.4byte	mustSend.14228
  10185 4716 3D       		.uleb128 0x3d
  10186 4717 10000000 		.4byte	.LBB54
  10187 471b AC000000 		.4byte	.LBE54-.LBB54
@@ -10763,7 +10763,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  10189 4723 3E       		.uleb128 0x3e
  10190 4724 6900     		.ascii	"i\000"
  10191 4726 01       		.byte	0x1
- 10192 4727 D4       		.byte	0xd4
+ 10192 4727 D8       		.byte	0xd8
  10193 4728 E1000000 		.4byte	0xe1
  10194 472c 5A010000 		.4byte	.LLST26
  10195 4730 00       		.byte	0
@@ -10772,7 +10772,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  10198 4736 56010000 		.4byte	.LBB55
  10199 473a 4E000000 		.4byte	.LBE55-.LBB55
  10200 473e 01       		.byte	0x1
- 10201 473f 0601     		.2byte	0x106
+ 10201 473f 0A01     		.2byte	0x10a
  10202 4741 56480000 		.4byte	0x4856
  10203 4745 40       		.uleb128 0x40
  10204 4746 764B0000 		.4byte	0x4b76
@@ -10798,7 +10798,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  10224 4783 0F       		.byte	0xf
  10225 4784 BF01     		.2byte	0x1bf
  10226 4786 40       		.uleb128 0x40
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 181
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 181
 
 
  10227 4787 174C0000 		.4byte	0x4c17
@@ -10858,7 +10858,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  10281 481b 174C0000 		.4byte	0x4c17
  10282 481f 00020000 		.4byte	.LLST30
  10283 4823 00       		.byte	0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 182
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 182
 
 
  10284 4824 00       		.byte	0
@@ -10918,7 +10918,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  10338 488c 03       		.byte	0x3
  10339 488d 00000000 		.4byte	micLeft_cmplx_input
  10340 4891 00       		.byte	0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 183
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 183
 
 
  10341 4892 46       		.uleb128 0x46
@@ -10978,7 +10978,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  10395 48f1 0A       		.byte	0xa
  10396 48f2 0004     		.2byte	0x400
  10397 48f4 00       		.byte	0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 184
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 184
 
 
  10398 48f5 46       		.uleb128 0x46
@@ -11038,7 +11038,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  10452 4954 03       		.byte	0x3
  10453 4955 00000000 		.4byte	micBack_cmplx_input
  10454 4959 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 185
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 185
 
 
  10455 495a 01       		.uleb128 0x1
@@ -11089,7 +11089,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  10500 49a6 3B       		.uleb128 0x3b
  10501 49a7 B61A0000 		.4byte	.LASF953
  10502 49ab 01       		.byte	0x1
- 10503 49ac 8A       		.byte	0x8a
+ 10503 49ac 8D       		.byte	0x8d
  10504 49ad 00000000 		.4byte	.LFB291
  10505 49b1 3C010000 		.4byte	.LFE291-.LFB291
  10506 49b5 01       		.uleb128 0x1
@@ -11098,78 +11098,78 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  10509 49bb 3C       		.uleb128 0x3c
  10510 49bc B50D0000 		.4byte	.LASF954
  10511 49c0 01       		.byte	0x1
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 186
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 186
 
 
- 10512 49c1 8A       		.byte	0x8a
+ 10512 49c1 8D       		.byte	0x8d
  10513 49c2 80430000 		.4byte	0x4380
  10514 49c6 14020000 		.4byte	.LLST9
  10515 49ca 3C       		.uleb128 0x3c
  10516 49cb 1F180000 		.4byte	.LASF955
  10517 49cf 01       		.byte	0x1
- 10518 49d0 8A       		.byte	0x8a
+ 10518 49d0 8D       		.byte	0x8d
  10519 49d1 80430000 		.4byte	0x4380
  10520 49d5 43020000 		.4byte	.LLST10
  10521 49d9 3C       		.uleb128 0x3c
  10522 49da 391B0000 		.4byte	.LASF956
  10523 49de 01       		.byte	0x1
- 10524 49df 8A       		.byte	0x8a
+ 10524 49df 8D       		.byte	0x8d
  10525 49e0 80430000 		.4byte	0x4380
  10526 49e4 72020000 		.4byte	.LLST11
  10527 49e8 3C       		.uleb128 0x3c
  10528 49e9 E6170000 		.4byte	.LASF957
  10529 49ed 01       		.byte	0x1
- 10530 49ee 8A       		.byte	0x8a
+ 10530 49ee 8D       		.byte	0x8d
  10531 49ef 80430000 		.4byte	0x4380
  10532 49f3 A1020000 		.4byte	.LLST12
  10533 49f7 47       		.uleb128 0x47
  10534 49f8 FE230000 		.4byte	.LASF958
  10535 49fc 01       		.byte	0x1
- 10536 49fd 8B       		.byte	0x8b
+ 10536 49fd 8F       		.byte	0x8f
  10537 49fe 25000000 		.4byte	0x25
  10538 4a02 D0020000 		.4byte	.LLST13
  10539 4a06 47       		.uleb128 0x47
  10540 4a07 160B0000 		.4byte	.LASF959
  10541 4a0b 01       		.byte	0x1
- 10542 4a0c 8C       		.byte	0x8c
+ 10542 4a0c 90       		.byte	0x90
  10543 4a0d 25000000 		.4byte	0x25
  10544 4a11 18030000 		.4byte	.LLST14
  10545 4a15 47       		.uleb128 0x47
  10546 4a16 84190000 		.4byte	.LASF960
  10547 4a1a 01       		.byte	0x1
- 10548 4a1b 8D       		.byte	0x8d
+ 10548 4a1b 91       		.byte	0x91
  10549 4a1c 25000000 		.4byte	0x25
  10550 4a20 3C030000 		.4byte	.LLST15
  10551 4a24 47       		.uleb128 0x47
  10552 4a25 23260000 		.4byte	.LASF961
  10553 4a29 01       		.byte	0x1
- 10554 4a2a 8E       		.byte	0x8e
+ 10554 4a2a 92       		.byte	0x92
  10555 4a2b 25000000 		.4byte	0x25
  10556 4a2f 6C030000 		.4byte	.LLST16
  10557 4a33 47       		.uleb128 0x47
  10558 4a34 4D240000 		.4byte	.LASF962
  10559 4a38 01       		.byte	0x1
- 10560 4a39 90       		.byte	0x90
+ 10560 4a39 94       		.byte	0x94
  10561 4a3a D6000000 		.4byte	0xd6
  10562 4a3e 9C030000 		.4byte	.LLST17
  10563 4a42 32       		.uleb128 0x32
  10564 4a43 36270000 		.4byte	.LASF963
  10565 4a47 01       		.byte	0x1
- 10566 4a48 91       		.byte	0x91
+ 10566 4a48 95       		.byte	0x95
  10567 4a49 C0150000 		.4byte	0x15c0
  10568 4a4d 05       		.uleb128 0x5
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 187
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 187
 
 
  10569 4a4e 03       		.byte	0x3
- 10570 4a4f 00000000 		.4byte	allumer.14225
+ 10570 4a4f 00000000 		.4byte	allumer.14217
  10571 4a53 48       		.uleb128 0x48
  10572 4a54 00000000 		.4byte	.Ldebug_ranges0+0
  10573 4a58 6A4A0000 		.4byte	0x4a6a
  10574 4a5c 3E       		.uleb128 0x3e
  10575 4a5d 6900     		.ascii	"i\000"
  10576 4a5f 01       		.byte	0x1
- 10577 4a60 94       		.byte	0x94
+ 10577 4a60 98       		.byte	0x98
  10578 4a61 E1000000 		.4byte	0xe1
  10579 4a65 B1030000 		.4byte	.LLST18
  10580 4a69 00       		.byte	0
@@ -11180,7 +11180,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  10585 4a77 47       		.uleb128 0x47
  10586 4a78 960B0000 		.4byte	.LASF964
  10587 4a7c 01       		.byte	0x1
- 10588 4a7d AB       		.byte	0xab
+ 10588 4a7d AF       		.byte	0xaf
  10589 4a7e 2C000000 		.4byte	0x2c
  10590 4a82 E7030000 		.4byte	.LLST23
  10591 4a86 35       		.uleb128 0x35
@@ -11202,7 +11202,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  10607 4aa6 82000000 		.4byte	.LBB36
  10608 4aaa 1C000000 		.4byte	.LBE36-.LBB36
  10609 4aae 01       		.byte	0x1
- 10610 4aaf A6       		.byte	0xa6
+ 10610 4aaf AA       		.byte	0xaa
  10611 4ab0 1B4B0000 		.4byte	0x4b1b
  10612 4ab4 40       		.uleb128 0x40
  10613 4ab5 524B0000 		.4byte	0x4b52
@@ -11218,7 +11218,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  10623 4ad4 36040000 		.4byte	.LLST22
  10624 4ad8 43       		.uleb128 0x43
  10625 4ad9 82000000 		.4byte	.LBB37
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 188
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 188
 
 
  10626 4add 1C000000 		.4byte	.LBE37-.LBB37
@@ -11272,36 +11272,36 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  10674 4b25 4A       		.uleb128 0x4a
  10675 4b26 7C1E0000 		.4byte	.LASF998
  10676 4b2a 01       		.byte	0x1
- 10677 4b2b 49       		.byte	0x49
+ 10677 4b2b 48       		.byte	0x48
  10678 4b2c 01       		.byte	0x1
  10679 4b2d 694B0000 		.4byte	0x4b69
  10680 4b31 4B       		.uleb128 0x4b
  10681 4b32 C9200000 		.4byte	.LASF965
  10682 4b36 01       		.byte	0x1
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 189
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 189
 
 
- 10683 4b37 49       		.byte	0x49
+ 10683 4b37 48       		.byte	0x48
  10684 4b38 25000000 		.4byte	0x25
  10685 4b3c 4B       		.uleb128 0x4b
  10686 4b3d 010D0000 		.4byte	.LASF966
  10687 4b41 01       		.byte	0x1
- 10688 4b42 49       		.byte	0x49
+ 10688 4b42 48       		.byte	0x48
  10689 4b43 25000000 		.4byte	0x25
  10690 4b47 4B       		.uleb128 0x4b
  10691 4b48 BC0D0000 		.4byte	.LASF967
  10692 4b4c 01       		.byte	0x1
- 10693 4b4d 49       		.byte	0x49
+ 10693 4b4d 48       		.byte	0x48
  10694 4b4e 25000000 		.4byte	0x25
  10695 4b52 4B       		.uleb128 0x4b
  10696 4b53 9F160000 		.4byte	.LASF968
  10697 4b57 01       		.byte	0x1
- 10698 4b58 49       		.byte	0x49
+ 10698 4b58 48       		.byte	0x48
  10699 4b59 25000000 		.4byte	0x25
  10700 4b5d 4C       		.uleb128 0x4c
  10701 4b5e 4C110000 		.4byte	.LASF972
  10702 4b62 01       		.byte	0x1
- 10703 4b63 4B       		.byte	0x4b
+ 10703 4b63 4A       		.byte	0x4a
  10704 4b64 2C000000 		.4byte	0x2c
  10705 4b68 00       		.byte	0
  10706 4b69 4D       		.uleb128 0x4d
@@ -11338,7 +11338,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  10737 4baa 69010000 		.4byte	0x169
  10738 4bae 03       		.byte	0x3
  10739 4baf BF4B0000 		.4byte	0x4bbf
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 190
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 190
 
 
  10740 4bb3 50       		.uleb128 0x50
@@ -11398,7 +11398,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  10794 4c25 254B0000 		.4byte	0x4b25
  10795 4c29 00000000 		.4byte	.LFB297
  10796 4c2d B4010000 		.4byte	.LFE297-.LFB297
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 191
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 191
 
 
  10797 4c31 01       		.uleb128 0x1
@@ -11458,7 +11458,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  10851 4ca3 E0000000 		.4byte	.LVL5
  10852 4ca7 444E0000 		.4byte	0x4e44
  10853 4cab 39       		.uleb128 0x39
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 192
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 192
 
 
  10854 4cac F6000000 		.4byte	.LVL6
@@ -11518,7 +11518,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  10908 4d24 54       		.uleb128 0x54
  10909 4d25 254B0000 		.4byte	0x4b25
  10910 4d29 00000000 		.4byte	.LFB290
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 193
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 193
 
 
  10911 4d2d 60000000 		.4byte	.LFE290-.LFB290
@@ -11578,7 +11578,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  10965 4d96 3A       		.uleb128 0x3a
  10966 4d97 02       		.uleb128 0x2
  10967 4d98 90       		.byte	0x90
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 194
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 194
 
 
  10968 4d99 43       		.uleb128 0x43
@@ -11638,7 +11638,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  11022 4e0c DC1A0000 		.4byte	.LASF986
  11023 4e10 DC1A0000 		.4byte	.LASF986
  11024 4e14 0A       		.byte	0xa
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 195
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 195
 
 
  11025 4e15 1702     		.2byte	0x217
@@ -11698,7 +11698,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  11079 000f 10       		.uleb128 0x10
  11080 0010 17       		.uleb128 0x17
  11081 0011 00       		.byte	0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 196
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 196
 
 
  11082 0012 00       		.byte	0
@@ -11758,7 +11758,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  11136 0048 0E       		.uleb128 0xe
  11137 0049 0B       		.uleb128 0xb
  11138 004a 0B       		.uleb128 0xb
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 197
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 197
 
 
  11139 004b 3A       		.uleb128 0x3a
@@ -11818,7 +11818,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  11193 0081 0F       		.uleb128 0xf
  11194 0082 00       		.byte	0
  11195 0083 0B       		.uleb128 0xb
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 198
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 198
 
 
  11196 0084 0B       		.uleb128 0xb
@@ -11878,7 +11878,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  11250 00ba 01       		.uleb128 0x1
  11251 00bb 13       		.uleb128 0x13
  11252 00bc 00       		.byte	0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 199
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 199
 
 
  11253 00bd 00       		.byte	0
@@ -11938,7 +11938,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  11307 00f3 3A       		.uleb128 0x3a
  11308 00f4 0B       		.uleb128 0xb
  11309 00f5 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 200
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 200
 
 
  11310 00f6 05       		.uleb128 0x5
@@ -11998,7 +11998,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  11364 012c 19       		.uleb128 0x19
  11365 012d 13       		.uleb128 0x13
  11366 012e 01       		.byte	0x1
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 201
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 201
 
 
  11367 012f 0B       		.uleb128 0xb
@@ -12058,7 +12058,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  11421 0165 3A       		.uleb128 0x3a
  11422 0166 0B       		.uleb128 0xb
  11423 0167 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 202
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 202
 
 
  11424 0168 0B       		.uleb128 0xb
@@ -12118,7 +12118,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  11478 019e 13       		.uleb128 0x13
  11479 019f 3A       		.uleb128 0x3a
  11480 01a0 0B       		.uleb128 0xb
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 203
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 203
 
 
  11481 01a1 3B       		.uleb128 0x3b
@@ -12178,7 +12178,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  11535 01d7 06       		.uleb128 0x6
  11536 01d8 3A       		.uleb128 0x3a
  11537 01d9 0B       		.uleb128 0xb
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 204
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 204
 
 
  11538 01da 3B       		.uleb128 0x3b
@@ -12238,7 +12238,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  11592 0210 49       		.uleb128 0x49
  11593 0211 13       		.uleb128 0x13
  11594 0212 00       		.byte	0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 205
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 205
 
 
  11595 0213 00       		.byte	0
@@ -12298,7 +12298,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  11649 0249 49       		.uleb128 0x49
  11650 024a 13       		.uleb128 0x13
  11651 024b 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 206
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 206
 
 
  11652 024c 19       		.uleb128 0x19
@@ -12358,7 +12358,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  11706 0282 0E       		.uleb128 0xe
  11707 0283 3A       		.uleb128 0x3a
  11708 0284 0B       		.uleb128 0xb
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 207
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 207
 
 
  11709 0285 3B       		.uleb128 0x3b
@@ -12418,7 +12418,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  11763 02be 19       		.uleb128 0x19
  11764 02bf 11       		.uleb128 0x11
  11765 02c0 01       		.uleb128 0x1
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 208
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 208
 
 
  11766 02c1 12       		.uleb128 0x12
@@ -12478,7 +12478,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  11820 02fe 00       		.byte	0
  11821 02ff 00       		.byte	0
  11822 0300 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 209
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 209
 
 
  11823 0301 2E       		.uleb128 0x2e
@@ -12538,7 +12538,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  11877 0338 08       		.uleb128 0x8
  11878 0339 3A       		.uleb128 0x3a
  11879 033a 0B       		.uleb128 0xb
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 210
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 210
 
 
  11880 033b 3B       		.uleb128 0x3b
@@ -12598,7 +12598,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  11934 0371 52       		.uleb128 0x52
  11935 0372 01       		.uleb128 0x1
  11936 0373 55       		.uleb128 0x55
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 211
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 211
 
 
  11937 0374 17       		.uleb128 0x17
@@ -12658,7 +12658,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  11991 03ae 49       		.uleb128 0x49
  11992 03af 13       		.uleb128 0x13
  11993 03b0 02       		.uleb128 0x2
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 212
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 212
 
 
  11994 03b1 17       		.uleb128 0x17
@@ -12718,7 +12718,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  12048 03e7 0B       		.uleb128 0xb
  12049 03e8 3B       		.uleb128 0x3b
  12050 03e9 0B       		.uleb128 0xb
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 213
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 213
 
 
  12051 03ea 49       		.uleb128 0x49
@@ -12778,7 +12778,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  12105 0420 3B       		.uleb128 0x3b
  12106 0421 0B       		.uleb128 0xb
  12107 0422 27       		.uleb128 0x27
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 214
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 214
 
 
  12108 0423 19       		.uleb128 0x19
@@ -12838,7 +12838,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  12162 0459 0E       		.uleb128 0xe
  12163 045a 3A       		.uleb128 0x3a
  12164 045b 0B       		.uleb128 0xb
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 215
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 215
 
 
  12165 045c 3B       		.uleb128 0x3b
@@ -12898,7 +12898,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  12219 0496 00       		.byte	0
  12220 0497 00       		.byte	0
  12221 0498 58       		.uleb128 0x58
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 216
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 216
 
 
  12222 0499 2E       		.uleb128 0x2e
@@ -12958,7 +12958,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  12276 002c 0400     		.2byte	0x4
  12277 002e F3       		.byte	0xf3
  12278 002f 01       		.uleb128 0x1
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 217
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 217
 
 
  12279 0030 50       		.byte	0x50
@@ -13018,7 +13018,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  12333 00ac 01       		.uleb128 0x1
  12334 00ad 50       		.byte	0x50
  12335 00ae 9F       		.byte	0x9f
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 218
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 218
 
 
  12336 00af 54000000 		.4byte	.LVL104
@@ -13078,7 +13078,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  12390 012e 42010000 		.4byte	.LVL68
  12391 0132 56010000 		.4byte	.LVL70
  12392 0136 0100     		.2byte	0x1
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 219
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 219
 
 
  12393 0138 51       		.byte	0x51
@@ -13138,7 +13138,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  12447              	.LLST28:
  12448 01c3 56010000 		.4byte	.LVL70
  12449 01c7 5C010000 		.4byte	.LVL71
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 220
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 220
 
 
  12450 01cb 0300     		.2byte	0x3
@@ -13198,7 +13198,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  12504 024e 26000000 		.4byte	.LVL30
  12505 0252 2C000000 		.4byte	.LVL31
  12506 0256 0400     		.2byte	0x4
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 221
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 221
 
 
  12507 0258 71       		.byte	0x71
@@ -13258,7 +13258,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  12561 02d4 2C000000 		.4byte	.LVL31
  12562 02d8 0600     		.2byte	0x6
  12563 02da 9E       		.byte	0x9e
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 222
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 222
 
 
  12564 02db 04       		.uleb128 0x4
@@ -13318,7 +13318,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  12618 0363 52       		.uleb128 0x52
  12619 0364 00000000 		.4byte	0
  12620 0368 00000000 		.4byte	0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 223
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 223
 
 
  12621              	.LLST16:
@@ -13378,7 +13378,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  12675 03f2 00000000 		.4byte	0
  12676 03f6 00000000 		.4byte	0
  12677              	.LLST19:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 224
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 224
 
 
  12678 03fa 82000000 		.4byte	.LVL39
@@ -13438,7 +13438,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  12732 047c F3       		.byte	0xf3
  12733 047d 03       		.uleb128 0x3
  12734 047e F5       		.byte	0xf5
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 225
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 225
 
 
  12735 047f 40       		.uleb128 0x40
@@ -13498,7 +13498,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  12789 04ed 03       		.uleb128 0x3
  12790 04ee F5       		.byte	0xf5
  12791 04ef 40       		.uleb128 0x40
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 226
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 226
 
 
  12792 04f0 25       		.uleb128 0x25
@@ -13558,7 +13558,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  12846 0562 0600     		.2byte	0x6
  12847 0564 F3       		.byte	0xf3
  12848 0565 03       		.uleb128 0x3
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 227
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 227
 
 
  12849 0566 F5       		.byte	0xf5
@@ -13618,7 +13618,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  12903 05d4 F3       		.byte	0xf3
  12904 05d5 03       		.uleb128 0x3
  12905 05d6 F5       		.byte	0xf5
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 228
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 228
 
 
  12906 05d7 41       		.uleb128 0x41
@@ -13678,7 +13678,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  12960 0645 03       		.uleb128 0x3
  12961 0646 F5       		.byte	0xf5
  12962 0647 41       		.uleb128 0x41
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 229
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 229
 
 
  12963 0648 25       		.uleb128 0x25
@@ -13738,7 +13738,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  13017 06ba 0600     		.2byte	0x6
  13018 06bc F3       		.byte	0xf3
  13019 06bd 03       		.uleb128 0x3
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 230
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 230
 
 
  13020 06be F5       		.byte	0xf5
@@ -13798,7 +13798,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  13074 072c F3       		.byte	0xf3
  13075 072d 03       		.uleb128 0x3
  13076 072e F5       		.byte	0xf5
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 231
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 231
 
 
  13077 072f 42       		.uleb128 0x42
@@ -13858,7 +13858,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  13131 079e F6000000 		.4byte	.LVL6
  13132 07a2 0600     		.2byte	0x6
  13133 07a4 F3       		.byte	0xf3
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 232
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 232
 
 
  13134 07a5 03       		.uleb128 0x3
@@ -13918,7 +13918,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  13188 0812 0600     		.2byte	0x6
  13189 0814 F3       		.byte	0xf3
  13190 0815 03       		.uleb128 0x3
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 233
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 233
 
 
  13191 0816 F5       		.byte	0xf5
@@ -13978,7 +13978,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  13245 0889 03       		.uleb128 0x3
  13246 088a F5       		.byte	0xf5
  13247 088b 40       		.uleb128 0x40
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 234
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 234
 
 
  13248 088c 25       		.uleb128 0x25
@@ -14038,7 +14038,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  13302 090a 0600     		.2byte	0x6
  13303 090c F3       		.byte	0xf3
  13304 090d 03       		.uleb128 0x3
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 235
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 235
 
 
  13305 090e F5       		.byte	0xf5
@@ -14098,7 +14098,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  13359 000b 00       		.byte	0
  13360 000c 0000     		.2byte	0
  13361 000e 0000     		.2byte	0
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 236
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 236
 
 
  13362 0010 00000000 		.4byte	.LFB297
@@ -14158,11 +14158,11 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  13416 0088 00000000 		.4byte	0
  13417 008c 00000000 		.4byte	0
  13418              		.section	.debug_line,"",%progbits
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 237
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 237
 
 
  13419              	.Ldebug_line0:
- 13420 0000 EC0B0000 		.section	.debug_str,"MS",%progbits,1
+ 13420 0000 EE0B0000 		.section	.debug_str,"MS",%progbits,1
  13420      0200FB09 
  13420      00000201 
  13420      FB0E0D00 
@@ -14218,7 +14218,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  13440      484F5400 
  13441              	.LASF31:
  13442 008e 6D73675F 		.ascii	"msg_t\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 238
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 238
 
 
  13442      7400
@@ -14278,7 +14278,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  13472 0113 4932535F 		.ascii	"I2S_READY\000"
  13472      52454144 
  13472      5900
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 239
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 239
 
 
  13473              	.LASF806:
@@ -14338,7 +14338,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  13503              	.LASF229:
  13504 019d 6D5F6E65 		.ascii	"m_next\000"
  13504      787400
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 240
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 240
 
 
  13505              	.LASF319:
@@ -14398,7 +14398,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  13538      65647200 
  13539              	.LASF650:
  13540 0220 44494550 		.ascii	"DIEPTXF\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 241
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 241
 
 
  13540      54584600 
@@ -14458,7 +14458,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  13568      66665F66 
  13568      6C616773 
  13568      00
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 242
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 242
 
 
  13569              	.LASF826:
@@ -14518,7 +14518,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  13599              	.LASF37:
  13600 0342 74687265 		.ascii	"thread_t\000"
  13600      61645F74 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 243
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 243
 
 
  13600      00
@@ -14578,7 +14578,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  13626      746B6C69 
  13626      6D697400 
  13627              	.LASF160:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 244
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 244
 
 
  13628 03ea 4D304152 		.ascii	"M0AR\000"
@@ -14638,7 +14638,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  13657              	.LASF271:
  13658 0475 715F746F 		.ascii	"q_top\000"
  13658      7000
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 245
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 245
 
 
  13659              	.LASF815:
@@ -14698,7 +14698,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  13686      7063616C 
  13686      6C626163 
  13686      6B5F7400 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 246
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 246
 
 
  13687              	.LASF460:
@@ -14758,7 +14758,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  13712      6E47726F 
  13712      757000
  13713              	.LASF665:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 247
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 247
 
 
  13714 05a7 44535453 		.ascii	"DSTS\000"
@@ -14818,7 +14818,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  13740      3100
  13741              	.LASF172:
  13742 0631 52455350 		.ascii	"RESP2\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 248
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 248
 
 
  13742      3200
@@ -14878,7 +14878,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  13771              	.LASF675:
  13772 06bf 72657376 		.ascii	"resvd830\000"
  13772      64383330 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 249
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 249
 
 
  13772      00
@@ -14938,7 +14938,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  13800      4500
  13801              	.LASF567:
  13802 0750 696E5F70 		.ascii	"in_params\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 250
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 250
 
 
  13802      6172616D 
@@ -14998,7 +14998,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  13832      434F4E54 
  13832      494E554F 
  13832      555300
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 251
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 251
 
 
  13833              	.LASF693:
@@ -15058,7 +15058,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  13859              	.LASF701:
  13860 086a 7278636E 		.ascii	"rxcnt\000"
  13860      7400
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 252
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 252
 
 
  13861              	.LASF329:
@@ -15118,7 +15118,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  13890      5F776461 
  13890      7900
  13891              	.LASF921:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 253
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 253
 
 
  13892 08fb 5F5F6664 		.ascii	"__fdlibm_posix\000"
@@ -15178,7 +15178,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  13917              	.LASF832:
  13918 098c 5F737464 		.ascii	"_stdout\000"
  13918      6F757400 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 254
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 254
 
 
  13919              	.LASF181:
@@ -15238,7 +15238,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  13946      7400
  13947              	.LASF414:
  13948 0a1c 4558545F 		.ascii	"EXT_UNINIT\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 255
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 255
 
 
  13948      554E494E 
@@ -15298,7 +15298,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  13980      7272656E 
  13980      7400
  13981              	.LASF995:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 256
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 256
 
 
  13982 0aa1 61756469 		.ascii	"audio_processing.c\000"
@@ -15358,7 +15358,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14009              	.LASF793:
  14010 0b2a 5F5F746D 		.ascii	"__tm_min\000"
  14010      5F6D696E 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 257
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 257
 
 
  14010      00
@@ -15418,7 +15418,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14035              	.LASF184:
  14036 0bbb 52584352 		.ascii	"RXCRCR\000"
  14036      435200
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 258
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 258
 
 
  14037              	.LASF698:
@@ -15478,7 +15478,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14066      544D534B 
  14066      00
  14067              	.LASF568:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 259
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 259
 
 
  14068 0c4e 6F75745F 		.ascii	"out_params\000"
@@ -15538,7 +15538,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14095              	.LASF24:
  14096 0cda 7274636E 		.ascii	"rtcnt_t\000"
  14096      745F7400 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 260
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 260
 
 
  14097              	.LASF348:
@@ -15598,7 +15598,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14127              	.LASF5:
  14128 0d69 73697A65 		.ascii	"size_t\000"
  14128      5F7400
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 261
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 261
 
 
  14129              	.LASF95:
@@ -15658,7 +15658,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14158      454D504D 
  14158      534B00
  14159              	.LASF913:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 262
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 262
 
 
  14160 0e02 52494748 		.ascii	"RIGHT_OUTPUT\000"
@@ -15718,7 +15718,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14188 0e90 61646472 		.ascii	"addr\000"
  14188      00
  14189              	.LASF123:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 263
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 263
 
 
  14190 0e95 52463052 		.ascii	"RF0R\000"
@@ -15778,7 +15778,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14217              	.LASF595:
  14218 0f28 5553425F 		.ascii	"USB_EP0_ERROR\000"
  14218      4550305F 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 264
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 264
 
 
  14218      4552524F 
@@ -15838,7 +15838,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14244      43313120 
  14244      372E322E 
  14244      31203230 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 265
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 265
 
 
  14244      31373039 
@@ -15898,7 +15898,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14262      725F7300 
  14263              	.LASF767:
  14264 113f 746F7069 		.ascii	"topic_s\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 266
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 266
 
 
  14264      635F7300 
@@ -15958,7 +15958,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14292      74537461 
  14292      746500
  14293              	.LASF40:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 267
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 267
 
 
  14294 11e0 705F7072 		.ascii	"p_prio\000"
@@ -16018,7 +16018,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14324 126c 5F636F6F 		.ascii	"_cookie\000"
  14324      6B696500 
  14325              	.LASF886:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 268
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 268
 
 
  14326 1274 70617261 		.ascii	"parameter_namespace_t\000"
@@ -16078,7 +16078,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14352      644300
  14353              	.LASF511:
  14354 1309 50574D44 		.ascii	"PWMD2\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 269
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 269
 
 
  14354      3200
@@ -16138,7 +16138,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14382      4C585F49 
  14382      4E505554 
  14382      00
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 270
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 270
 
 
  14383              	.LASF862:
@@ -16198,7 +16198,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14410 1428 63685365 		.ascii	"chSemSignalI\000"
  14410      6D536967 
  14410      6E616C49 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 271
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 271
 
 
  14410      00
@@ -16258,7 +16258,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14436      5F7400
  14437              	.LASF785:
  14438 14c8 5F5F554C 		.ascii	"__ULong\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 272
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 272
 
 
  14438      6F6E6700 
@@ -16318,7 +16318,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14464 1562 6F70746F 		.ascii	"optopt\000"
  14464      707400
  14465              	.LASF527:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 273
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 273
 
 
  14466 1569 70757474 		.ascii	"putt\000"
@@ -16378,7 +16378,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14494      4556454E 
  14494      545F5355 
  14494      5350454E 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 274
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 274
 
 
  14494      4400
@@ -16438,7 +16438,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14522      5F696565 
  14522      6500
  14523              	.LASF505:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 275
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 275
 
 
  14524 1695 70776D6D 		.ascii	"pwmmode_t\000"
@@ -16498,7 +16498,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14552 171e 6765745F 		.ascii	"get_selector\000"
  14552      73656C65 
  14552      63746F72 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 276
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 276
 
 
  14552      00
@@ -16558,7 +16558,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14578      54797065 
  14578      44656600 
  14579              	.LASF120:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 277
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 277
 
 
  14580 17c7 52444852 		.ascii	"RDHR\000"
@@ -16618,7 +16618,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14608      545F5249 
  14608      47485400 
  14609              	.LASF426:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 278
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 278
 
 
  14610 1851 4750545F 		.ascii	"GPT_UNINIT\000"
@@ -16678,7 +16678,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14634      3200
  14635              	.LASF63:
  14636 18e7 74687265 		.ascii	"threads_queue_t\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 279
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 279
 
 
  14636      6164735F 
@@ -16738,7 +16738,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14664      72717072 
  14664      696F00
  14665              	.LASF432:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 280
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 280
 
 
  14666 197a 47505444 		.ascii	"GPTDriver\000"
@@ -16798,7 +16798,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14696 19fd 77747472 		.ascii	"wttrp\000"
  14696      7000
  14697              	.LASF273:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 281
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 281
 
 
  14698 1a03 715F7264 		.ascii	"q_rdptr\000"
@@ -16858,7 +16858,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14730 1a85 5F736967 		.ascii	"_sign\000"
  14730      6E00
  14731              	.LASF976:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 282
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 282
 
 
  14732 1a8b 706F7274 		.ascii	"port_lock\000"
@@ -16918,7 +16918,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14757              	.LASF390:
  14758 1b1b 64616373 		.ascii	"dacstate_t\000"
  14758      74617465 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 283
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 283
 
 
  14758      5F7400
@@ -16978,7 +16978,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14786      52464C4F 
  14786      5700
  14787              	.LASF154:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 284
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 284
 
 
  14788 1bb5 45534352 		.ascii	"ESCR\000"
@@ -17038,7 +17038,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14816      6E6B00
  14817              	.LASF746:
  14818 1c55 64636D69 		.ascii	"dcmierrorcallback_t\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 285
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 285
 
 
  14818      6572726F 
@@ -17098,7 +17098,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14848      00
  14849              	.LASF931:
  14850 1cd6 4C454438 		.ascii	"LED8\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 286
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 286
 
 
  14850      00
@@ -17158,7 +17158,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14873              	.LASF147:
  14874 1d74 44485231 		.ascii	"DHR12LD\000"
  14874      324C4400 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 287
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 287
 
 
  14875              	.LASF351:
@@ -17218,7 +17218,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14900      707400
  14901              	.LASF880:
  14902 1e1b 5F756E75 		.ascii	"_unused\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 288
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 288
 
 
  14902      73656400 
@@ -17278,7 +17278,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14932 1ea8 6164635F 		.ascii	"adc_channels_num_t\000"
  14932      6368616E 
  14932      6E656C73 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 289
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 289
 
 
  14932      5F6E756D 
@@ -17338,7 +17338,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14959              	.LASF917:
  14960 1f4e 646F7562 		.ascii	"double\000"
  14960      6C6500
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 290
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 290
 
 
  14961              	.LASF808:
@@ -17398,7 +17398,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  14988 1fe0 50555044 		.ascii	"PUPDR\000"
  14988      5200
  14989              	.LASF12:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 291
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 291
 
 
  14990 1fe6 5F5F696E 		.ascii	"__int32_t\000"
@@ -17458,7 +17458,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  15014      00
  15015              	.LASF692:
  15016 2085 71756575 		.ascii	"queue\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 292
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 292
 
 
  15016      6500
@@ -17518,7 +17518,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  15045              	.LASF136:
  15046 2109 52455345 		.ascii	"RESERVED5\000"
  15046      52564544 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 293
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 293
 
 
  15046      3500
@@ -17578,7 +17578,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  15071      72446570 
  15071      75636B00 
  15072              	.LASF259:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 294
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 294
 
 
  15073 21cc 656C5F6C 		.ascii	"el_listener\000"
@@ -17638,7 +17638,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  15099      637300
  15100              	.LASF971:
  15101 2268 63685379 		.ascii	"chSysUnlock\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 295
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 295
 
 
  15101      73556E6C 
@@ -17698,7 +17698,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  15131 22f9 5F646174 		.ascii	"_data\000"
  15131      6100
  15132              	.LASF935:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 296
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 296
 
 
  15133 22ff 6D696352 		.ascii	"micRight_cmplx_input\000"
@@ -17758,7 +17758,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  15159 2390 7472616E 		.ascii	"transmitting\000"
  15159      736D6974 
  15159      74696E67 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 297
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 297
 
 
  15159      00
@@ -17818,7 +17818,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  15189 2416 6E616D65 		.ascii	"name\000"
  15189      00
  15190              	.LASF254:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 298
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 298
 
 
  15191 241b 62696E61 		.ascii	"binary_semaphore_t\000"
@@ -17878,7 +17878,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  15215 24b2 72657376 		.ascii	"resvd700\000"
  15215      64373030 
  15215      00
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 299
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 299
 
 
  15216              	.LASF186:
@@ -17938,7 +17938,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  15243      696E666F 
  15243      00
  15244              	.LASF340:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 300
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 300
 
 
  15245 2552 61646365 		.ascii	"adcerror_t\000"
@@ -17998,7 +17998,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  15271 25e4 53444344 		.ascii	"SDCDriverVMT\000"
  15271      72697665 
  15271      72564D54 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 301
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 301
 
 
  15271      00
@@ -18058,7 +18058,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  15299 267a 424C4B5F 		.ascii	"BLK_DISCONNECTING\000"
  15299      44495343 
  15299      4F4E4E45 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 302
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 302
 
 
  15299      4354494E 
@@ -18118,7 +18118,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  15323      00
  15324              	.LASF189:
  15325 2729 47545052 		.ascii	"GTPR\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 303
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 303
 
 
  15325      00
@@ -18178,7 +18178,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  15354              	.LASF743:
  15355 27b2 44434D49 		.ascii	"DCMIDriver\000"
  15355      44726976 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 304
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 304
 
 
  15355      657200
@@ -18238,7 +18238,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  15385      70654465 
  15385      6600
  15386              	.LASF278:
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 305
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 305
 
 
  15387 2846 6F757470 		.ascii	"output_queue_t\000"
@@ -18298,7 +18298,7 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  15415      3200
  15416              	.LASF545:
  15417 28d7 69735F69 		.ascii	"is_inserted\000"
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 306
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 306
 
 
  15417      6E736572 
@@ -18325,67 +18325,67 @@ ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 1
  15429      74617465 
  15429      5F7400
  15430              		.ident	"GCC: (GNU Tools for Arm Embedded Processors 7-2017-q4-major) 7.2.1 20170904 (release) [ARM
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 307
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 307
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 audio_processing.c
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:18     .text.led_mon.part.0:00000000 $t
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:25     .text.led_mon.part.0:00000000 led_mon.part.0
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:330    .text.led_mon.part.0:000001ac $d
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:336    .text.led_mon:00000000 $t
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:344    .text.led_mon:00000000 led_mon
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:427    .text.led_mon:0000005c $d
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:432    .text.sound_remote:00000000 $t
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:440    .text.sound_remote:00000000 sound_remote
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:662    .text.sound_remote:00000124 $d
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:672    .text.processAudioData:00000000 $t
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:680    .text.processAudioData:00000000 processAudioData
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1017   .text.processAudioData:000001ac $d
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1380   .bss.micRight_cmplx_input:00000000 micRight_cmplx_input
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1368   .bss.micLeft_cmplx_input:00000000 micLeft_cmplx_input
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1356   .bss.micFront_cmplx_input:00000000 micFront_cmplx_input
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1344   .bss.micBack_cmplx_input:00000000 micBack_cmplx_input
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1386   .bss.micRight_output:00000000 micRight_output
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1374   .bss.micLeft_output:00000000 micLeft_output
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1362   .bss.micFront_output:00000000 micFront_output
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1350   .bss.micBack_output:00000000 micBack_output
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1036   .text.wait_send_to_computer:00000000 $t
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1044   .text.wait_send_to_computer:00000000 wait_send_to_computer
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1090   .text.wait_send_to_computer:00000024 $d
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1098   .text.get_speed_coeff:00000000 $t
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1106   .text.get_speed_coeff:00000000 get_speed_coeff
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1144   .text.get_speed_coeff:00000024 $d
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1150   .text.get_direction:00000000 $t
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1158   .text.get_direction:00000000 get_direction
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1196   .text.get_direction:00000020 $d
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1202   .text.get_audio_buffer_ptr:00000000 $t
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1210   .text.get_audio_buffer_ptr:00000000 get_audio_buffer_ptr
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1316   .text.get_audio_buffer_ptr:0000005c $d
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1332   .bss.allumer.14225:00000000 allumer.14225
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1333   .bss.allumer.14225:00000000 $d
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1338   .bss.direction:00000000 direction
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1339   .bss.direction:00000000 $d
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1341   .bss.micBack_cmplx_input:00000000 $d
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1347   .bss.micBack_output:00000000 $d
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1353   .bss.micFront_cmplx_input:00000000 $d
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1359   .bss.micFront_output:00000000 $d
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1365   .bss.micLeft_cmplx_input:00000000 $d
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1371   .bss.micLeft_output:00000000 $d
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1377   .bss.micRight_cmplx_input:00000000 $d
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1383   .bss.micRight_output:00000000 $d
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1392   .bss.mustSend.14236:00000000 mustSend.14236
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1393   .bss.mustSend.14236:00000000 $d
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1395   .bss.nb_samples.14235:00000000 $d
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1399   .bss.nb_samples.14235:00000000 nb_samples.14235
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1402   .bss.speed_coeff:00000000 $d
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1406   .bss.speed_coeff:00000000 speed_coeff
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1409   .data.sendToComputer_sem:00000000 $d
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1413   .data.sendToComputer_sem:00000000 sendToComputer_sem
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1418   .rodata.__func__.7153:00000000 $d
-C:\Users\ludo\AppData\Local\Temp\cca4k04i.s:1422   .rodata.__func__.7153:00000000 __func__.7153
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:18     .text.led_mon.part.0:00000000 $t
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:25     .text.led_mon.part.0:00000000 led_mon.part.0
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:330    .text.led_mon.part.0:000001ac $d
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:336    .text.led_mon:00000000 $t
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:344    .text.led_mon:00000000 led_mon
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:427    .text.led_mon:0000005c $d
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:432    .text.sound_remote:00000000 $t
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:440    .text.sound_remote:00000000 sound_remote
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:662    .text.sound_remote:00000124 $d
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:672    .text.processAudioData:00000000 $t
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:680    .text.processAudioData:00000000 processAudioData
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1017   .text.processAudioData:000001ac $d
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1380   .bss.micRight_cmplx_input:00000000 micRight_cmplx_input
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1368   .bss.micLeft_cmplx_input:00000000 micLeft_cmplx_input
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1356   .bss.micFront_cmplx_input:00000000 micFront_cmplx_input
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1344   .bss.micBack_cmplx_input:00000000 micBack_cmplx_input
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1386   .bss.micRight_output:00000000 micRight_output
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1374   .bss.micLeft_output:00000000 micLeft_output
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1362   .bss.micFront_output:00000000 micFront_output
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1350   .bss.micBack_output:00000000 micBack_output
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1036   .text.wait_send_to_computer:00000000 $t
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1044   .text.wait_send_to_computer:00000000 wait_send_to_computer
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1090   .text.wait_send_to_computer:00000024 $d
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1098   .text.get_speed_coeff:00000000 $t
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1106   .text.get_speed_coeff:00000000 get_speed_coeff
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1144   .text.get_speed_coeff:00000024 $d
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1150   .text.get_direction:00000000 $t
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1158   .text.get_direction:00000000 get_direction
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1196   .text.get_direction:00000020 $d
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1202   .text.get_audio_buffer_ptr:00000000 $t
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1210   .text.get_audio_buffer_ptr:00000000 get_audio_buffer_ptr
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1316   .text.get_audio_buffer_ptr:0000005c $d
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1332   .bss.allumer.14217:00000000 allumer.14217
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1333   .bss.allumer.14217:00000000 $d
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1338   .bss.direction:00000000 direction
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1339   .bss.direction:00000000 $d
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1341   .bss.micBack_cmplx_input:00000000 $d
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1347   .bss.micBack_output:00000000 $d
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1353   .bss.micFront_cmplx_input:00000000 $d
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1359   .bss.micFront_output:00000000 $d
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1365   .bss.micLeft_cmplx_input:00000000 $d
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1371   .bss.micLeft_output:00000000 $d
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1377   .bss.micRight_cmplx_input:00000000 $d
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1383   .bss.micRight_output:00000000 $d
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1392   .bss.mustSend.14228:00000000 mustSend.14228
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1393   .bss.mustSend.14228:00000000 $d
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1395   .bss.nb_samples.14227:00000000 $d
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1399   .bss.nb_samples.14227:00000000 nb_samples.14227
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1402   .bss.speed_coeff:00000000 $d
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1406   .bss.speed_coeff:00000000 speed_coeff
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1409   .data.sendToComputer_sem:00000000 $d
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1413   .data.sendToComputer_sem:00000000 sendToComputer_sem
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1418   .rodata.__func__.7153:00000000 $d
+C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s:1422   .rodata.__func__.7153:00000000 __func__.7153
 
-ARM GAS  C:\Users\ludo\AppData\Local\Temp\cca4k04i.s 			page 308
+ARM GAS  C:\Users\ludo\AppData\Local\Temp\ccSLeFr8.s 			page 308
 
 
 UNDEFINED SYMBOLS

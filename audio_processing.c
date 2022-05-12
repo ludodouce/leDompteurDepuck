@@ -7,7 +7,6 @@
 #include <motors.h>
 #include <audio/microphone.h>
 #include <audio_processing.h>
-#include <communications.h>
 #include <fft.h>
 #include <arm_math.h>
 #include <leds.h>
@@ -73,9 +72,12 @@ static bool direction;
 void led_mon(float left, float right, float front, float back) {
 	//fonction qui gère la gestion de l'allumage des LEDs suivant la provenance du son
 	int select = get_selector();
+
 	if (select!=SELECTORVALUE) { //seulement si le mode chorée n'est pas activée
+
 	if ((right > left)){	//compare l'intensité
 		direction = true;	//choisit la direction où tourner
+
 			if (front > back) {	//compare l'intensité
 				if (abs(right-front)<IN_BETWEEN_FRONT){
 					clear_leds();	//efface les LEDs deja allumee puis allume la led desiree
@@ -101,6 +103,7 @@ void led_mon(float left, float right, float front, float back) {
 			}
 		} else if ((right < left)) {
 			direction = false;		//retient de tourner dans l'autre direction
+
 			if (front > back) {
 						if (abs(front-left)<IN_BETWEEN_FRONT) {
 							clear_leds();
@@ -136,6 +139,7 @@ void led_mon(float left, float right, float front, float back) {
 */
 
 void sound_remote(float* data_L, float* data_R, float* data_F, float* data_B){
+
 	float max_norm_left = MIN_VALUE_THRESHOLD;
 	float max_norm_front = MIN_VALUE_THRESHOLD;
 	float max_norm_back = MIN_VALUE_THRESHOLD;
@@ -261,7 +265,7 @@ void processAudioData(int16_t *data, uint16_t num_samples){
 			//signals to send the result to the computer
 			chBSemSignal(&sendToComputer_sem);
 			mustSend = ZERO;
-		} //ICI y'a des bailles à enlever
+		}
 		nb_samples = ZERO;
 		mustSend++;
 

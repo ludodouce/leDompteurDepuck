@@ -13,7 +13,6 @@
 
 #include <audio_processing.h>
 #include <fft.h>
-#include <communications.h>
 #include <arm_math.h>
 #include <sensors/VL53L0X/VL53L0X.h>
 #include <detecteurinfra.h>
@@ -58,7 +57,7 @@ int main(void)
     /* Infinite loop. */
     while (TRUE) {
 
-        //waits until a result must be sent to the computer
+      //waits until a result must be sent to the computer
     wait_send_to_computer();
     chThdSleepMilliseconds(CENTMILIS);
     }
