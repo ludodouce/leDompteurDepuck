@@ -15,14 +15,13 @@
 #include <fft.h>
 #include <arm_math.h>
 #include <sensors/VL53L0X/VL53L0X.h>
-#include <detecteurinfra.h>
+#include "gestionMouvements.h"
 #include"spi_comm.h"
 
 #define CENTMILIS 100
 #define SERIALCONFIG 115200,0,0,0,
 #define TRUE 1
 
-static int tim;
 static void serial_start(void)
 {
 	//serial config pour la communication

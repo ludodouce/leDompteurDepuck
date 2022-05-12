@@ -5,8 +5,8 @@
  *      Author: ludo
  */
 
-#ifndef DETECTEURINFRA_H_
-#define DETECTEURINFRA_H_
+#ifndef GESTIONMOUVEMENTS_H_
+#define GESTIONMOUVEMENTS_H_
 
 void startDetecteur(void); //start the thread for detectDistance
 void laChoreeDeReggaeton(void); //fonction de la chor�e
@@ -14,4 +14,4 @@ void get_StopAudioSem(void);
 _Bool get_stopAudio(void);
 
 
-#endif /* DETECTEURINFRA_H_ */
+#endif /* GESTIONMOUVEMENTS_H_ */

@@ -10,7 +10,7 @@
 #include <fft.h>
 #include <arm_math.h>
 #include <leds.h>
-#include <detecteurinfra.h>
+#include "gestionMouvements.h"
 
 //semaphore
 static BSEMAPHORE_DECL(sendToComputer_sem, TRUE);
