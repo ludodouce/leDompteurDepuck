@@ -49,6 +49,7 @@ int main(void)
     mic_start(&processAudioData);
     VL53L0X_start();	//init pour le decteur de distance
     startDetecteur();
+
     /* Infinite loop. */
     while (TRUE) {
     chThdSleepMilliseconds(CENTMILIS);
