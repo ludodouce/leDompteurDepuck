@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+
 
 #include "ch.h"
 #include "hal.h"
@@ -11,8 +9,7 @@
 #include <audio/microphone.h>
 
 #include <audio_processing.h>
-#include <fft.h>
-#include <arm_math.h>
+
 #include <sensors/VL53L0X/VL53L0X.h>
 #include "gestionMouvements.h"
 #include"spi_comm.h"

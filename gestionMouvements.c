@@ -15,7 +15,8 @@
 #include <stdbool.h>
 
 #define THREADSIZE 256
-#define INITIAL_SPEED 100
+#define INITIAL_SPEED 300
+#define SPEED_TOUR 100
 #define SPEED_CHOREE 1000
 #define ZERO 0
 #define SELECTOR 5
@@ -63,11 +64,11 @@ static THD_FUNCTION(MouvementsEtModes, arg) {
 	        if ((distance < DISTANCE_SEUIL) && speed!=ZERO){
 
 	        	if (direction) {
-	        	 right_motor_set_speed(-INITIAL_SPEED); //turn right of 90deg
-	        	 left_motor_set_speed(INITIAL_SPEED);
+	        	 right_motor_set_speed(-SPEED_TOUR); //turn right of 90deg
+	        	 left_motor_set_speed(SPEED_TOUR);
 	        	} else {
-	        	 right_motor_set_speed(INITIAL_SPEED); //turn left of 90deg
-	        	 left_motor_set_speed(-INITIAL_SPEED);
+	        	 right_motor_set_speed(SPEED_TOUR); //turn left of 90deg
+	        	 left_motor_set_speed(-SPEED_TOUR);
 	        	}
 	        	 chThdSleepMilliseconds(TEMPS_NONANTE_DEGRES_INITIAL_SPEED);
 	        } else {
