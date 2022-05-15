@@ -187,7 +187,7 @@ void processAudioData(int16_t *data, uint16_t num_samples){
 	*/
 
 	static uint16_t nb_samples = ZERO;
-	static uint8_t mustSend = ZERO;
+
 	bool stop=get_stopAudio();
 
 	if(stop){
@@ -243,13 +243,8 @@ void processAudioData(int16_t *data, uint16_t num_samples){
 		arm_cmplx_mag_f32(micFront_cmplx_input, micFront_output, FFT_SIZE);
 		arm_cmplx_mag_f32(micBack_cmplx_input, micBack_output, FFT_SIZE);
 
-		//sends only one FFT result over 10 for 1 mic to not flood
-		if(mustSend > TAILLEPOUREVITERSURCHARGE){
-			//eviter la stack overflow
-			mustSend = ZERO;
-		}
+
 		nb_samples = ZERO;
-		mustSend++;
 
 		sound_remote(micLeft_output,micRight_output,micFront_output,micBack_output);
 	}
