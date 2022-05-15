@@ -7,7 +7,6 @@
 #include "memory_protection.h"
 #include <usbcfg.h>
 #include <main.h>
-#include <chprintf.h>
 #include <motors.h>
 #include <audio/microphone.h>
 

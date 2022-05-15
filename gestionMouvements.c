@@ -1,8 +1,8 @@
 /*
- * detecteurinfra.c
+ * gestionsMouvements.c
  *
  *  Created on: 29 avr. 2022
- *      Author: ludo
+ *      Author: Ludo et Marius
  */
 
 #include "gestionMouvements.h"
@@ -10,7 +10,6 @@
 #include <sensors/VL53L0X/VL53L0X.h>
 #include <motors.h>
 #include "ch.h"
-#include <chprintf.h>
 #include <audio_processing.h>
 #include "selector.h"
 #include <stdbool.h>
@@ -23,19 +22,23 @@
 #define DISTANCE_SEUIL 55
 #define TEMPS_NONANTE_DEGRES_INITIAL_SPEED 3270
 #define CENTMS 100
+
+//gestion des tempos
 #define SPEED_OFF 0
-#define TEMPO_ROULER 630
+#define TEMPO_ROULER 472
 #define ATTENTE_DEMARRER 3000
 #define TEMPS_QUARANTECINQ_DEGRES 165
 #define TEMPS_TOURS_DEGRES  2970
 #define TEMPS_CENTQUATREVINGT_DEGRES 670
 #define TEMPS_NONANTE_DEGRES_CHOREE_SPEED 340
+#define TEMPO_PAUSE_NONANTE 200
+#define TEMPO_PAUSE_QUARANTECINQ 290
 
 static bool stop_audio = false;
 static BSEMAPHORE_DECL(Stop_Audio, FALSE); //sem pour eviter d'utiliser les ressources de processaudio pour rien
 
-static THD_WORKING_AREA(waDetecteurDistance, THREADSIZE);
-static THD_FUNCTION(DetecteurDistance, arg) {
+static THD_WORKING_AREA(waMouvementsEtModes, THREADSIZE);
+static THD_FUNCTION(MouvementsEtModes, arg) {
 
     chRegSetThreadName(__FUNCTION__);
     (void)arg;
@@ -77,7 +80,7 @@ static THD_FUNCTION(DetecteurDistance, arg) {
 }
 
 void startDetecteur(void){ //declaration du thread
-	chThdCreateStatic(waDetecteurDistance, sizeof(waDetecteurDistance), NORMALPRIO, DetecteurDistance, NULL);
+	chThdCreateStatic(waMouvementsEtModes, sizeof(waMouvementsEtModes), NORMALPRIO, MouvementsEtModes, NULL);
 	}
 
 
@@ -95,9 +98,17 @@ void laChoreeDeReggaeton(void){ //toute la choree
 	left_motor_set_speed(-SPEED_CHOREE); //derriere
 	chThdSleepMilliseconds(TEMPO_ROULER);
 
+	right_motor_set_speed(SPEED_OFF);
+	left_motor_set_speed(SPEED_OFF);		//tempo pause
+	chThdSleepMilliseconds(TEMPO_PAUSE_NONANTE);
+
 	right_motor_set_speed(SPEED_CHOREE);
 	left_motor_set_speed(-SPEED_CHOREE); //tour de 90 degres
 	chThdSleepMilliseconds(TEMPS_NONANTE_DEGRES_CHOREE_SPEED);
+
+	right_motor_set_speed(SPEED_OFF);
+	left_motor_set_speed(SPEED_OFF);
+	chThdSleepMilliseconds(TEMPO_PAUSE_NONANTE);
 
 	right_motor_set_speed(SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE); //devant
@@ -106,9 +117,17 @@ void laChoreeDeReggaeton(void){ //toute la choree
 	left_motor_set_speed(-SPEED_CHOREE);  //derriere
 	chThdSleepMilliseconds(TEMPO_ROULER);
 
+	right_motor_set_speed(SPEED_OFF);
+	left_motor_set_speed(SPEED_OFF);
+	chThdSleepMilliseconds(TEMPO_PAUSE_QUARANTECINQ);
+
 	right_motor_set_speed(-SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE);
 	chThdSleepMilliseconds(TEMPS_QUARANTECINQ_DEGRES);   //toure de 45 degres
+
+	right_motor_set_speed(SPEED_OFF);
+	left_motor_set_speed(SPEED_OFF);		//tempo pause
+	chThdSleepMilliseconds(TEMPO_PAUSE_QUARANTECINQ);
 
 	right_motor_set_speed(SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE); //devant
@@ -116,12 +135,21 @@ void laChoreeDeReggaeton(void){ //toute la choree
 	right_motor_set_speed(-SPEED_CHOREE); //derriere
 	left_motor_set_speed(-SPEED_CHOREE);
 	chThdSleepMilliseconds(TEMPO_ROULER);
+
+	right_motor_set_speed(SPEED_OFF);
+	left_motor_set_speed(SPEED_OFF);
+	chThdSleepMilliseconds(TEMPO_PAUSE_NONANTE);
+
 	right_motor_set_speed(-SPEED_CHOREE); //derriere
 	left_motor_set_speed(-SPEED_CHOREE);
 	chThdSleepMilliseconds(TEMPO_ROULER);
 	right_motor_set_speed(SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE); //devant
 	chThdSleepMilliseconds(TEMPO_ROULER);
+
+	right_motor_set_speed(SPEED_OFF);
+	left_motor_set_speed(SPEED_OFF);		//tempo pause
+	chThdSleepMilliseconds(TEMPO_PAUSE_NONANTE);
 
 	right_motor_set_speed(-SPEED_CHOREE);
 	left_motor_set_speed(SPEED_CHOREE);  //nonante

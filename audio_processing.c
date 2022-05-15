@@ -1,8 +1,6 @@
 #include "ch.h"
 #include "hal.h"
 #include <main.h>
-#include <usbcfg.h>
-#include <chprintf.h>
 
 #include <motors.h>
 #include <audio/microphone.h>
@@ -70,11 +68,11 @@ static bool direction;
  * of the source of the sound by comparing the intensity perceived by M1 (back mic), M2 (left mic), M3 (right mic), M4 (front mic)
  */
 void led_mon(float left, float right, float front, float back) {
-	//fonction qui g�re la gestion de l'allumage des LEDs suivant la provenance du son
-	//seulement si le mode chor�e n'est pas activ�e
-	if ((right > left)){	//compare l'intensit�
-		direction = true;	//choisit la direction o� tourner
-			if (front > back) {	//compare l'intensit�
+	//fonction qui gere la gestion de l'allumage des LEDs suivant la provenance du son
+	//seulement si le mode choree n'est pas activee
+	if ((right > left)){	//compare l'intensite
+		direction = true;	//choisit la direction ou tourner
+			if (front > back) {	//compare l'intensite
 				if (abs(right-front)<IN_BETWEEN_FRONT){
 					clear_leds();	//efface les LEDs deja allumee puis allume la led desiree
 					set_rgb_led(LED2,GREEN);
@@ -158,14 +156,14 @@ void sound_remote(float* data_L, float* data_R, float* data_F, float* data_B){
 		}
 	}
 
-//pour trouver l'intensité au niveau des micros et au niveau de la led par
+//pour trouver l'intensite au niveau des micros et au niveau de la led par
 	//rapport au deux micros pour former les zones (rapport + justesse du code).
 	led_mon(max_norm_left,max_norm_right,max_norm_front,max_norm_back);
 
-	//condition pour les fr�quences pour allumer le robot
+	//condition pour les frequences pour allumer le robot
 
 	if((max_norm_index_left >= NORM_INDEX_MIN_LEFT && max_norm_index_left <= NORM_INDEX_MAX_LEFT) && max_norm_left > LEFT_VALUE_MIN){ // 1015.625Hz et 1093.75Hz
-		//fonctionne seulement s'il n'est pas dans le mode chor�e
+		//fonctionne seulement s'il n'est pas dans le mode choree
 		allumer = !allumer;
 		speed_coeff=allumer;
 		chThdSleepMilliseconds(DEUXMILLEMILIS);
@@ -262,7 +260,7 @@ void processAudioData(int16_t *data, uint16_t num_samples){
 			//signals to send the result to the computer
 			chBSemSignal(&sendToComputer_sem);
 			mustSend = ZERO;
-		} //ICI y'a des bailles � enlever
+		}
 		nb_samples = ZERO;
 		mustSend++;
 
