@@ -1,8 +1,5 @@
-#include "ch.h"
-#include "hal.h"
-#include <main.h>
 
-#include <motors.h>
+#include <main.h>
 #include <audio/microphone.h>
 #include <audio_processing.h>
 #include <fft.h>
@@ -34,27 +31,13 @@ static bool direction;
 
 
 #define MIN_FREQ		60	//we don't analyze before this index to not use resources for nothing
-#define FREQ_FORWARD	32	//250Hz
-#define FREQ_LEFT		19	//296Hz
-#define FREQ_RIGHT		23	//359HZ
-#define FREQ_BACKWARD	32	//406Hz
 #define MAX_FREQ		80	//we don't analyze after this index to not use resources for nothing
-
-#define FREQ_FORWARD_L		(FREQ_FORWARD-1)
-#define FREQ_FORWARD_H		(FREQ_FORWARD+1)
-#define FREQ_LEFT_L			(FREQ_LEFT-1)
-#define FREQ_LEFT_H			(FREQ_LEFT+1)
-#define FREQ_RIGHT_L		(FREQ_RIGHT-1)
-#define FREQ_RIGHT_H		(FREQ_RIGHT+1)
-#define FREQ_BACKWARD_L		(FREQ_BACKWARD-1)
-#define FREQ_BACKWARD_H		(FREQ_BACKWARD+1)
 
 #define SELECTORVALUE 5
 #define LEDON 1
 #define NORMINDEXMAX -1
 #define ZERO 0
 #define COEFFDEUX 2
-#define COEFFSPEED 3
 #define NORM_INDEX_MIN_LEFT 65
 #define NORM_INDEX_MAX_LEFT 70
 #define LEFT_VALUE_MIN 100000
@@ -65,11 +48,14 @@ static bool direction;
 #define TAILLEPOUREVITERSURCHARGE 8
 
 /* Function to turn on and off leds and rgb leds (LED1..LED8) depending on the direction
- * of the source of the sound by comparing the intensity perceived by M1 (back mic), M2 (left mic), M3 (right mic), M4 (front mic)
+ * of the source of the sound by comparing the intensity perceived by
+ * M1 (back mic), M2 (left mic), M3 (right mic), M4 (front mic)
  */
 void led_mon(float left, float right, float front, float back) {
+
 	//fonction qui gere la gestion de l'allumage des LEDs suivant la provenance du son
 	//seulement si le mode choree n'est pas activee
+
 	if ((right > left)){	//compare l'intensite
 		direction = true;	//choisit la direction ou tourner
 			if (front > back) {	//compare l'intensite
@@ -163,9 +149,11 @@ void sound_remote(float* data_L, float* data_R, float* data_F, float* data_B){
 	//condition pour les frequences pour allumer le robot
 
 	if((max_norm_index_left >= NORM_INDEX_MIN_LEFT && max_norm_index_left <= NORM_INDEX_MAX_LEFT) && max_norm_left > LEFT_VALUE_MIN){ // 1015.625Hz et 1093.75Hz
+
 		//fonctionne seulement s'il n'est pas dans le mode choree
 		allumer = !allumer;
 		speed_coeff=allumer;
+
 		chThdSleepMilliseconds(DEUXMILLEMILIS);
 		}
 	if (allumer) {
@@ -173,8 +161,9 @@ void sound_remote(float* data_L, float* data_R, float* data_F, float* data_B){
 	} else {
 		speed_coeff=SPEED_OFF;
 	}
+
 	if ((max_norm_index_left > NORM_INDEX_MAX_LEFT) && allumer) { //accelere le robot en fonction de la vitesse entendue
-			speed_coeff = COEFFSPEED*max_norm_index_left/MIN_FREQ;
+			speed_coeff = COEFFDEUX*max_norm_index_left/MIN_FREQ;
 		}
 }
 
@@ -254,11 +243,9 @@ void processAudioData(int16_t *data, uint16_t num_samples){
 		arm_cmplx_mag_f32(micFront_cmplx_input, micFront_output, FFT_SIZE);
 		arm_cmplx_mag_f32(micBack_cmplx_input, micBack_output, FFT_SIZE);
 
-		//sends only one FFT result over 10 for 1 mic to not flood the computer
-		//sends to UART3
+		//sends only one FFT result over 10 for 1 mic to not flood
 		if(mustSend > TAILLEPOUREVITERSURCHARGE){
-			//signals to send the result to the computer
-			chBSemSignal(&sendToComputer_sem);
+			//eviter la stack overflow
 			mustSend = ZERO;
 		}
 		nb_samples = ZERO;

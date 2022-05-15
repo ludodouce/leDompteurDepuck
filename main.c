@@ -51,9 +51,6 @@ int main(void)
     startDetecteur();
     /* Infinite loop. */
     while (TRUE) {
-
-        //waits until a result must be sent to the computer
-    wait_send_to_computer();
     chThdSleepMilliseconds(CENTMILIS);
     }
 }

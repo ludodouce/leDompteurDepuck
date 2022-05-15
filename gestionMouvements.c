@@ -51,12 +51,15 @@ static THD_FUNCTION(MouvementsEtModes, arg) {
 
 	      //selection du mode choregraphie ou mode Cirque
 	     if(selecteur == SELECTOR){
+
 	    	 stop_audio = true;
 	    	laChoreeDeReggaeton();
 
 	     }else{
+
 		     chBSemSignal(&Stop_Audio); //signal pour reutiliser process audio
 		     stop_audio = false;
+
 	    	 distance = VL53L0X_get_dist_mm(); //receive distance in mm from the Thread of the ToF
 	    	 float speed = get_speed_coeff();
 	    	 bool direction = get_direction(); //receive direction, going left or right, from the Thread of audio processing
@@ -70,9 +73,11 @@ static THD_FUNCTION(MouvementsEtModes, arg) {
 	        	 right_motor_set_speed(SPEED_TOUR); //turn left of 90deg
 	        	 left_motor_set_speed(-SPEED_TOUR);
 	        	}
-	        	 chThdSleepMilliseconds(TEMPS_NONANTE_DEGRES_INITIAL_SPEED);
+
+	        	chThdSleepMilliseconds(TEMPS_NONANTE_DEGRES_INITIAL_SPEED);
 	        } else {
-	        	left_motor_set_speed(INITIAL_SPEED*speed); //going forward with speed depending on the frequency (100step/s by default)
+	        	left_motor_set_speed(INITIAL_SPEED*speed); //going forward with speed
+	        	//depending on the frequency (100step/s by default)
 	        	right_motor_set_speed(INITIAL_SPEED*speed);
 	        }
 	     }
@@ -178,10 +183,10 @@ void laChoreeDeReggaeton(void){ //toute la choree
 	left_motor_set_speed(SPEED_CHOREE);  //tour et quart
 	chThdSleepMilliseconds(TEMPS_TOURS_DEGRES);
 
-	right_motor_set_speed(SPEED_OFF);
+	right_motor_set_speed(SPEED_OFF); //arret
 	left_motor_set_speed(SPEED_OFF);
 
-	chThdSleepMilliseconds(ATTENTE_DEMARRER);
+	chThdSleepMilliseconds(ATTENTE_DEMARRER); //attente
 }
 
 void get_StopAudioSem(void){
